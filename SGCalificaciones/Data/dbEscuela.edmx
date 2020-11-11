@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BdCalificacionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bimestre">
+          <Key>
+            <PropertyRef Name="id_bimestre" />
+          </Key>
+          <Property Name="id_bimestre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bimestre" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Calificaciones">
+          <Key>
+            <PropertyRef Name="id_calificacion" />
+          </Key>
+          <Property Name="id_calificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calificacion" Type="int" />
+          <Property Name="id_bimestre" Type="int" />
+          <Property Name="nro_carnet" Type="int" />
+          <Property Name="id_criterio" Type="int" />
+          <Property Name="id_materia" Type="int" />
+        </EntityType>
+        <EntityType Name="Criterio">
+          <Key>
+            <PropertyRef Name="id_criterio" />
+          </Key>
+          <Property Name="id_criterio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="desc_criterio" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="id_curso" />
+          </Key>
+          <Property Name="id_curso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom_curso" Type="varchar" MaxLength="25" />
+          <Property Name="paralelo" Type="varchar" MaxLength="5" />
+          <Property Name="nro_carnet" Type="int" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="nro_carnet" />
+          </Key>
+          <Property Name="nro_carnet" Type="int" Nullable="false" />
+          <Property Name="id_curso" Type="varchar" MaxLength="15" />
+          <Property Name="nombre" Type="varchar" MaxLength="40" />
+          <Property Name="ap_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="ap_materno" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="int" />
+          <Property Name="direccion" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Materia">
+          <Key>
+            <PropertyRef Name="id_materia" />
+          </Key>
+          <Property Name="id_materia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_materia" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Materia_Curso">
+          <Key>
+            <PropertyRef Name="id_asignacion" />
+          </Key>
+          <Property Name="id_asignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_curso" Type="int" />
+          <Property Name="id_materia" Type="int" />
+        </EntityType>
+        <EntityType Name="Plantel_Educativo">
+          <Key>
+            <PropertyRef Name="nro_carnet" />
+          </Key>
+          <Property Name="nro_carnet" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="40" />
+          <Property Name="ap_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="ap_materno" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="int" />
+          <Property Name="tipo_plantel" Type="varchar" MaxLength="20" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Calificaciones_Bimestre">
+          <End Role="Bimestre" Type="Self.Bimestre" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bimestre">
+              <PropertyRef Name="id_bimestre" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="id_bimestre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Calificaciones_Criterio">
+          <End Role="Criterio" Type="Self.Criterio" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterio">
+              <PropertyRef Name="id_criterio" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="id_criterio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Calificaciones_Estudiante">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiante">
+              <PropertyRef Name="nro_carnet" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="nro_carnet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Calificaciones_Materia">
+          <End Role="Materia" Type="Self.Materia" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materia">
+              <PropertyRef Name="id_materia" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="id_materia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curso_Plantel_Educativo">
+          <End Role="Plantel_Educativo" Type="Self.Plantel_Educativo" Multiplicity="0..1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plantel_Educativo">
+              <PropertyRef Name="nro_carnet" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="nro_carnet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Materia_Curso_Curso">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+          <End Role="Materia_Curso" Type="Self.Materia_Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="id_curso" />
+            </Principal>
+            <Dependent Role="Materia_Curso">
+              <PropertyRef Name="id_curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Materia_Curso_Materia">
+          <End Role="Materia" Type="Self.Materia" Multiplicity="0..1" />
+          <End Role="Materia_Curso" Type="Self.Materia_Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materia">
+              <PropertyRef Name="id_materia" />
+            </Principal>
+            <Dependent Role="Materia_Curso">
+              <PropertyRef Name="id_materia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BdCalificacionesModelStoreContainer">
+          <EntitySet Name="Bimestre" EntityType="Self.Bimestre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Criterio" EntityType="Self.Criterio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materia" EntityType="Self.Materia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materia_Curso" EntityType="Self.Materia_Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plantel_Educativo" EntityType="Self.Plantel_Educativo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Calificaciones_Bimestre" Association="Self.FK_Calificaciones_Bimestre">
+            <End Role="Bimestre" EntitySet="Bimestre" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Calificaciones_Criterio" Association="Self.FK_Calificaciones_Criterio">
+            <End Role="Criterio" EntitySet="Criterio" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Calificaciones_Estudiante" Association="Self.FK_Calificaciones_Estudiante">
+            <End Role="Estudiante" EntitySet="Estudiante" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Calificaciones_Materia" Association="Self.FK_Calificaciones_Materia">
+            <End Role="Materia" EntitySet="Materia" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curso_Plantel_Educativo" Association="Self.FK_Curso_Plantel_Educativo">
+            <End Role="Plantel_Educativo" EntitySet="Plantel_Educativo" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Materia_Curso_Curso" Association="Self.FK_Materia_Curso_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Materia_Curso" EntitySet="Materia_Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Materia_Curso_Materia" Association="Self.FK_Materia_Curso_Materia">
+            <End Role="Materia" EntitySet="Materia" />
+            <End Role="Materia_Curso" EntitySet="Materia_Curso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BdCalificacionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bimestre">
+          <Key>
+            <PropertyRef Name="id_bimestre" />
+          </Key>
+          <Property Name="id_bimestre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bimestre1" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK_Calificaciones_Bimestre" FromRole="Bimestre" ToRole="Calificaciones" />
+        </EntityType>
+        <EntityType Name="Calificaciones">
+          <Key>
+            <PropertyRef Name="id_calificacion" />
+          </Key>
+          <Property Name="id_calificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calificacion" Type="Int32" />
+          <Property Name="id_bimestre" Type="Int32" />
+          <Property Name="nro_carnet" Type="Int32" />
+          <Property Name="id_criterio" Type="Int32" />
+          <Property Name="id_materia" Type="Int32" />
+          <NavigationProperty Name="Bimestre" Relationship="Self.FK_Calificaciones_Bimestre" FromRole="Calificaciones" ToRole="Bimestre" />
+          <NavigationProperty Name="Criterio" Relationship="Self.FK_Calificaciones_Criterio" FromRole="Calificaciones" ToRole="Criterio" />
+          <NavigationProperty Name="Estudiante" Relationship="Self.FK_Calificaciones_Estudiante" FromRole="Calificaciones" ToRole="Estudiante" />
+          <NavigationProperty Name="Materia" Relationship="Self.FK_Calificaciones_Materia" FromRole="Calificaciones" ToRole="Materia" />
+        </EntityType>
+        <EntityType Name="Criterio">
+          <Key>
+            <PropertyRef Name="id_criterio" />
+          </Key>
+          <Property Name="id_criterio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="desc_criterio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK_Calificaciones_Criterio" FromRole="Criterio" ToRole="Calificaciones" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="id_curso" />
+          </Key>
+          <Property Name="id_curso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom_curso" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="paralelo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="nro_carnet" Type="Int32" />
+          <NavigationProperty Name="Plantel_Educativo" Relationship="Self.FK_Curso_Plantel_Educativo" FromRole="Curso" ToRole="Plantel_Educativo" />
+          <NavigationProperty Name="Materia_Curso" Relationship="Self.FK_Materia_Curso_Curso" FromRole="Curso" ToRole="Materia_Curso" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="nro_carnet" />
+          </Key>
+          <Property Name="nro_carnet" Type="Int32" Nullable="false" />
+          <Property Name="id_curso" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ap_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ap_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="Int32" />
+          <Property Name="direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK_Calificaciones_Estudiante" FromRole="Estudiante" ToRole="Calificaciones" />
+        </EntityType>
+        <EntityType Name="Materia">
+          <Key>
+            <PropertyRef Name="id_materia" />
+          </Key>
+          <Property Name="id_materia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_materia" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK_Calificaciones_Materia" FromRole="Materia" ToRole="Calificaciones" />
+          <NavigationProperty Name="Materia_Curso" Relationship="Self.FK_Materia_Curso_Materia" FromRole="Materia" ToRole="Materia_Curso" />
+        </EntityType>
+        <EntityType Name="Materia_Curso">
+          <Key>
+            <PropertyRef Name="id_asignacion" />
+          </Key>
+          <Property Name="id_asignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_curso" Type="Int32" />
+          <Property Name="id_materia" Type="Int32" />
+          <NavigationProperty Name="Curso" Relationship="Self.FK_Materia_Curso_Curso" FromRole="Materia_Curso" ToRole="Curso" />
+          <NavigationProperty Name="Materia" Relationship="Self.FK_Materia_Curso_Materia" FromRole="Materia_Curso" ToRole="Materia" />
+        </EntityType>
+        <EntityType Name="Plantel_Educativo">
+          <Key>
+            <PropertyRef Name="nro_carnet" />
+          </Key>
+          <Property Name="nro_carnet" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ap_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ap_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="Int32" />
+          <Property Name="tipo_plantel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Curso" Relationship="Self.FK_Curso_Plantel_Educativo" FromRole="Plantel_Educativo" ToRole="Curso" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Calificaciones_Bimestre">
+          <End Role="Bimestre" Type="Self.Bimestre" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bimestre">
+              <PropertyRef Name="id_bimestre" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="id_bimestre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Calificaciones_Criterio">
+          <End Role="Criterio" Type="Self.Criterio" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterio">
+              <PropertyRef Name="id_criterio" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="id_criterio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Calificaciones_Estudiante">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiante">
+              <PropertyRef Name="nro_carnet" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="nro_carnet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Calificaciones_Materia">
+          <End Role="Materia" Type="Self.Materia" Multiplicity="0..1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materia">
+              <PropertyRef Name="id_materia" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="id_materia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curso_Plantel_Educativo">
+          <End Role="Plantel_Educativo" Type="Self.Plantel_Educativo" Multiplicity="0..1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plantel_Educativo">
+              <PropertyRef Name="nro_carnet" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="nro_carnet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Materia_Curso_Curso">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+          <End Role="Materia_Curso" Type="Self.Materia_Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="id_curso" />
+            </Principal>
+            <Dependent Role="Materia_Curso">
+              <PropertyRef Name="id_curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Materia_Curso_Materia">
+          <End Role="Materia" Type="Self.Materia" Multiplicity="0..1" />
+          <End Role="Materia_Curso" Type="Self.Materia_Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materia">
+              <PropertyRef Name="id_materia" />
+            </Principal>
+            <Dependent Role="Materia_Curso">
+              <PropertyRef Name="id_materia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BdCalificacionesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bimestre" EntityType="Self.Bimestre" />
+          <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" />
+          <EntitySet Name="Criterio" EntityType="Self.Criterio" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" />
+          <EntitySet Name="Estudiante" EntityType="Self.Estudiante" />
+          <EntitySet Name="Materia" EntityType="Self.Materia" />
+          <EntitySet Name="Materia_Curso" EntityType="Self.Materia_Curso" />
+          <EntitySet Name="Plantel_Educativo" EntityType="Self.Plantel_Educativo" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Calificaciones_Bimestre" Association="Self.FK_Calificaciones_Bimestre">
+            <End Role="Bimestre" EntitySet="Bimestre" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Calificaciones_Criterio" Association="Self.FK_Calificaciones_Criterio">
+            <End Role="Criterio" EntitySet="Criterio" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Calificaciones_Estudiante" Association="Self.FK_Calificaciones_Estudiante">
+            <End Role="Estudiante" EntitySet="Estudiante" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Calificaciones_Materia" Association="Self.FK_Calificaciones_Materia">
+            <End Role="Materia" EntitySet="Materia" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curso_Plantel_Educativo" Association="Self.FK_Curso_Plantel_Educativo">
+            <End Role="Plantel_Educativo" EntitySet="Plantel_Educativo" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Materia_Curso_Curso" Association="Self.FK_Materia_Curso_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Materia_Curso" EntitySet="Materia_Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Materia_Curso_Materia" Association="Self.FK_Materia_Curso_Materia">
+            <End Role="Materia" EntitySet="Materia" />
+            <End Role="Materia_Curso" EntitySet="Materia_Curso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BdCalificacionesModelStoreContainer" CdmEntityContainer="BdCalificacionesEntities">
+          <EntitySetMapping Name="Bimestre">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Bimestre">
+              <MappingFragment StoreEntitySet="Bimestre">
+                <ScalarProperty Name="id_bimestre" ColumnName="id_bimestre" />
+                <ScalarProperty Name="bimestre1" ColumnName="bimestre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calificaciones">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Calificaciones">
+              <MappingFragment StoreEntitySet="Calificaciones">
+                <ScalarProperty Name="id_calificacion" ColumnName="id_calificacion" />
+                <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+                <ScalarProperty Name="id_bimestre" ColumnName="id_bimestre" />
+                <ScalarProperty Name="nro_carnet" ColumnName="nro_carnet" />
+                <ScalarProperty Name="id_criterio" ColumnName="id_criterio" />
+                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Criterio">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Criterio">
+              <MappingFragment StoreEntitySet="Criterio">
+                <ScalarProperty Name="id_criterio" ColumnName="id_criterio" />
+                <ScalarProperty Name="desc_criterio" ColumnName="desc_criterio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curso">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Curso">
+              <MappingFragment StoreEntitySet="Curso">
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+                <ScalarProperty Name="nom_curso" ColumnName="nom_curso" />
+                <ScalarProperty Name="paralelo" ColumnName="paralelo" />
+                <ScalarProperty Name="nro_carnet" ColumnName="nro_carnet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudiante">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Estudiante">
+              <MappingFragment StoreEntitySet="Estudiante">
+                <ScalarProperty Name="nro_carnet" ColumnName="nro_carnet" />
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
+                <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materia">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Materia">
+              <MappingFragment StoreEntitySet="Materia">
+                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
+                <ScalarProperty Name="nombre_materia" ColumnName="nombre_materia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materia_Curso">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Materia_Curso">
+              <MappingFragment StoreEntitySet="Materia_Curso">
+                <ScalarProperty Name="id_asignacion" ColumnName="id_asignacion" />
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plantel_Educativo">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.Plantel_Educativo">
+              <MappingFragment StoreEntitySet="Plantel_Educativo">
+                <ScalarProperty Name="nro_carnet" ColumnName="nro_carnet" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
+                <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="tipo_plantel" ColumnName="tipo_plantel" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BdCalificacionesModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

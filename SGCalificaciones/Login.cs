@@ -16,5 +16,12 @@ namespace SGCalificaciones
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Presentación.FrmPrincipal frmP = new Presentación.FrmPrincipal();
+            frmP.Show();
+        }
     }
 }

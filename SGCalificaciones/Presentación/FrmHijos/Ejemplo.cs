@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SGCalificaciones.Presentación
+namespace SGCalificaciones.Presentación.FrmHijos
 {
-    public partial class Principal : Form
+    public partial class Ejemplo : Form
     {
-        public Principal()
+        public Ejemplo()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

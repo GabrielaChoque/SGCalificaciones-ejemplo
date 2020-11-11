@@ -45,12 +45,21 @@
     <Reference Include="DevComponents.DotNetBar.Layout, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.Instrumentation, Version=12.5.0.2, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -64,10 +73,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\dsSGCalificaciones.Designer.cs">
+    <Compile Include="Data\Bimestre.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Calificaciones.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Criterio.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Curso.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dbEscuela.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsSGCalificaciones.xsd</DependentUpon>
+      <DependentUpon>dbEscuela.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dbEscuela.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dbEscuela.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbEscuela.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Estudiante.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Materia.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Materia_Curso.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Plantel_Educativo.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>dbEscuela.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -75,19 +121,25 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentación\Principal.cs">
+    <Compile Include="Presentación\FrmHijos\Ejemplo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentación\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Presentación\FrmHijos\Ejemplo.Designer.cs">
+      <DependentUpon>Ejemplo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentación\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Presentación\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,17 +151,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Data\dsSGCalificaciones.xsc">
-      <DependentUpon>dsSGCalificaciones.xsd</DependentUpon>
+    <EntityDeploy Include="Data\dbEscuela.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbEscuela.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\dbEscuela.edmx.diagram">
+      <DependentUpon>dbEscuela.edmx</DependentUpon>
     </None>
-    <None Include="Data\dsSGCalificaciones.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsSGCalificaciones.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Data\dsSGCalificaciones.xss">
-      <DependentUpon>dsSGCalificaciones.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.BdCalificacionesEntities.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Bimestre.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Calificaciones.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Criterio.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Curso.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Estudiante.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Materia.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Materia_Curso.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.Plantel_Educativo.datasource" />
+    <None Include="Properties\DataSources\SGCalificaciones.Data.sysdiagrams.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controladores\" />
-    <Folder Include="Presentación\FrmHijos\" />
     <Folder Include="Presentación\FrmPadres\" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +209,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\dbEscuela.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>dbEscuela.Context.cs</LastGenOutput>
+      <DependentUpon>dbEscuela.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\dbEscuela.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbEscuela.edmx</DependentUpon>
+      <LastGenOutput>dbEscuela.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

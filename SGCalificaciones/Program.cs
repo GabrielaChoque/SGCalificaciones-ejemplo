@@ -16,7 +16,7 @@ namespace SGCalificaciones
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Presentación.Principal());
+            Application.Run(new Presentación.FrmPrincipal());
         }
     }
 }
