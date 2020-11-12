@@ -47,6 +47,7 @@ namespace SGCalificaciones.Vista.Administrativo
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.nro_carnetLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -221,12 +222,22 @@ namespace SGCalificaciones.Vista.Administrativo
             this.iconPictureBox1.TabIndex = 7;
             this.iconPictureBox1.TabStop = false;
             // 
+            // nro_carnetLabel1
+            // 
+            this.nro_carnetLabel1.AutoSize = true;
+            this.nro_carnetLabel1.Location = new System.Drawing.Point(232, 30);
+            this.nro_carnetLabel1.Name = "nro_carnetLabel1";
+            this.nro_carnetLabel1.Size = new System.Drawing.Size(35, 13);
+            this.nro_carnetLabel1.TabIndex = 9;
+            this.nro_carnetLabel1.Text = "label3";
+            // 
             // frmGestionPlantel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1070, 669);
+            this.Controls.Add(this.nro_carnetLabel1);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -265,5 +276,6 @@ namespace SGCalificaciones.Vista.Administrativo
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label nro_carnetLabel1;
     }
 }

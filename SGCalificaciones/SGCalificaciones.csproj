@@ -114,10 +114,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vista\Administrativo\frmGestionPlantel.cs">
+    <Compile Include="Vista\Gestiones\frmGestionPlantel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Administrativo\frmGestionPlantel.Designer.cs">
+    <Compile Include="Vista\Gestiones\frmGestionPlantel.Designer.cs">
       <DependentUpon>frmGestionPlantel.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmPrincipal.cs">
@@ -125,6 +125,12 @@
     </Compile>
     <Compile Include="Vista\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmPlantel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmPlantel.Designer.cs">
+      <DependentUpon>frmPlantel.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -139,11 +145,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vista\Administrativo\frmGestionPlantel.resx">
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionPlantel.resx">
       <DependentUpon>frmGestionPlantel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmPlantel.resx">
+      <DependentUpon>frmPlantel.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\BdCalificaciones.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -194,8 +203,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vista\Profesor\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
