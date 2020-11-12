@@ -12,34 +12,32 @@ using System.Windows.Forms;
 
 namespace SGCalificaciones.Vista.Ventanas
 {
-    public partial class frmPlantel : Form
+    public partial class frmEstudiante : Form
     {
-        PlantelController _objUsuario = new PlantelController();
+        EstudianteController _objUsuario = new EstudianteController();
         private string _cuenta;
         private bool _esNuevo;
-        public frmPlantel()
+        public frmEstudiante()
         {
             _esNuevo = true;
             InitializeComponent();
         }
-        public frmPlantel(string pCuenta)
+        public frmEstudiante(string pCuenta)
         {
-            
             _cuenta = pCuenta;
             _esNuevo = false;
             InitializeComponent();
         }
-
-        private void frmPlantel_Load(object sender, EventArgs e)
+        private void frmEstudiante_Load(object sender, EventArgs e)
         {
             if (_esNuevo)
             {
-                plantel_EducativoBindingSource.AddNew();
+                estudianteBindingSource.AddNew();
                 label1.Text = "REGISTRAR NUEVO";
             }
             else
             {
-                plantel_EducativoBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                estudianteBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
                 label1.Text = "MODIFICAR";
             }
         }
@@ -76,9 +74,9 @@ namespace SGCalificaciones.Vista.Ventanas
 
         }
 
-        private Plantel_Educativo CargarDatos()
+        private Estudiante CargarDatos()
         {
-            var reg = (Plantel_Educativo)plantel_EducativoBindingSource.Current;
+            var reg = (Estudiante)estudianteBindingSource.Current;
             //reg.FechaNac = DateTime.Now;
             return reg;
         }
@@ -88,5 +86,5 @@ namespace SGCalificaciones.Vista.Ventanas
             Close();
         }
 
-    }
+     }
 }

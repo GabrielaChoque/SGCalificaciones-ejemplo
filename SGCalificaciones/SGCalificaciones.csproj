@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\EstudianteController.cs" />
     <Compile Include="Controlador\PlantelController.cs" />
     <Compile Include="Data\BdCalificaciones.Context.cs">
       <AutoGen>True</AutoGen>
@@ -120,6 +121,12 @@
     <Compile Include="Vista\frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionarEstudiante.Designer.cs">
+      <DependentUpon>frmGestionarEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Gestiones\frmGestionPlantel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +138,12 @@
     </Compile>
     <Compile Include="Vista\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmEstudiante.Designer.cs">
+      <DependentUpon>frmEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas\frmPlantel.cs">
       <SubType>Form</SubType>
@@ -154,11 +167,17 @@
     <EmbeddedResource Include="Vista\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionarEstudiante.resx">
+      <DependentUpon>frmGestionarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionPlantel.resx">
       <DependentUpon>frmGestionPlantel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmEstudiante.resx">
+      <DependentUpon>frmEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmPlantel.resx">
       <DependentUpon>frmPlantel.cs</DependentUpon>
