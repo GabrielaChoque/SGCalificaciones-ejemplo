@@ -36,7 +36,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
-            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nro_carnetLabel1 = new System.Windows.Forms.Label();
             this.estudianteDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +45,13 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_carnetLabel1 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox1
@@ -146,9 +149,14 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // estudianteBindingSource
+            // nro_carnetLabel1
             // 
-            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
+            this.nro_carnetLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "nro_carnet", true));
+            this.nro_carnetLabel1.Location = new System.Drawing.Point(127, 68);
+            this.nro_carnetLabel1.Name = "nro_carnetLabel1";
+            this.nro_carnetLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nro_carnetLabel1.TabIndex = 15;
+            this.nro_carnetLabel1.Text = "label2";
             // 
             // estudianteDataGridView
             // 
@@ -161,12 +169,13 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
             this.estudianteDataGridView.DataSource = this.estudianteBindingSource;
-            this.estudianteDataGridView.Location = new System.Drawing.Point(158, 213);
+            this.estudianteDataGridView.Location = new System.Drawing.Point(115, 223);
             this.estudianteDataGridView.Name = "estudianteDataGridView";
-            this.estudianteDataGridView.Size = new System.Drawing.Size(760, 220);
-            this.estudianteDataGridView.TabIndex = 14;
+            this.estudianteDataGridView.Size = new System.Drawing.Size(861, 220);
+            this.estudianteDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -210,14 +219,29 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn7.HeaderText = "direccion";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // nro_carnetLabel1
+            // dataGridViewTextBoxColumn8
             // 
-            this.nro_carnetLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "nro_carnet", true));
-            this.nro_carnetLabel1.Location = new System.Drawing.Point(127, 68);
-            this.nro_carnetLabel1.Name = "nro_carnetLabel1";
-            this.nro_carnetLabel1.Size = new System.Drawing.Size(100, 23);
-            this.nro_carnetLabel1.TabIndex = 15;
-            this.nro_carnetLabel1.Text = "label2";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Calificaciones";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Calificaciones";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // estudianteBindingSource
+            // 
+            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.Location = new System.Drawing.Point(1034, 12);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox2.TabIndex = 16;
+            this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
             // frmGestionarEstudiante
             // 
@@ -225,8 +249,9 @@ namespace SGCalificaciones.Vista.Gestiones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1078, 669);
-            this.Controls.Add(this.nro_carnetLabel1);
+            this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.estudianteDataGridView);
+            this.Controls.Add(this.nro_carnetLabel1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
@@ -237,8 +262,9 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Name = "frmGestionarEstudiante";
             this.Text = "frmGestionarEstudiante";
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +279,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnNuevo;
         private System.Windows.Forms.BindingSource estudianteBindingSource;
+        private System.Windows.Forms.Label nro_carnetLabel1;
         private System.Windows.Forms.DataGridView estudianteDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -261,6 +288,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Label nro_carnetLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }

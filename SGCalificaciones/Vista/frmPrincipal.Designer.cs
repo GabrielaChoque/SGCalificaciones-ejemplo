@@ -33,9 +33,6 @@ namespace SGCalificaciones.Vista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.PannelMenu = new System.Windows.Forms.Panel();
-            this.MenuTop = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnAnioEscolar = new FontAwesome.Sharp.IconButton();
@@ -44,14 +41,17 @@ namespace SGCalificaciones.Vista
             this.btnInicio = new FontAwesome.Sharp.IconButton();
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
+            this.MenuTop = new System.Windows.Forms.Panel();
             this.Restaurar = new System.Windows.Forms.PictureBox();
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.Maximizar = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.PtbxMenuSidebar = new System.Windows.Forms.PictureBox();
+            this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.PannelMenu.SuspendLayout();
-            this.MenuTop.SuspendLayout();
             this.Sidebar.SuspendLayout();
+            this.MenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).BeginInit();
@@ -77,39 +77,6 @@ namespace SGCalificaciones.Vista
             this.PannelMenu.Name = "PannelMenu";
             this.PannelMenu.Size = new System.Drawing.Size(300, 669);
             this.PannelMenu.TabIndex = 9;
-            // 
-            // MenuTop
-            // 
-            this.MenuTop.BackColor = System.Drawing.Color.SteelBlue;
-            this.MenuTop.Controls.Add(this.Restaurar);
-            this.MenuTop.Controls.Add(this.Minimizar);
-            this.MenuTop.Controls.Add(this.Maximizar);
-            this.MenuTop.Controls.Add(this.Salir);
-            this.MenuTop.Controls.Add(this.label1);
-            this.MenuTop.Controls.Add(this.PtbxMenuSidebar);
-            this.MenuTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuTop.Location = new System.Drawing.Point(0, 0);
-            this.MenuTop.Name = "MenuTop";
-            this.MenuTop.Size = new System.Drawing.Size(1370, 80);
-            this.MenuTop.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(70, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(529, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "UNIDAD EDUCATIVA \"CARLOS BELTRAN MORALES\"";
-            // 
-            // MoverDashboard
-            // 
-            this.MoverDashboard.Fixed = true;
-            this.MoverDashboard.Horizontal = true;
-            this.MoverDashboard.TargetControl = this.MenuTop;
-            this.MoverDashboard.Vertical = true;
             // 
             // Sidebar
             // 
@@ -194,6 +161,7 @@ namespace SGCalificaciones.Vista
             this.btnEstudiantes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstudiantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstudiantes.UseVisualStyleBackColor = false;
+            this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
             // 
             // btnPlantelDocente
             // 
@@ -261,6 +229,21 @@ namespace SGCalificaciones.Vista
             this.label2.TabIndex = 6;
             this.label2.Text = "MENU";
             // 
+            // MenuTop
+            // 
+            this.MenuTop.BackColor = System.Drawing.Color.SteelBlue;
+            this.MenuTop.Controls.Add(this.Restaurar);
+            this.MenuTop.Controls.Add(this.Minimizar);
+            this.MenuTop.Controls.Add(this.Maximizar);
+            this.MenuTop.Controls.Add(this.Salir);
+            this.MenuTop.Controls.Add(this.label1);
+            this.MenuTop.Controls.Add(this.PtbxMenuSidebar);
+            this.MenuTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MenuTop.Location = new System.Drawing.Point(0, 0);
+            this.MenuTop.Name = "MenuTop";
+            this.MenuTop.Size = new System.Drawing.Size(1370, 80);
+            this.MenuTop.TabIndex = 8;
+            // 
             // Restaurar
             // 
             this.Restaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -310,6 +293,17 @@ namespace SGCalificaciones.Vista
             this.Salir.TabStop = false;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(70, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(529, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "UNIDAD EDUCATIVA \"CARLOS BELTRAN MORALES\"";
+            // 
             // PtbxMenuSidebar
             // 
             this.PtbxMenuSidebar.Image = ((System.Drawing.Image)(resources.GetObject("PtbxMenuSidebar.Image")));
@@ -319,6 +313,13 @@ namespace SGCalificaciones.Vista
             this.PtbxMenuSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PtbxMenuSidebar.TabIndex = 0;
             this.PtbxMenuSidebar.TabStop = false;
+            // 
+            // MoverDashboard
+            // 
+            this.MoverDashboard.Fixed = true;
+            this.MoverDashboard.Horizontal = true;
+            this.MoverDashboard.TargetControl = this.MenuTop;
+            this.MoverDashboard.Vertical = true;
             // 
             // frmPrincipal
             // 
@@ -334,10 +335,10 @@ namespace SGCalificaciones.Vista
             this.Text = "frmPrincipal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.PannelMenu.ResumeLayout(false);
-            this.MenuTop.ResumeLayout(false);
-            this.MenuTop.PerformLayout();
             this.Sidebar.ResumeLayout(false);
             this.Sidebar.PerformLayout();
+            this.MenuTop.ResumeLayout(false);
+            this.MenuTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).EndInit();

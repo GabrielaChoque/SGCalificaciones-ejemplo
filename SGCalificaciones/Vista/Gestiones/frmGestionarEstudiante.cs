@@ -63,5 +63,10 @@ namespace SGCalificaciones.Vista.Gestiones
                 Listar(txtBuscar.Text);
             }
         }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

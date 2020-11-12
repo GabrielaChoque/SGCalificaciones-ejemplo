@@ -48,8 +48,8 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
             this.id_cursoComboBox = new System.Windows.Forms.ComboBox();
-            this.bdCalificacionesEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdCalificacionesEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -58,8 +58,8 @@ namespace SGCalificaciones.Vista.Ventanas
             nombreLabel = new System.Windows.Forms.Label();
             nro_carnetLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdCalificacionesEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdCalificacionesEntitiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ap_maternoLabel
@@ -144,6 +144,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -164,6 +165,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // label1
             // 
@@ -240,13 +242,13 @@ namespace SGCalificaciones.Vista.Ventanas
             this.id_cursoComboBox.TabIndex = 54;
             this.id_cursoComboBox.ValueMember = "id_curso";
             // 
-            // bdCalificacionesEntitiesBindingSource
-            // 
-            this.bdCalificacionesEntitiesBindingSource.DataSource = typeof(SGCalificaciones.Data.BdCalificacionesEntities);
-            // 
             // cursoBindingSource
             // 
             this.cursoBindingSource.DataSource = typeof(SGCalificaciones.Data.Curso);
+            // 
+            // bdCalificacionesEntitiesBindingSource
+            // 
+            this.bdCalificacionesEntitiesBindingSource.DataSource = typeof(SGCalificaciones.Data.BdCalificacionesEntities);
             // 
             // frmEstudiante
             // 
@@ -274,9 +276,10 @@ namespace SGCalificaciones.Vista.Ventanas
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEstudiante";
+            this.Load += new System.EventHandler(this.frmEstudiante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdCalificacionesEntitiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdCalificacionesEntitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -70,5 +70,10 @@ namespace SGCalificaciones.Vista
         {
             AbrirFormInPanel(new Vista.frmInicio());
         }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionarEstudiante());
+        }
     }
 }

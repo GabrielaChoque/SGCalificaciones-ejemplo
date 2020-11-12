@@ -192,7 +192,7 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.plantel_EducativoDataGridView.DataSource = this.plantel_EducativoBindingSource;
-            this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(32, 231);
+            this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(54, 250);
             this.plantel_EducativoDataGridView.Name = "plantel_EducativoDataGridView";
             this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(977, 232);
             this.plantel_EducativoDataGridView.TabIndex = 11;
