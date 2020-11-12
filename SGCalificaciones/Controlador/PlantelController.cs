@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGCalificaciones.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,39 +11,37 @@ namespace SGCalificaciones.Controlador
     {
         BdCalificacionesEntities _db = new BdCalificacionesEntities();
 
-        public List<Administrativo> Listar(string pBuscar)
+        public List<Plantel_Educativo> Listar(string pBuscar)
         {
-            return _db.Administrativo.Where(x => x.ocupación.Contains(pBuscar)).ToList();
+            return _db.Plantel_Educativo.Where(x => x.nombre.Contains(pBuscar)).ToList();
         }
-        public bool Insertar(Data.Administrativo reg)
+        public bool Insertar(Data.Plantel_Educativo reg)
         {
-            _db.Administrativo.Add(reg);
+            _db.Plantel_Educativo.Add(reg);
             _db.SaveChanges();
             return true;
         }
-        public bool Modificar(Data.Administrativo reg)
+        public bool Modificar(Data.Plantel_Educativo reg)
         {
             _db.Entry(reg).State = System.Data.Entity.EntityState.Modified;
             return _db.SaveChanges() > 0;
         }
         public bool Eliminar(int pParametro)
         {
-            var reg = _db.Administrativo.Where(x => x.nro_carnet == pParametro).FirstOrDefault();
-            _db.Administrativo.Remove(reg);
+            var reg = _db.Plantel_Educativo.Where(x => x.nro_carnet == pParametro).FirstOrDefault();
+            _db.Plantel_Educativo.Remove(reg);
             return _db.SaveChanges() > 0;
         }
-        internal List<Administrativo> BuscarPorPK(int pCuenta)
+        internal List<Plantel_Educativo> BuscarPorPK(int pCuenta)
         {
-            return _db.Administrativo.Where(x => x.nro_carnet == pCuenta).ToList();
+            return _db.Plantel_Educativo.Where(x => x.nro_carnet == pCuenta).ToList();
         }
-
         public bool Autenticar(int pUser, string pPass) //metodo autenticar con parametro Administrativo y contraseña respectivamente
         {
             try
             {
-
                 //en una var "res" donde usamos de la base de datos usando la tabla Administrativo donde x sea usado para uso de datos en tabla BD
-                var res = _db.Administrativo.Where(x => x.nro_carnet == pUser && x.contrasenia == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un Administrativo con lo mismos datos
+                var res = _db.Plantel_Educativo.Where(x => x.nro_carnet == pUser && x.contrasenia == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un Administrativo con lo mismos datos
                 if (res != null) //si res es diferente de vacio
                     return true;
                 else
@@ -54,9 +53,9 @@ namespace SGCalificaciones.Controlador
             }
         }
 
-        internal List<Administrativo> ControlSesion(int pUser, string pPass)
+        internal List<Plantel_Educativo> ControlSesion(string pUser, string pPass)
         {
-            return _db.Administrativo.Where(x => x.nro_carnet == pUser && x.contrasenia == pPass).ToList();
+            return _db.Plantel_Educativo.Where(x => x.usuario == pUser && x.contrasenia == pPass).ToList();
         }
         //public bool VerificarAdministrativoRepetido(string pCi) //metodo autenticar con parametro Administrativo y contraseña respectivamente
         //{ 
