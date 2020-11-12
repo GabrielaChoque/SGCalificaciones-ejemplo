@@ -33,8 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +58,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BdCalificaciones.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdCalificaciones.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdCalificaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BdCalificaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdCalificaciones.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Bimestre.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Calificaciones.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Criterio.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Curso.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Estudiante.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Materia.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Materia_Curso.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Plantel_Educativo.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +120,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Data\BdCalificaciones.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BdCalificaciones.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\BdCalificaciones.edmx.diagram">
+      <DependentUpon>BdCalificaciones.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +140,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\BdCalificaciones.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BdCalificaciones.Context.cs</LastGenOutput>
+      <DependentUpon>BdCalificaciones.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\BdCalificaciones.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdCalificaciones.edmx</DependentUpon>
+      <LastGenOutput>BdCalificaciones.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controlador\" />
+    <Folder Include="Vista\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
