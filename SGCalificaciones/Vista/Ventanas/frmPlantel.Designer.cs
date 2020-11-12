@@ -39,17 +39,17 @@ namespace SGCalificaciones.Vista.Ventanas
             System.Windows.Forms.Label usuarioLabel;
             System.Windows.Forms.Label tipo_plantelLabel;
             this.label1 = new System.Windows.Forms.Label();
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ap_maternoTextBox = new System.Windows.Forms.TextBox();
-            this.ap_paternoTextBox = new System.Windows.Forms.TextBox();
-            this.celularTextBox = new System.Windows.Forms.TextBox();
             this.contraseniaTextBox = new System.Windows.Forms.TextBox();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
-            this.tipo_plantelComboBox = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.celularTextBox = new System.Windows.Forms.TextBox();
+            this.ap_paternoTextBox = new System.Windows.Forms.TextBox();
+            this.ap_maternoTextBox = new System.Windows.Forms.TextBox();
+            this.tipo_plantelComboBox = new System.Windows.Forms.ComboBox();
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -124,6 +124,15 @@ namespace SGCalificaciones.Vista.Ventanas
             usuarioLabel.TabIndex = 16;
             usuarioLabel.Text = "usuario:";
             // 
+            // tipo_plantelLabel
+            // 
+            tipo_plantelLabel.AutoSize = true;
+            tipo_plantelLabel.Location = new System.Drawing.Point(45, 192);
+            tipo_plantelLabel.Name = "tipo_plantelLabel";
+            tipo_plantelLabel.Size = new System.Drawing.Size(58, 13);
+            tipo_plantelLabel.TabIndex = 17;
+            tipo_plantelLabel.Text = "PLANTEL:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -134,34 +143,6 @@ namespace SGCalificaciones.Vista.Ventanas
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // plantel_EducativoBindingSource
-            // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
-            // 
-            // ap_maternoTextBox
-            // 
-            this.ap_maternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_materno", true));
-            this.ap_maternoTextBox.Location = new System.Drawing.Point(169, 111);
-            this.ap_maternoTextBox.Name = "ap_maternoTextBox";
-            this.ap_maternoTextBox.Size = new System.Drawing.Size(166, 20);
-            this.ap_maternoTextBox.TabIndex = 3;
-            // 
-            // ap_paternoTextBox
-            // 
-            this.ap_paternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_paterno", true));
-            this.ap_paternoTextBox.Location = new System.Drawing.Point(169, 137);
-            this.ap_paternoTextBox.Name = "ap_paternoTextBox";
-            this.ap_paternoTextBox.Size = new System.Drawing.Size(166, 20);
-            this.ap_paternoTextBox.TabIndex = 5;
-            // 
-            // celularTextBox
-            // 
-            this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "celular", true));
-            this.celularTextBox.Location = new System.Drawing.Point(169, 163);
-            this.celularTextBox.Name = "celularTextBox";
-            this.celularTextBox.Size = new System.Drawing.Size(166, 20);
-            this.celularTextBox.TabIndex = 7;
-            // 
             // contraseniaTextBox
             // 
             this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "contrasenia", true));
@@ -170,21 +151,9 @@ namespace SGCalificaciones.Vista.Ventanas
             this.contraseniaTextBox.Size = new System.Drawing.Size(166, 20);
             this.contraseniaTextBox.TabIndex = 9;
             // 
-            // nombreTextBox
+            // plantel_EducativoBindingSource
             // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(169, 84);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(166, 20);
-            this.nombreTextBox.TabIndex = 11;
-            // 
-            // nro_carnetTextBox
-            // 
-            this.nro_carnetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
-            this.nro_carnetTextBox.Location = new System.Drawing.Point(169, 58);
-            this.nro_carnetTextBox.Name = "nro_carnetTextBox";
-            this.nro_carnetTextBox.Size = new System.Drawing.Size(166, 20);
-            this.nro_carnetTextBox.TabIndex = 13;
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
             // usuarioTextBox
             // 
@@ -193,27 +162,6 @@ namespace SGCalificaciones.Vista.Ventanas
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(166, 20);
             this.usuarioTextBox.TabIndex = 17;
-            // 
-            // tipo_plantelLabel
-            // 
-            tipo_plantelLabel.AutoSize = true;
-            tipo_plantelLabel.Location = new System.Drawing.Point(45, 192);
-            tipo_plantelLabel.Name = "tipo_plantelLabel";
-            tipo_plantelLabel.Size = new System.Drawing.Size(58, 13);
-            tipo_plantelLabel.TabIndex = 17;
-            tipo_plantelLabel.Text = "PLANTEL:";
-            // 
-            // tipo_plantelComboBox
-            // 
-            this.tipo_plantelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "tipo_plantel", true));
-            this.tipo_plantelComboBox.FormattingEnabled = true;
-            this.tipo_plantelComboBox.Items.AddRange(new object[] {
-            "Docente",
-            "Administrativo"});
-            this.tipo_plantelComboBox.Location = new System.Drawing.Point(169, 189);
-            this.tipo_plantelComboBox.Name = "tipo_plantelComboBox";
-            this.tipo_plantelComboBox.Size = new System.Drawing.Size(166, 21);
-            this.tipo_plantelComboBox.TabIndex = 18;
             // 
             // btnAceptar
             // 
@@ -257,6 +205,58 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // nro_carnetTextBox
+            // 
+            this.nro_carnetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
+            this.nro_carnetTextBox.Location = new System.Drawing.Point(169, 58);
+            this.nro_carnetTextBox.Name = "nro_carnetTextBox";
+            this.nro_carnetTextBox.Size = new System.Drawing.Size(166, 20);
+            this.nro_carnetTextBox.TabIndex = 13;
+            // 
+            // nombreTextBox
+            // 
+            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nombre", true));
+            this.nombreTextBox.Location = new System.Drawing.Point(169, 84);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(166, 20);
+            this.nombreTextBox.TabIndex = 11;
+            // 
+            // celularTextBox
+            // 
+            this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "celular", true));
+            this.celularTextBox.Location = new System.Drawing.Point(169, 163);
+            this.celularTextBox.Name = "celularTextBox";
+            this.celularTextBox.Size = new System.Drawing.Size(166, 20);
+            this.celularTextBox.TabIndex = 7;
+            // 
+            // ap_paternoTextBox
+            // 
+            this.ap_paternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_paterno", true));
+            this.ap_paternoTextBox.Location = new System.Drawing.Point(169, 137);
+            this.ap_paternoTextBox.Name = "ap_paternoTextBox";
+            this.ap_paternoTextBox.Size = new System.Drawing.Size(166, 20);
+            this.ap_paternoTextBox.TabIndex = 5;
+            // 
+            // ap_maternoTextBox
+            // 
+            this.ap_maternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_materno", true));
+            this.ap_maternoTextBox.Location = new System.Drawing.Point(169, 111);
+            this.ap_maternoTextBox.Name = "ap_maternoTextBox";
+            this.ap_maternoTextBox.Size = new System.Drawing.Size(166, 20);
+            this.ap_maternoTextBox.TabIndex = 3;
+            // 
+            // tipo_plantelComboBox
+            // 
+            this.tipo_plantelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "tipo_plantel", true));
+            this.tipo_plantelComboBox.FormattingEnabled = true;
+            this.tipo_plantelComboBox.Items.AddRange(new object[] {
+            "Docente",
+            "Administrativo"});
+            this.tipo_plantelComboBox.Location = new System.Drawing.Point(169, 189);
+            this.tipo_plantelComboBox.Name = "tipo_plantelComboBox";
+            this.tipo_plantelComboBox.Size = new System.Drawing.Size(166, 21);
+            this.tipo_plantelComboBox.TabIndex = 18;
+            // 
             // frmPlantel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +287,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.Name = "frmPlantel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPlantel";
+            this.Load += new System.EventHandler(this.frmPlantel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,15 +298,15 @@ namespace SGCalificaciones.Vista.Ventanas
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource plantel_EducativoBindingSource;
-        private System.Windows.Forms.TextBox ap_maternoTextBox;
-        private System.Windows.Forms.TextBox ap_paternoTextBox;
-        private System.Windows.Forms.TextBox celularTextBox;
         private System.Windows.Forms.TextBox contraseniaTextBox;
-        private System.Windows.Forms.TextBox nombreTextBox;
-        private System.Windows.Forms.TextBox nro_carnetTextBox;
         private System.Windows.Forms.TextBox usuarioTextBox;
-        private System.Windows.Forms.ComboBox tipo_plantelComboBox;
         private FontAwesome.Sharp.IconButton btnAceptar;
         private FontAwesome.Sharp.IconButton btnCancelar;
+        private System.Windows.Forms.TextBox nro_carnetTextBox;
+        private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.TextBox celularTextBox;
+        private System.Windows.Forms.TextBox ap_paternoTextBox;
+        private System.Windows.Forms.TextBox ap_maternoTextBox;
+        private System.Windows.Forms.ComboBox tipo_plantelComboBox;
     }
 }

@@ -65,5 +65,10 @@ namespace SGCalificaciones.Vista
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.frmInicio());
+        }
     }
 }

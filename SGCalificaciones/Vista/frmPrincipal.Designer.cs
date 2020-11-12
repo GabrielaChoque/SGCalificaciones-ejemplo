@@ -332,6 +332,7 @@ namespace SGCalificaciones.Vista
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.PannelMenu.ResumeLayout(false);
             this.MenuTop.ResumeLayout(false);
             this.MenuTop.PerformLayout();

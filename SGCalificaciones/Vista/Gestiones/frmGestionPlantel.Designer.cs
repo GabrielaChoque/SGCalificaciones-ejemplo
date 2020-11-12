@@ -32,12 +32,13 @@ namespace SGCalificaciones.Vista.Administrativo
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.nro_carnetLabel1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.nro_carnetLabel1 = new System.Windows.Forms.Label();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.plantel_EducativoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,11 +49,10 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,15 +73,6 @@ namespace SGCalificaciones.Vista.Administrativo
             this.txtBuscar.Size = new System.Drawing.Size(462, 26);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
-            // 
-            // nro_carnetLabel1
-            // 
-            this.nro_carnetLabel1.AutoSize = true;
-            this.nro_carnetLabel1.Location = new System.Drawing.Point(62, 57);
-            this.nro_carnetLabel1.Name = "nro_carnetLabel1";
-            this.nro_carnetLabel1.Size = new System.Drawing.Size(35, 13);
-            this.nro_carnetLabel1.TabIndex = 9;
-            this.nro_carnetLabel1.Text = "label3";
             // 
             // iconPictureBox1
             // 
@@ -173,6 +164,19 @@ namespace SGCalificaciones.Vista.Administrativo
             this.iconPictureBox2.TabStop = false;
             this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
+            // nro_carnetLabel1
+            // 
+            this.nro_carnetLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
+            this.nro_carnetLabel1.Location = new System.Drawing.Point(87, 158);
+            this.nro_carnetLabel1.Name = "nro_carnetLabel1";
+            this.nro_carnetLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nro_carnetLabel1.TabIndex = 11;
+            this.nro_carnetLabel1.Text = "label2";
+            // 
+            // plantel_EducativoBindingSource
+            // 
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
+            // 
             // plantel_EducativoDataGridView
             // 
             this.plantel_EducativoDataGridView.AutoGenerateColumns = false;
@@ -188,10 +192,10 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.plantel_EducativoDataGridView.DataSource = this.plantel_EducativoBindingSource;
-            this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(55, 215);
+            this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(32, 231);
             this.plantel_EducativoDataGridView.Name = "plantel_EducativoDataGridView";
-            this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(950, 263);
-            this.plantel_EducativoDataGridView.TabIndex = 10;
+            this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(977, 232);
+            this.plantel_EducativoDataGridView.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -247,10 +251,6 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn9.HeaderText = "Curso";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // plantel_EducativoBindingSource
-            // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
-            // 
             // frmGestionPlantel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,8 +258,8 @@ namespace SGCalificaciones.Vista.Administrativo
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1078, 669);
             this.Controls.Add(this.plantel_EducativoDataGridView);
-            this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.nro_carnetLabel1);
+            this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -272,8 +272,8 @@ namespace SGCalificaciones.Vista.Administrativo
             this.Load += new System.EventHandler(this.frmGestionPlantel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,8 +288,8 @@ namespace SGCalificaciones.Vista.Administrativo
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Label nro_carnetLabel1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Label nro_carnetLabel1;
         private System.Windows.Forms.DataGridView plantel_EducativoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

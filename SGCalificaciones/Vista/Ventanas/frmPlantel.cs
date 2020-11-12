@@ -24,22 +24,23 @@ namespace SGCalificaciones.Vista.Ventanas
         }
         public frmPlantel(string pCuenta)
         {
+            
             _cuenta = pCuenta;
             _esNuevo = false;
             InitializeComponent();
         }
 
-        private void frmAdministrativo_Load(object sender, EventArgs e)
+        private void frmPlantel_Load(object sender, EventArgs e)
         {
             if (_esNuevo)
             {
-                plantel_EducativoBindingSource.AddNew(); //habilitador de cupos 
-                label1.Text = "REGISTRAR USUARIO";
+                plantel_EducativoBindingSource.AddNew();
+                label1.Text = "         REGISTRAR\n     MEDICAMENTO";
             }
             else
             {
                 plantel_EducativoBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
-                label1.Text = "MODIFICAR USUARIO";
+                label1.Text = "         MODIFICAR\n     MEDICAMENTO";
             }
         }
 

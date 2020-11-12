@@ -27,7 +27,7 @@ namespace SGCalificaciones
         {
             frmPrincipal frm = new frmPrincipal();
             frm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
