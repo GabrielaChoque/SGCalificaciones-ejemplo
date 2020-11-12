@@ -75,5 +75,16 @@ namespace SGCalificaciones.Vista
         {
             AbrirFormInPanel(new Vista.Gestiones.frmGestionarEstudiante());
         }
+
+        private void btnAnioEscolar_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionarAnioEscolar());
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

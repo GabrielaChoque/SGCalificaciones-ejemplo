@@ -276,6 +276,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEstudiante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmEstudiante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();

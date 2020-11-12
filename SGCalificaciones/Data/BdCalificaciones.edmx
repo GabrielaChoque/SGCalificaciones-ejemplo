@@ -222,7 +222,7 @@
             <PropertyRef Name="id_bimestre" />
           </Key>
           <Property Name="id_bimestre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="bimestre1" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="bimestre" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Calificaciones" Relationship="Self.FK_Calificaciones_Bimestre" FromRole="Bimestre" ToRole="Calificaciones" />
         </EntityType>
         <EntityType Name="Calificaciones">
@@ -448,7 +448,7 @@
             <EntityTypeMapping TypeName="BdCalificacionesModel.Bimestre">
               <MappingFragment StoreEntitySet="Bimestre">
                 <ScalarProperty Name="id_bimestre" ColumnName="id_bimestre" />
-                <ScalarProperty Name="bimestre1" ColumnName="bimestre" />
+                <ScalarProperty Name="bimestre" ColumnName="bimestre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
