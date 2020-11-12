@@ -30,22 +30,8 @@ namespace SGCalificaciones.Vista.Administrativo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionPlantel));
             this.label1 = new System.Windows.Forms.Label();
             this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.plantel_EducativoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.plantel_EducativoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.plantel_EducativoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +42,14 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.btnModificar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingNavigator)).BeginInit();
-            this.plantel_EducativoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,131 +66,6 @@ namespace SGCalificaciones.Vista.Administrativo
             // 
             this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
-            // plantel_EducativoBindingNavigator
-            // 
-            this.plantel_EducativoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.plantel_EducativoBindingNavigator.BindingSource = this.plantel_EducativoBindingSource;
-            this.plantel_EducativoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.plantel_EducativoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.plantel_EducativoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.plantel_EducativoBindingNavigatorSaveItem});
-            this.plantel_EducativoBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.plantel_EducativoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.plantel_EducativoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.plantel_EducativoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.plantel_EducativoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.plantel_EducativoBindingNavigator.Name = "plantel_EducativoBindingNavigator";
-            this.plantel_EducativoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.plantel_EducativoBindingNavigator.Size = new System.Drawing.Size(1070, 25);
-            this.plantel_EducativoBindingNavigator.TabIndex = 1;
-            this.plantel_EducativoBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            // 
-            // plantel_EducativoBindingNavigatorSaveItem
-            // 
-            this.plantel_EducativoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.plantel_EducativoBindingNavigatorSaveItem.Enabled = false;
-            this.plantel_EducativoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("plantel_EducativoBindingNavigatorSaveItem.Image")));
-            this.plantel_EducativoBindingNavigatorSaveItem.Name = "plantel_EducativoBindingNavigatorSaveItem";
-            this.plantel_EducativoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.plantel_EducativoBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
             // plantel_EducativoDataGridView
             // 
             this.plantel_EducativoDataGridView.AutoGenerateColumns = false;
@@ -216,7 +81,7 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.plantel_EducativoDataGridView.DataSource = this.plantel_EducativoBindingSource;
-            this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(26, 175);
+            this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(41, 210);
             this.plantel_EducativoDataGridView.Name = "plantel_EducativoDataGridView";
             this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(952, 282);
             this.plantel_EducativoDataGridView.TabIndex = 2;
@@ -275,23 +140,107 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn9.HeaderText = "Curso";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 60;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(139, 529);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(195, 70);
+            this.btnNuevo.TabIndex = 3;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 60;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(416, 529);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(195, 70);
+            this.btnModificar.TabIndex = 4;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 60;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(704, 529);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(195, 70);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(289, 160);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(462, 26);
+            this.txtBuscar.TabIndex = 6;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(244, 158);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(39, 32);
+            this.iconPictureBox1.TabIndex = 7;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // frmGestionPlantel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1070, 669);
+            this.Controls.Add(this.iconPictureBox1);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.plantel_EducativoDataGridView);
-            this.Controls.Add(this.plantel_EducativoBindingNavigator);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionPlantel";
             this.Text = "frmGestionProfesores";
+            this.Load += new System.EventHandler(this.frmGestionPlantel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingNavigator)).EndInit();
-            this.plantel_EducativoBindingNavigator.ResumeLayout(false);
-            this.plantel_EducativoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,19 +250,6 @@ namespace SGCalificaciones.Vista.Administrativo
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource plantel_EducativoBindingSource;
-        private System.Windows.Forms.BindingNavigator plantel_EducativoBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton plantel_EducativoBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView plantel_EducativoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -324,5 +260,10 @@ namespace SGCalificaciones.Vista.Administrativo
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private FontAwesome.Sharp.IconButton btnNuevo;
+        private FontAwesome.Sharp.IconButton btnModificar;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

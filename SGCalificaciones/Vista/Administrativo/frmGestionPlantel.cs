@@ -17,6 +17,9 @@ namespace SGCalificaciones.Vista.Administrativo
             InitializeComponent();
         }
 
-      
+        private void frmGestionPlantel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
