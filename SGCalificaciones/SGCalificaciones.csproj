@@ -132,6 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vista\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Data\BdCalificaciones.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BdCalificaciones.Designer.cs</LastGenOutput>
