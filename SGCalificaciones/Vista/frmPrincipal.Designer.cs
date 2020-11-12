@@ -31,28 +31,27 @@ namespace SGCalificaciones.Vista
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.Wrapper = new System.Windows.Forms.Panel();
-            this.SidebarWrapper = new System.Windows.Forms.Panel();
+            this.PanelContenido = new System.Windows.Forms.Panel();
+            this.PannelMenu = new System.Windows.Forms.Panel();
+            this.MenuTop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new FontAwesome.Sharp.IconButton();
+            this.btnAnioEscolar = new FontAwesome.Sharp.IconButton();
+            this.btnEstudiantes = new FontAwesome.Sharp.IconButton();
+            this.btnPlantelDocente = new FontAwesome.Sharp.IconButton();
             this.btnInicio = new FontAwesome.Sharp.IconButton();
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
-            this.MenuTop = new System.Windows.Forms.Panel();
             this.Restaurar = new System.Windows.Forms.PictureBox();
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.Maximizar = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.PtbxMenuSidebar = new System.Windows.Forms.PictureBox();
-            this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.SidebarWrapper.SuspendLayout();
-            this.Sidebar.SuspendLayout();
+            this.PannelMenu.SuspendLayout();
             this.MenuTop.SuspendLayout();
+            this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).BeginInit();
@@ -60,24 +59,57 @@ namespace SGCalificaciones.Vista
             ((System.ComponentModel.ISupportInitialize)(this.PtbxMenuSidebar)).BeginInit();
             this.SuspendLayout();
             // 
-            // Wrapper
+            // PanelContenido
             // 
-            this.Wrapper.BackColor = System.Drawing.Color.White;
-            this.Wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Wrapper.Location = new System.Drawing.Point(300, 80);
-            this.Wrapper.Name = "Wrapper";
-            this.Wrapper.Size = new System.Drawing.Size(1070, 669);
-            this.Wrapper.TabIndex = 10;
+            this.PanelContenido.BackColor = System.Drawing.Color.White;
+            this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenido.Location = new System.Drawing.Point(300, 80);
+            this.PanelContenido.Name = "PanelContenido";
+            this.PanelContenido.Size = new System.Drawing.Size(1070, 669);
+            this.PanelContenido.TabIndex = 10;
             // 
-            // SidebarWrapper
+            // PannelMenu
             // 
-            this.SidebarWrapper.BackColor = System.Drawing.Color.White;
-            this.SidebarWrapper.Controls.Add(this.Sidebar);
-            this.SidebarWrapper.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SidebarWrapper.Location = new System.Drawing.Point(0, 80);
-            this.SidebarWrapper.Name = "SidebarWrapper";
-            this.SidebarWrapper.Size = new System.Drawing.Size(300, 669);
-            this.SidebarWrapper.TabIndex = 9;
+            this.PannelMenu.BackColor = System.Drawing.Color.White;
+            this.PannelMenu.Controls.Add(this.Sidebar);
+            this.PannelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PannelMenu.Location = new System.Drawing.Point(0, 80);
+            this.PannelMenu.Name = "PannelMenu";
+            this.PannelMenu.Size = new System.Drawing.Size(300, 669);
+            this.PannelMenu.TabIndex = 9;
+            // 
+            // MenuTop
+            // 
+            this.MenuTop.BackColor = System.Drawing.Color.SteelBlue;
+            this.MenuTop.Controls.Add(this.Restaurar);
+            this.MenuTop.Controls.Add(this.Minimizar);
+            this.MenuTop.Controls.Add(this.Maximizar);
+            this.MenuTop.Controls.Add(this.Salir);
+            this.MenuTop.Controls.Add(this.label1);
+            this.MenuTop.Controls.Add(this.PtbxMenuSidebar);
+            this.MenuTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MenuTop.Location = new System.Drawing.Point(0, 0);
+            this.MenuTop.Name = "MenuTop";
+            this.MenuTop.Size = new System.Drawing.Size(1370, 80);
+            this.MenuTop.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(70, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(529, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "UNIDAD EDUCATIVA \"CARLOS BELTRAN MORALES\"";
+            // 
+            // MoverDashboard
+            // 
+            this.MoverDashboard.Fixed = true;
+            this.MoverDashboard.Horizontal = true;
+            this.MoverDashboard.TargetControl = this.MenuTop;
+            this.MoverDashboard.Vertical = true;
             // 
             // Sidebar
             // 
@@ -86,11 +118,10 @@ namespace SGCalificaciones.Vista
             this.Sidebar.BackColor = System.Drawing.Color.SteelBlue;
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Sidebar.Controls.Add(this.iconButton5);
-            this.Sidebar.Controls.Add(this.iconButton4);
-            this.Sidebar.Controls.Add(this.iconButton3);
-            this.Sidebar.Controls.Add(this.iconButton2);
-            this.Sidebar.Controls.Add(this.iconButton1);
+            this.Sidebar.Controls.Add(this.btnSalir);
+            this.Sidebar.Controls.Add(this.btnAnioEscolar);
+            this.Sidebar.Controls.Add(this.btnEstudiantes);
+            this.Sidebar.Controls.Add(this.btnPlantelDocente);
             this.Sidebar.Controls.Add(this.btnInicio);
             this.Sidebar.Controls.Add(this.LineaSidebar);
             this.Sidebar.Controls.Add(this.label2);
@@ -104,105 +135,86 @@ namespace SGCalificaciones.Vista
             this.Sidebar.Size = new System.Drawing.Size(270, 672);
             this.Sidebar.TabIndex = 2;
             // 
-            // iconButton5
+            // btnSalir
             // 
-            this.iconButton5.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.White;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(7, 389);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(252, 51);
-            this.iconButton5.TabIndex = 20;
-            this.iconButton5.Text = "SALIR";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = false;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnSalir.IconColor = System.Drawing.Color.White;
+            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalir.IconSize = 30;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(7, 333);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(252, 51);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = false;
             // 
-            // iconButton4
+            // btnAnioEscolar
             // 
-            this.iconButton4.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.BookReader;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(7, 332);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(252, 51);
-            this.iconButton4.TabIndex = 19;
-            this.iconButton4.Text = "AÑO ESCOLAR";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = false;
+            this.btnAnioEscolar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnioEscolar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnioEscolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnioEscolar.ForeColor = System.Drawing.Color.White;
+            this.btnAnioEscolar.IconChar = FontAwesome.Sharp.IconChar.BookReader;
+            this.btnAnioEscolar.IconColor = System.Drawing.Color.White;
+            this.btnAnioEscolar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAnioEscolar.IconSize = 30;
+            this.btnAnioEscolar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnioEscolar.Location = new System.Drawing.Point(7, 276);
+            this.btnAnioEscolar.Name = "btnAnioEscolar";
+            this.btnAnioEscolar.Size = new System.Drawing.Size(252, 51);
+            this.btnAnioEscolar.TabIndex = 19;
+            this.btnAnioEscolar.Text = "AÑO ESCOLAR";
+            this.btnAnioEscolar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnioEscolar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnioEscolar.UseVisualStyleBackColor = false;
             // 
-            // iconButton3
+            // btnEstudiantes
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(7, 275);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(252, 51);
-            this.iconButton3.TabIndex = 18;
-            this.iconButton3.Text = "ESTUDIANTES";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.btnEstudiantes.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstudiantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstudiantes.ForeColor = System.Drawing.Color.White;
+            this.btnEstudiantes.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            this.btnEstudiantes.IconColor = System.Drawing.Color.White;
+            this.btnEstudiantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstudiantes.IconSize = 30;
+            this.btnEstudiantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstudiantes.Location = new System.Drawing.Point(7, 219);
+            this.btnEstudiantes.Name = "btnEstudiantes";
+            this.btnEstudiantes.Size = new System.Drawing.Size(252, 51);
+            this.btnEstudiantes.TabIndex = 18;
+            this.btnEstudiantes.Text = "ESTUDIANTES";
+            this.btnEstudiantes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstudiantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstudiantes.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // btnPlantelDocente
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(7, 218);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(252, 51);
-            this.iconButton2.TabIndex = 17;
-            this.iconButton2.Text = "PLANTEL DOCENTE";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(7, 161);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(252, 51);
-            this.iconButton1.TabIndex = 16;
-            this.iconButton1.Text = "PLANTEL ADMINISTRATIVO";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnPlantelDocente.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlantelDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlantelDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlantelDocente.ForeColor = System.Drawing.Color.White;
+            this.btnPlantelDocente.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
+            this.btnPlantelDocente.IconColor = System.Drawing.Color.White;
+            this.btnPlantelDocente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlantelDocente.IconSize = 30;
+            this.btnPlantelDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlantelDocente.Location = new System.Drawing.Point(7, 162);
+            this.btnPlantelDocente.Name = "btnPlantelDocente";
+            this.btnPlantelDocente.Size = new System.Drawing.Size(252, 51);
+            this.btnPlantelDocente.TabIndex = 17;
+            this.btnPlantelDocente.Text = "PLANTEL ESTUDIANTIL";
+            this.btnPlantelDocente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlantelDocente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlantelDocente.UseVisualStyleBackColor = false;
+            this.btnPlantelDocente.Click += new System.EventHandler(this.btnPlantelDocente_Click);
             // 
             // btnInicio
             // 
@@ -223,6 +235,7 @@ namespace SGCalificaciones.Vista
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // LineaSidebar
             // 
@@ -240,28 +253,13 @@ namespace SGCalificaciones.Vista
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(93, 30);
+            this.label2.Location = new System.Drawing.Point(96, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "MENU";
-            // 
-            // MenuTop
-            // 
-            this.MenuTop.BackColor = System.Drawing.Color.SteelBlue;
-            this.MenuTop.Controls.Add(this.Restaurar);
-            this.MenuTop.Controls.Add(this.Minimizar);
-            this.MenuTop.Controls.Add(this.Maximizar);
-            this.MenuTop.Controls.Add(this.Salir);
-            this.MenuTop.Controls.Add(this.label1);
-            this.MenuTop.Controls.Add(this.PtbxMenuSidebar);
-            this.MenuTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuTop.Location = new System.Drawing.Point(0, 0);
-            this.MenuTop.Name = "MenuTop";
-            this.MenuTop.Size = new System.Drawing.Size(1370, 80);
-            this.MenuTop.TabIndex = 8;
             // 
             // Restaurar
             // 
@@ -274,6 +272,7 @@ namespace SGCalificaciones.Vista
             this.Restaurar.TabIndex = 5;
             this.Restaurar.TabStop = false;
             this.Restaurar.Visible = false;
+            this.Restaurar.Click += new System.EventHandler(this.Restaurar_Click);
             // 
             // Minimizar
             // 
@@ -285,6 +284,7 @@ namespace SGCalificaciones.Vista
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Minimizar.TabIndex = 4;
             this.Minimizar.TabStop = false;
+            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
             // 
             // Maximizar
             // 
@@ -296,6 +296,7 @@ namespace SGCalificaciones.Vista
             this.Maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Maximizar.TabIndex = 3;
             this.Maximizar.TabStop = false;
+            this.Maximizar.Click += new System.EventHandler(this.Maximizar_Click);
             // 
             // Salir
             // 
@@ -307,17 +308,7 @@ namespace SGCalificaciones.Vista
             this.Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Salir.TabIndex = 2;
             this.Salir.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(82, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(430, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "UNIDAD EDUCATIVA \"CARLOS BELTRAN MORALES\"";
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // PtbxMenuSidebar
             // 
@@ -329,30 +320,23 @@ namespace SGCalificaciones.Vista
             this.PtbxMenuSidebar.TabIndex = 0;
             this.PtbxMenuSidebar.TabStop = false;
             // 
-            // MoverDashboard
-            // 
-            this.MoverDashboard.Fixed = true;
-            this.MoverDashboard.Horizontal = true;
-            this.MoverDashboard.TargetControl = this.MenuTop;
-            this.MoverDashboard.Vertical = true;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.Wrapper);
-            this.Controls.Add(this.SidebarWrapper);
+            this.Controls.Add(this.PanelContenido);
+            this.Controls.Add(this.PannelMenu);
             this.Controls.Add(this.MenuTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
-            this.SidebarWrapper.ResumeLayout(false);
-            this.Sidebar.ResumeLayout(false);
-            this.Sidebar.PerformLayout();
+            this.PannelMenu.ResumeLayout(false);
             this.MenuTop.ResumeLayout(false);
             this.MenuTop.PerformLayout();
+            this.Sidebar.ResumeLayout(false);
+            this.Sidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).EndInit();
@@ -364,8 +348,8 @@ namespace SGCalificaciones.Vista
 
         #endregion
 
-        private System.Windows.Forms.Panel Wrapper;
-        private System.Windows.Forms.Panel SidebarWrapper;
+        private System.Windows.Forms.Panel PanelContenido;
+        private System.Windows.Forms.Panel PannelMenu;
         private Bunifu.Framework.UI.BunifuGradientPanel Sidebar;
         private FontAwesome.Sharp.IconButton btnInicio;
         private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
@@ -377,11 +361,10 @@ namespace SGCalificaciones.Vista
         private System.Windows.Forms.PictureBox Salir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox PtbxMenuSidebar;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnSalir;
+        private FontAwesome.Sharp.IconButton btnAnioEscolar;
+        private FontAwesome.Sharp.IconButton btnEstudiantes;
+        private FontAwesome.Sharp.IconButton btnPlantelDocente;
         private Bunifu.Framework.UI.BunifuDragControl MoverDashboard;
     }
 }

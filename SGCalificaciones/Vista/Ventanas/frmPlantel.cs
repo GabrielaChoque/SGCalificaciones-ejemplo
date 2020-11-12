@@ -52,7 +52,7 @@ namespace SGCalificaciones.Vista.Ventanas
                 {
                     if (_objUsuario.Insertar(reg))
                     {
-                        MessageBox.Show("USUARIO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
                     }
                     else
@@ -63,7 +63,7 @@ namespace SGCalificaciones.Vista.Ventanas
                 {
                     if (_objUsuario.Modificar(reg))
                     {
-                        MessageBox.Show("USUARIO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
                     }
                 }

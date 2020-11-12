@@ -27,7 +27,7 @@ namespace SGCalificaciones.Vista.Administrativo
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            frmGestionPlantel AddUsuario = new frmGestionPlantel();
+            frmPlantel AddUsuario = new frmPlantel();
             AddUsuario.ShowDialog();
             Listar(txtBuscar.Text);
 
@@ -63,6 +63,11 @@ namespace SGCalificaciones.Vista.Administrativo
             {
                 Listar(txtBuscar.Text);
             }
+        }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

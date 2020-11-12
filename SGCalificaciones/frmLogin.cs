@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGCalificaciones.Vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace SGCalificaciones
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frm = new frmPrincipal();
+            frm.Show();
+            this.Close();
         }
     }
 }
