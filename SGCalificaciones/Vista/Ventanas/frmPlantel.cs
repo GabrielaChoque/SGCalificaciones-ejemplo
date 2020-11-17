@@ -24,12 +24,16 @@ namespace SGCalificaciones.Vista.Ventanas
         }
         public frmPlantel(string pCuenta)
         {
-            
             _cuenta = pCuenta;
             _esNuevo = false;
             InitializeComponent();
         }
 
+        private void UserPass()
+        {
+            usuarioLabel1.Text = nro_carnetTextBox.Text;
+            contraseniaLabel1.Text = nro_carnetTextBox.Text;
+        }
         private void frmPlantel_Load(object sender, EventArgs e)
         {
             if (_esNuevo)
@@ -84,6 +88,11 @@ namespace SGCalificaciones.Vista.Ventanas
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void nro_carnetTextBox_TextChanged(object sender, EventArgs e)
+        {
+            UserPass();
         }
     }
 }
