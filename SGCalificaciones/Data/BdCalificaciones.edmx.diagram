@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0dd8a1237e4445fea253af92fe8db827" Name="Diagram1">
         <EntityTypeShape EntityType="BdCalificacionesModel.Bimestre" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdCalificacionesModel.Calificaciones" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Criterio" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Curso" Width="1.5" PointX="3.75" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Estudiante" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
@@ -14,13 +13,14 @@
         <EntityTypeShape EntityType="BdCalificacionesModel.Materia_Curso" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Plantel_Educativo" Width="2.125" PointX="0.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Bimestre" ManuallyRouted="false" />
-        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Criterio" ManuallyRouted="false" />
-        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Estudiante" ManuallyRouted="false" />
-        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Materia" ManuallyRouted="false" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Curso_Plantel_Educativo" ManuallyRouted="false" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Materia_Curso_Curso" ManuallyRouted="false" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Materia_Curso_Materia" ManuallyRouted="false" />
+        <AssociationConnector Association="BdCalificacionesModel.FK_Criterio_Bimestre" />
+        <EntityTypeShape EntityType="BdCalificacionesModel.Calificaciones" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Criterio" />
+        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Estudiante" />
+        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Materia" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

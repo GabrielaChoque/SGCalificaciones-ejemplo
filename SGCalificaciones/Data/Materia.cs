@@ -17,16 +17,16 @@ namespace SGCalificaciones.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Materia()
         {
-            this.Calificaciones = new HashSet<Calificaciones>();
             this.Materia_Curso = new HashSet<Materia_Curso>();
+            this.Calificaciones = new HashSet<Calificaciones>();
         }
     
         public int id_materia { get; set; }
         public string nombre_materia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Calificaciones> Calificaciones { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Materia_Curso> Materia_Curso { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Calificaciones> Calificaciones { get; set; }
     }
 }

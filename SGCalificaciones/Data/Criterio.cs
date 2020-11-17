@@ -22,7 +22,10 @@ namespace SGCalificaciones.Data
     
         public int id_criterio { get; set; }
         public string desc_criterio { get; set; }
+        public Nullable<int> id_bimestre { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
     
+        public virtual Bimestre Bimestre { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Calificaciones> Calificaciones { get; set; }
     }

@@ -17,13 +17,13 @@ namespace SGCalificaciones.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Bimestre()
         {
-            this.Calificaciones = new HashSet<Calificaciones>();
+            this.Criterio = new HashSet<Criterio>();
         }
     
         public int id_bimestre { get; set; }
         public string bimestre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Calificaciones> Calificaciones { get; set; }
+        public virtual ICollection<Criterio> Criterio { get; set; }
     }
 }
