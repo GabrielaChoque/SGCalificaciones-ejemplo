@@ -21,7 +21,7 @@ namespace SGCalificaciones.Data
         }
     
         public int nro_carnet { get; set; }
-        public string id_curso { get; set; }
+        public Nullable<int> id_curso { get; set; }
         public string nombre { get; set; }
         public string ap_paterno { get; set; }
         public string ap_materno { get; set; }
@@ -30,5 +30,6 @@ namespace SGCalificaciones.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Calificaciones> Calificaciones { get; set; }
+        public virtual Curso Curso { get; set; }
     }
 }

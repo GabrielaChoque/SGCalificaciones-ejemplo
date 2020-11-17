@@ -139,7 +139,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnCancelar.Location = new System.Drawing.Point(255, 310);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(139, 45);
-            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -160,7 +160,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnAceptar.Location = new System.Drawing.Point(41, 310);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(139, 45);
-            this.btnAceptar.TabIndex = 38;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -187,7 +187,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.ap_maternoTextBox.Location = new System.Drawing.Point(188, 127);
             this.ap_maternoTextBox.Name = "ap_maternoTextBox";
             this.ap_maternoTextBox.Size = new System.Drawing.Size(163, 20);
-            this.ap_maternoTextBox.TabIndex = 41;
+            this.ap_maternoTextBox.TabIndex = 2;
             // 
             // ap_paternoTextBox
             // 
@@ -195,7 +195,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.ap_paternoTextBox.Location = new System.Drawing.Point(188, 153);
             this.ap_paternoTextBox.Name = "ap_paternoTextBox";
             this.ap_paternoTextBox.Size = new System.Drawing.Size(163, 20);
-            this.ap_paternoTextBox.TabIndex = 43;
+            this.ap_paternoTextBox.TabIndex = 3;
             // 
             // celularTextBox
             // 
@@ -203,7 +203,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.celularTextBox.Location = new System.Drawing.Point(188, 179);
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.Size = new System.Drawing.Size(163, 20);
-            this.celularTextBox.TabIndex = 45;
+            this.celularTextBox.TabIndex = 4;
             // 
             // direccionTextBox
             // 
@@ -211,7 +211,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.direccionTextBox.Location = new System.Drawing.Point(188, 205);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(163, 20);
-            this.direccionTextBox.TabIndex = 47;
+            this.direccionTextBox.TabIndex = 5;
             // 
             // nombreTextBox
             // 
@@ -219,7 +219,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nombreTextBox.Location = new System.Drawing.Point(188, 101);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(163, 20);
-            this.nombreTextBox.TabIndex = 51;
+            this.nombreTextBox.TabIndex = 1;
             // 
             // nro_carnetTextBox
             // 
@@ -227,7 +227,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nro_carnetTextBox.Location = new System.Drawing.Point(188, 75);
             this.nro_carnetTextBox.Name = "nro_carnetTextBox";
             this.nro_carnetTextBox.Size = new System.Drawing.Size(163, 20);
-            this.nro_carnetTextBox.TabIndex = 53;
+            this.nro_carnetTextBox.TabIndex = 0;
             // 
             // id_cursoComboBox
             // 
@@ -239,7 +239,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.id_cursoComboBox.Location = new System.Drawing.Point(188, 234);
             this.id_cursoComboBox.Name = "id_cursoComboBox";
             this.id_cursoComboBox.Size = new System.Drawing.Size(163, 21);
-            this.id_cursoComboBox.TabIndex = 54;
+            this.id_cursoComboBox.TabIndex = 6;
             this.id_cursoComboBox.ValueMember = "id_curso";
             // 
             // cursoBindingSource

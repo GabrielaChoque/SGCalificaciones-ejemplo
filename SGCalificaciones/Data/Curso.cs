@@ -18,6 +18,7 @@ namespace SGCalificaciones.Data
         public Curso()
         {
             this.Materia_Curso = new HashSet<Materia_Curso>();
+            this.Estudiante = new HashSet<Estudiante>();
         }
     
         public int id_curso { get; set; }
@@ -28,5 +29,7 @@ namespace SGCalificaciones.Data
         public virtual Plantel_Educativo Plantel_Educativo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Materia_Curso> Materia_Curso { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Estudiante> Estudiante { get; set; }
     }
 }

@@ -14,13 +14,20 @@ namespace SGCalificaciones.Vista.Gestiones
     public partial class frmCalificacionesGeneral : Form
     {
         EstudianteController _objUsuario = new EstudianteController();
-        public frmCalificacionesGeneral()
+        PlantelController _obj_Plantel = new PlantelController();
+
+        private string _User;
+        private string _Pass;
+        public frmCalificacionesGeneral(string usuario, string contrasenia)
         {
             InitializeComponent();
+            _User = usuario;
+            _Pass = contrasenia;
         }
         private void Listar(string pBuscar)
         {
-            estudianteBindingSource.DataSource = _objUsuario.Listar(pBuscar);
+            int pIdCurso = _obj_Plantel.cursoPlantel(_User,_Pass);
+            estudianteBindingSource.DataSource = _objUsuario.ListarMisEstudiantes(pBuscar, pIdCurso);
         }
 
         private void frmCalificacionesGeneral_Load(object sender, EventArgs e)

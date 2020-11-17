@@ -161,6 +161,12 @@
     <Compile Include="Vista\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\frmCriterio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmCriterio.Designer.cs">
+      <DependentUpon>frmCriterio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmCriterio.resx">
+      <DependentUpon>frmCriterio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmEstudiante.resx">
       <DependentUpon>frmEstudiante.cs</DependentUpon>

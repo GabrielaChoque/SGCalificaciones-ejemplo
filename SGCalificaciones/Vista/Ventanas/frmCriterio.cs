@@ -12,19 +12,18 @@ using System.Windows.Forms;
 
 namespace SGCalificaciones.Vista.Ventanas
 {
-    public partial class frmPlantel : Form
+    public partial class frmCriterio : Form
     {
-        PlantelController _objUsuario = new PlantelController();
+        CriterioController _objUsuario = new CriterioController();
         private string _cuenta;
         private bool _esNuevo;
-        public frmPlantel()
+        public frmCriterio()
         {
             _esNuevo = true;
             InitializeComponent();
         }
-        public frmPlantel(string pCuenta)
+        public frmCriterio(string pCuenta)
         {
-            
             _cuenta = pCuenta;
             _esNuevo = false;
             InitializeComponent();
@@ -34,12 +33,12 @@ namespace SGCalificaciones.Vista.Ventanas
         {
             if (_esNuevo)
             {
-                plantel_EducativoBindingSource.AddNew();
+                criterioBindingSource.AddNew();
                 label1.Text = "REGISTRAR NUEVO";
             }
             else
             {
-                plantel_EducativoBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                criterioBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
                 label1.Text = "MODIFICAR";
             }
         }
@@ -75,9 +74,9 @@ namespace SGCalificaciones.Vista.Ventanas
             }
         }
 
-        private Plantel_Educativo CargarDatos()
+        private Criterio CargarDatos()
         {
-            var reg = (Plantel_Educativo)plantel_EducativoBindingSource.Current;
+            var reg = (Criterio)criterioBindingSource.Current;
             return reg;
         }
 

@@ -147,6 +147,7 @@ namespace SGCalificaciones.Vista
             this.btnCriterios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCriterios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCriterios.UseVisualStyleBackColor = false;
+            this.btnCriterios.Click += new System.EventHandler(this.btnCriterios_Click);
             // 
             // btnMisEstudiantes
             // 

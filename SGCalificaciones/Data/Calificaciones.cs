@@ -21,7 +21,7 @@ namespace SGCalificaciones.Data
         public Nullable<int> id_materia { get; set; }
     
         public virtual Criterio Criterio { get; set; }
-        public virtual Estudiante Estudiante { get; set; }
         public virtual Materia Materia { get; set; }
+        public virtual Estudiante Estudiante { get; set; }
     }
 }

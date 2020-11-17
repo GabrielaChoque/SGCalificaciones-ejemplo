@@ -118,7 +118,12 @@ namespace SGCalificaciones.Vista
 
         private void btnMisEstudiantes_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.Gestiones.frmCalificacionesGeneral());
+            AbrirFormInPanel(new Vista.Gestiones.frmCalificacionesGeneral(_User, _Pass));
+        }
+
+        private void btnCriterios_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionarCriterio(_User, _Pass));
         }
     }
 }

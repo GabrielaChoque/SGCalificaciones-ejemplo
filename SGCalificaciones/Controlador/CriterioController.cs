@@ -11,9 +11,9 @@ namespace SGCalificaciones.Controlador
     {
         BdCalificacionesEntities _db = new BdCalificacionesEntities();
 
-        public List<Criterio> Listar(string pBuscar)
+        public List<Criterio> Listar(string pBuscar, int pCI)
         {
-            return _db.Criterio.Where(x => x.desc_criterio.Contains(pBuscar)).ToList();
+            return _db.Criterio.Where(x => x.desc_criterio.Contains(pBuscar) && x.nro_carnet==pCI).ToList();
         }
         public bool Insertar(Data.Criterio reg)
         {
@@ -31,6 +31,10 @@ namespace SGCalificaciones.Controlador
             var reg = _db.Criterio.Where(x => x.id_criterio == pParametro).FirstOrDefault();
             _db.Criterio.Remove(reg);
             return _db.SaveChanges() > 0;
+        }
+        internal List<Criterio> BuscarPorPK(int pId)
+        {
+            return _db.Criterio.Where(x => x.id_criterio == pId).ToList();
         }
     }
 }

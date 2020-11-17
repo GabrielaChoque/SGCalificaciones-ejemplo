@@ -35,6 +35,10 @@ namespace SGCalificaciones.Vista.Gestiones
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pbxSalir = new FontAwesome.Sharp.IconPictureBox();
             this.criterioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnModificar = new FontAwesome.Sharp.IconButton();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.id_criterioLabel1 = new System.Windows.Forms.Label();
             this.criterioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +46,8 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnModificar = new FontAwesome.Sharp.IconButton();
-            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.criterioBindingSource)).BeginInit();
@@ -94,10 +97,83 @@ namespace SGCalificaciones.Vista.Gestiones
             this.pbxSalir.Size = new System.Drawing.Size(32, 32);
             this.pbxSalir.TabIndex = 21;
             this.pbxSalir.TabStop = false;
+            this.pbxSalir.Click += new System.EventHandler(this.pbxSalir_Click);
             // 
             // criterioBindingSource
             // 
             this.criterioBindingSource.DataSource = typeof(SGCalificaciones.Data.Criterio);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 60;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(724, 513);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(195, 70);
+            this.btnEliminar.TabIndex = 25;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 60;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(436, 513);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(195, 70);
+            this.btnModificar.TabIndex = 24;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 60;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(159, 513);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(195, 70);
+            this.btnNuevo.TabIndex = 23;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // id_criterioLabel1
+            // 
+            this.id_criterioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.criterioBindingSource, "id_criterio", true));
+            this.id_criterioLabel1.Location = new System.Drawing.Point(163, 62);
+            this.id_criterioLabel1.Name = "id_criterioLabel1";
+            this.id_criterioLabel1.Size = new System.Drawing.Size(100, 23);
+            this.id_criterioLabel1.TabIndex = 26;
+            this.id_criterioLabel1.Text = "label2";
             // 
             // criterioDataGridView
             // 
@@ -109,12 +185,14 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
             this.criterioDataGridView.DataSource = this.criterioBindingSource;
-            this.criterioDataGridView.Location = new System.Drawing.Point(216, 204);
+            this.criterioDataGridView.Location = new System.Drawing.Point(127, 208);
             this.criterioDataGridView.Name = "criterioDataGridView";
-            this.criterioDataGridView.Size = new System.Drawing.Size(649, 220);
-            this.criterioDataGridView.TabIndex = 22;
+            this.criterioDataGridView.Size = new System.Drawing.Size(844, 220);
+            this.criterioDataGridView.TabIndex = 26;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -142,75 +220,27 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Bimestre";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Bimestre";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "nro_carnet";
+            this.dataGridViewTextBoxColumn5.HeaderText = "nro_carnet";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Calificaciones";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Calificaciones";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Bimestre";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Bimestre";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // btnEliminar
+            // dataGridViewTextBoxColumn7
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
-            this.btnEliminar.IconColor = System.Drawing.Color.White;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 60;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(724, 513);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(195, 70);
-            this.btnEliminar.TabIndex = 25;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Calificaciones";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Calificaciones";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // btnModificar
+            // dataGridViewTextBoxColumn8
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnModificar.IconColor = System.Drawing.Color.White;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 60;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(436, 513);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(195, 70);
-            this.btnModificar.TabIndex = 24;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnNuevo.IconColor = System.Drawing.Color.White;
-            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.IconSize = 60;
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(159, 513);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(195, 70);
-            this.btnNuevo.TabIndex = 23;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Plantel_Educativo";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Plantel_Educativo";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // frmGestionarCriterio
             // 
@@ -218,10 +248,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1078, 669);
+            this.Controls.Add(this.criterioDataGridView);
+            this.Controls.Add(this.id_criterioLabel1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.criterioDataGridView);
             this.Controls.Add(this.pbxSalir);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtBuscar);
@@ -229,6 +260,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarCriterio";
             this.Text = "frmGestionarCriterio";
+            this.Load += new System.EventHandler(this.frmGestionarCriterio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.criterioBindingSource)).EndInit();
@@ -245,6 +277,10 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconPictureBox pbxSalir;
         private System.Windows.Forms.BindingSource criterioBindingSource;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnModificar;
+        private FontAwesome.Sharp.IconButton btnNuevo;
+        private System.Windows.Forms.Label id_criterioLabel1;
         private System.Windows.Forms.DataGridView criterioDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -252,8 +288,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnModificar;
-        private FontAwesome.Sharp.IconButton btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

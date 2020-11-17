@@ -15,6 +15,10 @@ namespace SGCalificaciones.Controlador
         {
             return _db.Estudiante.Where(x => x.nombre.Contains(pBuscar)).ToList();
         }
+        public List<Estudiante> ListarMisEstudiantes(string pBuscar, int pIdCurso)
+        {
+            return _db.Estudiante.Where(x => x.nombre.Contains(pBuscar) && x.id_curso== pIdCurso).ToList();
+        }
         public bool Insertar(Data.Estudiante reg)
         {
             _db.Estudiante.Add(reg);

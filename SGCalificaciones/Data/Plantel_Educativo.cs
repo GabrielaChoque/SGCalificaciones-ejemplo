@@ -18,6 +18,7 @@ namespace SGCalificaciones.Data
         public Plantel_Educativo()
         {
             this.Curso = new HashSet<Curso>();
+            this.Criterio = new HashSet<Criterio>();
         }
     
         public int nro_carnet { get; set; }
@@ -31,5 +32,7 @@ namespace SGCalificaciones.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Curso> Curso { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Criterio> Criterio { get; set; }
     }
 }

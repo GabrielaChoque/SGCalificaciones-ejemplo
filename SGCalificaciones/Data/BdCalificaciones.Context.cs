@@ -28,11 +28,11 @@ namespace SGCalificaciones.Data
         public virtual DbSet<Bimestre> Bimestre { get; set; }
         public virtual DbSet<Criterio> Criterio { get; set; }
         public virtual DbSet<Curso> Curso { get; set; }
-        public virtual DbSet<Estudiante> Estudiante { get; set; }
         public virtual DbSet<Materia> Materia { get; set; }
         public virtual DbSet<Materia_Curso> Materia_Curso { get; set; }
         public virtual DbSet<Plantel_Educativo> Plantel_Educativo { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Calificaciones> Calificaciones { get; set; }
+        public virtual DbSet<Estudiante> Estudiante { get; set; }
     }
 }

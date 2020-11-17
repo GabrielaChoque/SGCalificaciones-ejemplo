@@ -74,8 +74,6 @@ namespace SGCalificaciones.Controlador
 
                 return nom + " " + app + " " + apm;  
             }
-
-
         }
 
         public int CiPlantel(string pUser, string pPass)
@@ -87,6 +85,16 @@ namespace SGCalificaciones.Controlador
                 }
         }
 
+        public int cursoPlantel(string pUser, string pPass)
+        {
+            int carnet = CiPlantel(pUser, pPass);
+            using (var context = new BdCalificacionesEntities())
+            {
+                var lista = _db.Curso.Where(x => x.nro_carnet == carnet).FirstOrDefault();
+                return lista.id_curso;
+            }
+
+        }
         internal List<Plantel_Educativo> ControlSesion(string pUser, string pPass)
         {
             return _db.Plantel_Educativo.Where(x => x.usuario == pUser && x.contrasenia == pPass).ToList();
