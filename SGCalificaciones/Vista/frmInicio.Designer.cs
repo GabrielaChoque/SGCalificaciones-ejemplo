@@ -32,6 +32,7 @@ namespace SGCalificaciones.Vista
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNombrePlantel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,18 +72,36 @@ namespace SGCalificaciones.Vista
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // lblNombrePlantel
+            // 
+            this.lblNombrePlantel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNombrePlantel.AutoSize = true;
+            this.lblNombrePlantel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblNombrePlantel.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombrePlantel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblNombrePlantel.Location = new System.Drawing.Point(647, 618);
+            this.lblNombrePlantel.Name = "lblNombrePlantel";
+            this.lblNombrePlantel.Size = new System.Drawing.Size(78, 32);
+            this.lblNombrePlantel.TabIndex = 4;
+            this.lblNombrePlantel.Text = "label2";
+            this.lblNombrePlantel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1070, 669);
+            this.Controls.Add(this.lblNombrePlantel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInicio";
             this.Text = "frmInicio";
+            this.Load += new System.EventHandler(this.frmInicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -95,5 +114,6 @@ namespace SGCalificaciones.Vista
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNombrePlantel;
     }
 }

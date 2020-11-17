@@ -34,6 +34,7 @@ namespace SGCalificaciones.Vista
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.PannelMenu = new System.Windows.Forms.Panel();
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnCalificaiones = new FontAwesome.Sharp.IconButton();
             this.btnCriterios = new FontAwesome.Sharp.IconButton();
             this.btnMisEstudiantes = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
@@ -51,7 +52,6 @@ namespace SGCalificaciones.Vista
             this.label1 = new System.Windows.Forms.Label();
             this.PtbxMenuSidebar = new System.Windows.Forms.PictureBox();
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btnCalificaiones = new FontAwesome.Sharp.IconButton();
             this.PannelMenu.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.MenuTop.SuspendLayout();
@@ -108,6 +108,26 @@ namespace SGCalificaciones.Vista
             this.Sidebar.Size = new System.Drawing.Size(270, 672);
             this.Sidebar.TabIndex = 2;
             // 
+            // btnCalificaiones
+            // 
+            this.btnCalificaiones.BackColor = System.Drawing.Color.Transparent;
+            this.btnCalificaiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalificaiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalificaiones.ForeColor = System.Drawing.Color.White;
+            this.btnCalificaiones.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.btnCalificaiones.IconColor = System.Drawing.Color.White;
+            this.btnCalificaiones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCalificaiones.IconSize = 30;
+            this.btnCalificaiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalificaiones.Location = new System.Drawing.Point(7, 448);
+            this.btnCalificaiones.Name = "btnCalificaiones";
+            this.btnCalificaiones.Size = new System.Drawing.Size(252, 51);
+            this.btnCalificaiones.TabIndex = 23;
+            this.btnCalificaiones.Text = "CALIFICACIONES";
+            this.btnCalificaiones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalificaiones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalificaiones.UseVisualStyleBackColor = false;
+            // 
             // btnCriterios
             // 
             this.btnCriterios.BackColor = System.Drawing.Color.Transparent;
@@ -147,6 +167,7 @@ namespace SGCalificaciones.Vista
             this.btnMisEstudiantes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMisEstudiantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMisEstudiantes.UseVisualStyleBackColor = false;
+            this.btnMisEstudiantes.Click += new System.EventHandler(this.btnMisEstudiantes_Click);
             // 
             // btnSalir
             // 
@@ -368,26 +389,6 @@ namespace SGCalificaciones.Vista
             this.MoverDashboard.Horizontal = true;
             this.MoverDashboard.TargetControl = this.MenuTop;
             this.MoverDashboard.Vertical = true;
-            // 
-            // btnCalificaiones
-            // 
-            this.btnCalificaiones.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalificaiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalificaiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalificaiones.ForeColor = System.Drawing.Color.White;
-            this.btnCalificaiones.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
-            this.btnCalificaiones.IconColor = System.Drawing.Color.White;
-            this.btnCalificaiones.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCalificaiones.IconSize = 30;
-            this.btnCalificaiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalificaiones.Location = new System.Drawing.Point(7, 448);
-            this.btnCalificaiones.Name = "btnCalificaiones";
-            this.btnCalificaiones.Size = new System.Drawing.Size(252, 51);
-            this.btnCalificaiones.TabIndex = 23;
-            this.btnCalificaiones.Text = "CALIFICACIONES";
-            this.btnCalificaiones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalificaiones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalificaiones.UseVisualStyleBackColor = false;
             // 
             // frmPrincipal
             // 

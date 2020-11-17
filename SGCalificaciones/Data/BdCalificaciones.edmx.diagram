@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="BdCalificacionesModel.Estudiante" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Materia" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Materia_Curso" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="BdCalificacionesModel.Plantel_Educativo" Width="2.125" PointX="1.125" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdCalificacionesModel.Plantel_Educativo" Width="2.125" PointX="0.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Bimestre" ManuallyRouted="false" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Criterio" ManuallyRouted="false" />

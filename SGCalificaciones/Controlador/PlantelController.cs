@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SGCalificaciones.Controlador
 {
@@ -36,21 +37,54 @@ namespace SGCalificaciones.Controlador
         {
             return _db.Plantel_Educativo.Where(x => x.nro_carnet == pCuenta).ToList();
         }
-        public bool Autenticar(int pUser, string pPass) //metodo autenticar con parametro Administrativo y contraseña respectivamente
+        public string Autenticar(string pUser, string pPass) //metodo autenticar con parametro Administrativo y contraseña respectivamente
         {
             try
             {
-                //en una var "res" donde usamos de la base de datos usando la tabla Administrativo donde x sea usado para uso de datos en tabla BD
-                var res = _db.Plantel_Educativo.Where(x => x.nro_carnet == pUser && x.contrasenia == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un Administrativo con lo mismos datos
+                //en una var "res" donde usamos de la base de datos usando la tabla PLantel Educativo donde x sea usado para uso de datos en tabla BD
+                var res = _db.Plantel_Educativo.Where(x => x.usuario == pUser && x.contrasenia == pPass).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un Administrativo con lo mismos datos
                 if (res != null) //si res es diferente de vacio
-                    return true;
+                {
+                    if (res.tipo_plantel=="Profesor")
+                        return "Si";
+                    else
+                        return "No";
+                }      
                 else
-                    return false;
+                    return "";
             }
             catch (Exception ex)
             {
-                return false;
+                return "";
             }
+        }
+
+
+        public string nombrePlantel(string pUser, string pPass)
+        {
+            int carnet = CiPlantel(pUser, pPass);
+            string nom, app, apm;
+
+            using (var context = new BdCalificacionesEntities())
+            {
+                var lista = context.Plantel_Educativo.Where(x => x.nro_carnet == carnet).FirstOrDefault();
+                nom=Convert.ToString(lista.nombre);
+                app = Convert.ToString(lista.ap_paterno);
+                apm = Convert.ToString(lista.ap_materno);
+
+                return nom + " " + app + " " + apm;  
+            }
+
+
+        }
+
+        public int CiPlantel(string pUser, string pPass)
+        {
+                using (var context = new BdCalificacionesEntities())
+                {
+                    var lista = context.Plantel_Educativo.Where(x => x.usuario == pUser && x.contrasenia == pPass).FirstOrDefault();
+                    return lista.nro_carnet;
+                }
         }
 
         internal List<Plantel_Educativo> ControlSesion(string pUser, string pPass)

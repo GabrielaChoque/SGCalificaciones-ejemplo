@@ -30,8 +30,8 @@
         {
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtContrasenia = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtUsuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -80,43 +80,43 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // bunifuMaterialTextbox2
+            // txtContrasenia
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox2.HintText = "Contraseña";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.SteelBlue;
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.SteelBlue;
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(75, 190);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(307, 33);
-            this.bunifuMaterialTextbox2.TabIndex = 31;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtContrasenia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtContrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtContrasenia.HintForeColor = System.Drawing.Color.Empty;
+            this.txtContrasenia.HintText = "Contraseña";
+            this.txtContrasenia.isPassword = false;
+            this.txtContrasenia.LineFocusedColor = System.Drawing.Color.SteelBlue;
+            this.txtContrasenia.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtContrasenia.LineMouseHoverColor = System.Drawing.Color.SteelBlue;
+            this.txtContrasenia.LineThickness = 3;
+            this.txtContrasenia.Location = new System.Drawing.Point(75, 190);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(307, 33);
+            this.txtContrasenia.TabIndex = 31;
+            this.txtContrasenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox3
+            // txtUsuario
             // 
-            this.bunifuMaterialTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox3.HintText = "Usuario";
-            this.bunifuMaterialTextbox3.isPassword = false;
-            this.bunifuMaterialTextbox3.LineFocusedColor = System.Drawing.Color.SteelBlue;
-            this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.SteelBlue;
-            this.bunifuMaterialTextbox3.LineThickness = 3;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(75, 121);
-            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
-            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(307, 33);
-            this.bunifuMaterialTextbox3.TabIndex = 30;
-            this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtUsuario.HintForeColor = System.Drawing.Color.Empty;
+            this.txtUsuario.HintText = "Usuario";
+            this.txtUsuario.isPassword = false;
+            this.txtUsuario.LineFocusedColor = System.Drawing.Color.SteelBlue;
+            this.txtUsuario.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.SteelBlue;
+            this.txtUsuario.LineThickness = 3;
+            this.txtUsuario.Location = new System.Drawing.Point(75, 121);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(307, 33);
+            this.txtUsuario.TabIndex = 30;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // pictureBox4
             // 
@@ -141,9 +141,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SGCalificaciones.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(177, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(176, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox2.Size = new System.Drawing.Size(69, 78);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
@@ -184,8 +184,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(426, 345);
-            this.Controls.Add(this.bunifuMaterialTextbox2);
-            this.Controls.Add(this.bunifuMaterialTextbox3);
+            this.Controls.Add(this.txtContrasenia);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pictureBox4);
@@ -219,8 +219,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtContrasenia;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtUsuario;
     }
 }
 

@@ -73,13 +73,11 @@ namespace SGCalificaciones.Vista.Ventanas
             {
                 MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private Plantel_Educativo CargarDatos()
         {
             var reg = (Plantel_Educativo)plantel_EducativoBindingSource.Current;
-            //reg.FechaNac = DateTime.Now;
             return reg;
         }
 

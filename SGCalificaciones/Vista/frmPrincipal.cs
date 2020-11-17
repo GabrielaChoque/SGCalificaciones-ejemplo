@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGCalificaciones.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,37 @@ namespace SGCalificaciones.Vista
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        private bool _esProfesor;
+        private string _User;
+        private string _Pass;
+        public frmPrincipal(string usuario, string contrasenia, bool EsProfesor)
         {
             InitializeComponent();
+            _esProfesor = EsProfesor;
+            _User = usuario;
+            _Pass = contrasenia;
+        }
+
+        private void ControlMenu()
+        {
+            if (_esProfesor)
+            {
+                btnPlantelDocente.Visible = false;
+                btnEstudiantes.Visible = false;
+                btnAnioEscolar.Visible = false;
+
+                btnMisEstudiantes.Location = new Point(7, 162);
+                btnCriterios.Location = new Point(7, 219);
+                btnCalificaiones.Location = new Point(7, 276);
+                btnSalir.Location = new Point(7, 334);
+            }
+            else
+            {
+                btnMisEstudiantes.Visible = false;
+                btnCriterios.Visible = false;
+                btnCalificaiones.Visible = false;
+                btnSalir.Location = new Point(7, 334);
+            }
         }
 
         //Abrir un formulario dentro del panel de contenido
@@ -34,7 +63,7 @@ namespace SGCalificaciones.Vista
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.frmInicio());
+            AbrirFormInPanel(new Vista.frmInicio(_User,_Pass,_esProfesor));
         }
 
         private void btnPlantelDocente_Click(object sender, EventArgs e)
@@ -44,7 +73,7 @@ namespace SGCalificaciones.Vista
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Maximizar_Click(object sender, EventArgs e)
@@ -68,7 +97,8 @@ namespace SGCalificaciones.Vista
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.frmInicio());
+            ControlMenu();
+            AbrirFormInPanel(new Vista.frmInicio(_User, _Pass,_esProfesor));
         }
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
@@ -83,8 +113,12 @@ namespace SGCalificaciones.Vista
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
+        private void btnMisEstudiantes_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmCalificacionesGeneral());
+        }
     }
 }

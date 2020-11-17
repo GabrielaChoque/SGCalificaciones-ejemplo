@@ -20,7 +20,7 @@ namespace SGCalificaciones.Vista.Gestiones
             InitializeComponent();
         }
         
-        private void frmGestionPlantel_Load(object sender, EventArgs e)
+        private void frmGestionarEstudiante_Load(object sender, EventArgs e)
         {
             Listar(txtBuscar.Text);
         }
@@ -35,7 +35,6 @@ namespace SGCalificaciones.Vista.Gestiones
         private void Listar(string pBuscar)
         {
             estudianteBindingSource.DataSource = _objUsuario.Listar(pBuscar);
-            //proveedorDataGridView.Columns["imagen"].Visible = false;
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

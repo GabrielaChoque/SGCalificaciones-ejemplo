@@ -36,12 +36,10 @@ namespace SGCalificaciones.Vista.Ventanas
             System.Windows.Forms.Label contraseniaLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label nro_carnetLabel;
-            System.Windows.Forms.Label usuarioLabel;
             System.Windows.Forms.Label tipo_plantelLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.contraseniaTextBox = new System.Windows.Forms.TextBox();
             this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.btnAceptar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
@@ -56,7 +54,6 @@ namespace SGCalificaciones.Vista.Ventanas
             contraseniaLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             nro_carnetLabel = new System.Windows.Forms.Label();
-            usuarioLabel = new System.Windows.Forms.Label();
             tipo_plantelLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,15 +112,6 @@ namespace SGCalificaciones.Vista.Ventanas
             nro_carnetLabel.TabIndex = 12;
             nro_carnetLabel.Text = "NUMERO DE CARNET:";
             // 
-            // usuarioLabel
-            // 
-            usuarioLabel.AutoSize = true;
-            usuarioLabel.Location = new System.Drawing.Point(72, 269);
-            usuarioLabel.Name = "usuarioLabel";
-            usuarioLabel.Size = new System.Drawing.Size(44, 13);
-            usuarioLabel.TabIndex = 16;
-            usuarioLabel.Text = "usuario:";
-            // 
             // tipo_plantelLabel
             // 
             tipo_plantelLabel.AutoSize = true;
@@ -154,14 +142,6 @@ namespace SGCalificaciones.Vista.Ventanas
             // plantel_EducativoBindingSource
             // 
             this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
-            // 
-            // usuarioTextBox
-            // 
-            this.usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "usuario", true));
-            this.usuarioTextBox.Location = new System.Drawing.Point(143, 266);
-            this.usuarioTextBox.Name = "usuarioTextBox";
-            this.usuarioTextBox.Size = new System.Drawing.Size(166, 20);
-            this.usuarioTextBox.TabIndex = 17;
             // 
             // btnAceptar
             // 
@@ -250,7 +230,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.tipo_plantelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "tipo_plantel", true));
             this.tipo_plantelComboBox.FormattingEnabled = true;
             this.tipo_plantelComboBox.Items.AddRange(new object[] {
-            "Docente",
+            "Profesor",
             "Administrativo"});
             this.tipo_plantelComboBox.Location = new System.Drawing.Point(169, 189);
             this.tipo_plantelComboBox.Name = "tipo_plantelComboBox";
@@ -279,8 +259,6 @@ namespace SGCalificaciones.Vista.Ventanas
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(nro_carnetLabel);
             this.Controls.Add(this.nro_carnetTextBox);
-            this.Controls.Add(usuarioLabel);
-            this.Controls.Add(this.usuarioTextBox);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -299,7 +277,6 @@ namespace SGCalificaciones.Vista.Ventanas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource plantel_EducativoBindingSource;
         private System.Windows.Forms.TextBox contraseniaTextBox;
-        private System.Windows.Forms.TextBox usuarioTextBox;
         private FontAwesome.Sharp.IconButton btnAceptar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.TextBox nro_carnetTextBox;

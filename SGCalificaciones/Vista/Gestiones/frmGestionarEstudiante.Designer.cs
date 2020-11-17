@@ -37,6 +37,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.nro_carnetLabel1 = new System.Windows.Forms.Label();
+            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estudianteDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +47,10 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,6 +158,10 @@ namespace SGCalificaciones.Vista.Gestiones
             this.nro_carnetLabel1.TabIndex = 15;
             this.nro_carnetLabel1.Text = "label2";
             // 
+            // estudianteBindingSource
+            // 
+            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
+            // 
             // estudianteDataGridView
             // 
             this.estudianteDataGridView.AutoGenerateColumns = false;
@@ -225,10 +229,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn8.HeaderText = "Calificaciones";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // estudianteBindingSource
-            // 
-            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
-            // 
             // iconPictureBox2
             // 
             this.iconPictureBox2.BackColor = System.Drawing.Color.White;
@@ -261,9 +261,10 @@ namespace SGCalificaciones.Vista.Gestiones
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarEstudiante";
             this.Text = "frmGestionarEstudiante";
+            this.Load += new System.EventHandler(this.frmGestionarEstudiante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

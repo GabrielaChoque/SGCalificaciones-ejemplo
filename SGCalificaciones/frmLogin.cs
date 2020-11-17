@@ -1,4 +1,5 @@
-﻿using SGCalificaciones.Vista;
+﻿using SGCalificaciones.Controlador;
+using SGCalificaciones.Vista;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SGCalificaciones
 {
     public partial class frmLogin : Form
     {
+        PlantelController _objUsuario = new PlantelController();
         public frmLogin()
         {
             InitializeComponent();
@@ -25,9 +27,24 @@ namespace SGCalificaciones
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            frmPrincipal frm = new frmPrincipal();
-            frm.Show();
-            this.Hide();
+            string tipoPlantel=_objUsuario.Autenticar(txtUsuario.Text,txtContrasenia.Text);
+
+            switch (tipoPlantel)
+            {
+                case "Si":
+                    this.Hide();
+                    frmPrincipal frm = new frmPrincipal(txtUsuario.Text, txtContrasenia.Text,true);
+                    frm.ShowDialog();
+                    break;
+                case "No":
+                    this.Hide();
+                    frmPrincipal form = new frmPrincipal(txtUsuario.Text, txtContrasenia.Text, false);
+                    form.ShowDialog();
+                    break;
+                case "":
+                    MessageBox.Show("LA CUENTA O CONTRASEÑA SON INCORRECTOS", "NO SE PUDO INICIAR SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }        
         }
     }
 }

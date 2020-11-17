@@ -1,5 +1,4 @@
 ﻿using SGCalificaciones.Controlador;
-using SGCalificaciones.Data;
 using SGCalificaciones.Vista.Ventanas;
 using System;
 using System.Collections.Generic;
@@ -36,7 +35,6 @@ namespace SGCalificaciones.Vista.Administrativo
         private void Listar(string pBuscar)
         {
             plantel_EducativoBindingSource.DataSource = _objUsuario.Listar(pBuscar);
-            //proveedorDataGridView.Columns["imagen"].Visible = false;
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

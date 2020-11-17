@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\BimestreController.cs" />
+    <Compile Include="Controlador\CursoController.cs" />
     <Compile Include="Controlador\EstudianteController.cs" />
     <Compile Include="Controlador\MateriaController.cs" />
     <Compile Include="Controlador\PlantelController.cs" />
@@ -123,11 +124,23 @@
     <Compile Include="Vista\frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Gestiones\frmCalificacionesGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmCalificacionesGeneral.Designer.cs">
+      <DependentUpon>frmCalificacionesGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Gestiones\frmGestionarAnioEscolar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Gestiones\frmGestionarAnioEscolar.Designer.cs">
       <DependentUpon>frmGestionarAnioEscolar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionarCriterio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionarCriterio.Designer.cs">
+      <DependentUpon>frmGestionarCriterio.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Gestiones\frmGestionarEstudiante.cs">
       <SubType>Form</SubType>
@@ -175,8 +188,14 @@
     <EmbeddedResource Include="Vista\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmCalificacionesGeneral.resx">
+      <DependentUpon>frmCalificacionesGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionarAnioEscolar.resx">
       <DependentUpon>frmGestionarAnioEscolar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionarCriterio.resx">
+      <DependentUpon>frmGestionarCriterio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionarEstudiante.resx">
       <DependentUpon>frmGestionarEstudiante.cs</DependentUpon>
