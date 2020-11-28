@@ -28,12 +28,6 @@ namespace SGCalificaciones.Vista.Ventanas
             _esNuevo = false;
             InitializeComponent();
         }
-
-        private void UserPass()
-        {
-            usuarioLabel1.Text = nro_carnetTextBox.Text;
-            contraseniaLabel1.Text = nro_carnetTextBox.Text;
-        }
         private void frmPlantel_Load(object sender, EventArgs e)
         {
             if (_esNuevo)
@@ -48,7 +42,7 @@ namespace SGCalificaciones.Vista.Ventanas
             }
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e) 
         {
             try
             {
@@ -66,6 +60,8 @@ namespace SGCalificaciones.Vista.Ventanas
                 }
                 else
                 {
+                    usuarioTextBox.Enabled = false;
+                    contraseniaTextBox.Enabled = false;
                     if (_objUsuario.Modificar(reg))
                     {
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,9 +86,6 @@ namespace SGCalificaciones.Vista.Ventanas
             Close();
         }
 
-        private void nro_carnetTextBox_TextChanged(object sender, EventArgs e)
-        {
-            UserPass();
-        }
+       
     }
 }

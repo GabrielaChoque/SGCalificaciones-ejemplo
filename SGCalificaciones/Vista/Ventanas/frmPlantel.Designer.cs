@@ -42,15 +42,15 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnAceptar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.celularTextBox = new System.Windows.Forms.TextBox();
             this.ap_paternoTextBox = new System.Windows.Forms.TextBox();
             this.ap_maternoTextBox = new System.Windows.Forms.TextBox();
             this.tipo_plantelComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.usuarioLabel1 = new System.Windows.Forms.Label();
-            this.contraseniaLabel1 = new System.Windows.Forms.Label();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioTextBox = new System.Windows.Forms.TextBox();
+            this.contraseniaTextBox = new System.Windows.Forms.TextBox();
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -59,8 +59,8 @@ namespace SGCalificaciones.Vista.Ventanas
             tipo_plantelLabel = new System.Windows.Forms.Label();
             contraseniaLabel = new System.Windows.Forms.Label();
             usuarioLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ap_maternoLabel
@@ -194,11 +194,6 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nro_carnetTextBox.Name = "nro_carnetTextBox";
             this.nro_carnetTextBox.Size = new System.Drawing.Size(166, 20);
             this.nro_carnetTextBox.TabIndex = 13;
-            this.nro_carnetTextBox.TextChanged += new System.EventHandler(this.nro_carnetTextBox_TextChanged);
-            // 
-            // plantel_EducativoBindingSource
-            // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
             // nombreTextBox
             // 
@@ -246,34 +241,36 @@ namespace SGCalificaciones.Vista.Ventanas
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.contraseniaTextBox);
+            this.groupBox1.Controls.Add(this.usuarioTextBox);
             this.groupBox1.Controls.Add(usuarioLabel);
-            this.groupBox1.Controls.Add(this.usuarioLabel1);
             this.groupBox1.Controls.Add(contraseniaLabel);
-            this.groupBox1.Controls.Add(this.contraseniaLabel1);
             this.groupBox1.Location = new System.Drawing.Point(29, 220);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 80);
+            this.groupBox1.Size = new System.Drawing.Size(353, 95);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inicio de Sesión en el Sistema";
             // 
-            // usuarioLabel1
+            // plantel_EducativoBindingSource
             // 
-            this.usuarioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "usuario", true));
-            this.usuarioLabel1.Location = new System.Drawing.Point(138, 26);
-            this.usuarioLabel1.Name = "usuarioLabel1";
-            this.usuarioLabel1.Size = new System.Drawing.Size(100, 23);
-            this.usuarioLabel1.TabIndex = 3;
-            this.usuarioLabel1.Text = "label2";
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
-            // contraseniaLabel1
+            // usuarioTextBox
             // 
-            this.contraseniaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "contrasenia", true));
-            this.contraseniaLabel1.Location = new System.Drawing.Point(138, 51);
-            this.contraseniaLabel1.Name = "contraseniaLabel1";
-            this.contraseniaLabel1.Size = new System.Drawing.Size(100, 23);
-            this.contraseniaLabel1.TabIndex = 1;
-            this.contraseniaLabel1.Text = "label2";
+            this.usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "usuario", true));
+            this.usuarioTextBox.Location = new System.Drawing.Point(142, 19);
+            this.usuarioTextBox.Name = "usuarioTextBox";
+            this.usuarioTextBox.Size = new System.Drawing.Size(164, 20);
+            this.usuarioTextBox.TabIndex = 3;
+            // 
+            // contraseniaTextBox
+            // 
+            this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "contrasenia", true));
+            this.contraseniaTextBox.Location = new System.Drawing.Point(142, 49);
+            this.contraseniaTextBox.Name = "contraseniaTextBox";
+            this.contraseniaTextBox.Size = new System.Drawing.Size(164, 20);
+            this.contraseniaTextBox.TabIndex = 5;
             // 
             // frmPlantel
             // 
@@ -303,9 +300,9 @@ namespace SGCalificaciones.Vista.Ventanas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPlantel";
             this.Load += new System.EventHandler(this.frmPlantel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +321,7 @@ namespace SGCalificaciones.Vista.Ventanas
         private System.Windows.Forms.TextBox ap_maternoTextBox;
         private System.Windows.Forms.ComboBox tipo_plantelComboBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label usuarioLabel1;
-        private System.Windows.Forms.Label contraseniaLabel1;
+        private System.Windows.Forms.TextBox contraseniaTextBox;
+        private System.Windows.Forms.TextBox usuarioTextBox;
     }
 }
