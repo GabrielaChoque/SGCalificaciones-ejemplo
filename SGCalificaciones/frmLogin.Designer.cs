@@ -86,8 +86,8 @@
             this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtContrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtContrasenia.HintForeColor = System.Drawing.Color.Empty;
-            this.txtContrasenia.HintText = "Contraseña";
-            this.txtContrasenia.isPassword = false;
+            this.txtContrasenia.HintText = "";
+            this.txtContrasenia.isPassword = true;
             this.txtContrasenia.LineFocusedColor = System.Drawing.Color.SteelBlue;
             this.txtContrasenia.LineIdleColor = System.Drawing.Color.Gray;
             this.txtContrasenia.LineMouseHoverColor = System.Drawing.Color.SteelBlue;
@@ -97,6 +97,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(307, 33);
             this.txtContrasenia.TabIndex = 31;
+            this.txtContrasenia.Text = "Contraseña";
             this.txtContrasenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtUsuario

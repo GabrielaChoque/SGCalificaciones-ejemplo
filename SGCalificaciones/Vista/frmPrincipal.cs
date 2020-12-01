@@ -15,6 +15,8 @@ namespace SGCalificaciones.Vista
 {
     public partial class frmPrincipal : Form
     {
+        PlantelController _objPlantel = new PlantelController();
+
         private bool _esProfesor;
         private string _User;
         private string _Pass;
@@ -99,6 +101,7 @@ namespace SGCalificaciones.Vista
         {
             ControlMenu();
             AbrirFormInPanel(new Vista.frmInicio(_User, _Pass,_esProfesor));
+            btnPerfil.Text= "(YO) " + Convert.ToString(_objPlantel.nombrePlantel(_User, _Pass));
         }
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
