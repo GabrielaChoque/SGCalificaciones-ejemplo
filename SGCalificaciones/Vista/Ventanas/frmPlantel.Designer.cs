@@ -42,15 +42,15 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnAceptar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.celularTextBox = new System.Windows.Forms.TextBox();
             this.ap_paternoTextBox = new System.Windows.Forms.TextBox();
             this.ap_maternoTextBox = new System.Windows.Forms.TextBox();
             this.tipo_plantelComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.contraseniaTextBox = new System.Windows.Forms.TextBox();
+            this.usuarioTextBox = new System.Windows.Forms.TextBox();
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -59,8 +59,8 @@ namespace SGCalificaciones.Vista.Ventanas
             tipo_plantelLabel = new System.Windows.Forms.Label();
             contraseniaLabel = new System.Windows.Forms.Label();
             usuarioLabel = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ap_maternoLabel
@@ -194,6 +194,11 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nro_carnetTextBox.Name = "nro_carnetTextBox";
             this.nro_carnetTextBox.Size = new System.Drawing.Size(166, 20);
             this.nro_carnetTextBox.TabIndex = 13;
+            this.nro_carnetTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nro_carnetTextBox_KeyPress);
+            // 
+            // plantel_EducativoBindingSource
+            // 
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
             // nombreTextBox
             // 
@@ -202,6 +207,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(166, 20);
             this.nombreTextBox.TabIndex = 11;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // celularTextBox
             // 
@@ -210,6 +216,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.Size = new System.Drawing.Size(166, 20);
             this.celularTextBox.TabIndex = 7;
+            this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularTextBox_KeyPress);
             // 
             // ap_paternoTextBox
             // 
@@ -218,6 +225,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.ap_paternoTextBox.Name = "ap_paternoTextBox";
             this.ap_paternoTextBox.Size = new System.Drawing.Size(166, 20);
             this.ap_paternoTextBox.TabIndex = 5;
+            this.ap_paternoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ap_paternoTextBox_KeyPress);
             // 
             // ap_maternoTextBox
             // 
@@ -226,6 +234,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.ap_maternoTextBox.Name = "ap_maternoTextBox";
             this.ap_maternoTextBox.Size = new System.Drawing.Size(166, 20);
             this.ap_maternoTextBox.TabIndex = 3;
+            this.ap_maternoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ap_maternoTextBox_KeyPress);
             // 
             // tipo_plantelComboBox
             // 
@@ -252,9 +261,13 @@ namespace SGCalificaciones.Vista.Ventanas
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inicio de Sesión en el Sistema";
             // 
-            // plantel_EducativoBindingSource
+            // contraseniaTextBox
             // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
+            this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "contrasenia", true));
+            this.contraseniaTextBox.Location = new System.Drawing.Point(142, 49);
+            this.contraseniaTextBox.Name = "contraseniaTextBox";
+            this.contraseniaTextBox.Size = new System.Drawing.Size(164, 20);
+            this.contraseniaTextBox.TabIndex = 5;
             // 
             // usuarioTextBox
             // 
@@ -263,14 +276,6 @@ namespace SGCalificaciones.Vista.Ventanas
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(164, 20);
             this.usuarioTextBox.TabIndex = 3;
-            // 
-            // contraseniaTextBox
-            // 
-            this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "contrasenia", true));
-            this.contraseniaTextBox.Location = new System.Drawing.Point(142, 49);
-            this.contraseniaTextBox.Name = "contraseniaTextBox";
-            this.contraseniaTextBox.Size = new System.Drawing.Size(164, 20);
-            this.contraseniaTextBox.TabIndex = 5;
             // 
             // frmPlantel
             // 
@@ -300,9 +305,9 @@ namespace SGCalificaciones.Vista.Ventanas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPlantel";
             this.Load += new System.EventHandler(this.frmPlantel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -46,5 +46,10 @@ namespace SGCalificaciones
                     break;
             }        
         }
+
+        private void TxtUsuario_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

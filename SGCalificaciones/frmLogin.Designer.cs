@@ -117,6 +117,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(307, 33);
             this.txtUsuario.TabIndex = 30;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsuario.OnValueChanged += new System.EventHandler(this.TxtUsuario_OnValueChanged);
             // 
             // pictureBox4
             // 

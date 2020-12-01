@@ -44,5 +44,20 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             Listar("");
         }
+
+        private void CursoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BimestreDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

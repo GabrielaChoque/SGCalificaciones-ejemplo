@@ -188,6 +188,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.ap_maternoTextBox.Name = "ap_maternoTextBox";
             this.ap_maternoTextBox.Size = new System.Drawing.Size(163, 20);
             this.ap_maternoTextBox.TabIndex = 2;
+            this.ap_maternoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ap_maternoTextBox_KeyPress);
             // 
             // ap_paternoTextBox
             // 
@@ -196,6 +197,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.ap_paternoTextBox.Name = "ap_paternoTextBox";
             this.ap_paternoTextBox.Size = new System.Drawing.Size(163, 20);
             this.ap_paternoTextBox.TabIndex = 3;
+            this.ap_paternoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ap_paternoTextBox_KeyPress);
             // 
             // celularTextBox
             // 
@@ -204,6 +206,8 @@ namespace SGCalificaciones.Vista.Ventanas
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.Size = new System.Drawing.Size(163, 20);
             this.celularTextBox.TabIndex = 4;
+            this.celularTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CelularTextBox_KeyDown);
+            this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularTextBox_KeyPress);
             // 
             // direccionTextBox
             // 
@@ -220,6 +224,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(163, 20);
             this.nombreTextBox.TabIndex = 1;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // nro_carnetTextBox
             // 
@@ -228,6 +233,7 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nro_carnetTextBox.Name = "nro_carnetTextBox";
             this.nro_carnetTextBox.Size = new System.Drawing.Size(163, 20);
             this.nro_carnetTextBox.TabIndex = 0;
+            this.nro_carnetTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nro_carnetTextBox_KeyPress);
             // 
             // id_cursoComboBox
             // 
