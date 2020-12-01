@@ -52,6 +52,7 @@ namespace SGCalificaciones.Vista
             this.label1 = new System.Windows.Forms.Label();
             this.PtbxMenuSidebar = new System.Windows.Forms.PictureBox();
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PannelMenu.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.MenuTop.SuspendLayout();
@@ -74,6 +75,7 @@ namespace SGCalificaciones.Vista
             // PannelMenu
             // 
             this.PannelMenu.BackColor = System.Drawing.Color.White;
+            this.PannelMenu.Controls.Add(this.iconButton1);
             this.PannelMenu.Controls.Add(this.Sidebar);
             this.PannelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PannelMenu.Location = new System.Drawing.Point(0, 80);
@@ -102,10 +104,10 @@ namespace SGCalificaciones.Vista
             this.Sidebar.GradientBottomRight = System.Drawing.Color.SteelBlue;
             this.Sidebar.GradientTopLeft = System.Drawing.Color.SteelBlue;
             this.Sidebar.GradientTopRight = System.Drawing.Color.Black;
-            this.Sidebar.Location = new System.Drawing.Point(16, 24);
+            this.Sidebar.Location = new System.Drawing.Point(16, 66);
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Quality = 10;
-            this.Sidebar.Size = new System.Drawing.Size(270, 672);
+            this.Sidebar.Size = new System.Drawing.Size(270, 630);
             this.Sidebar.TabIndex = 2;
             // 
             // btnCalificaiones
@@ -391,6 +393,26 @@ namespace SGCalificaciones.Vista
             this.MoverDashboard.TargetControl = this.MenuTop;
             this.MoverDashboard.Vertical = true;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.SteelBlue;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(16, 9);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(270, 51);
+            this.iconButton1.TabIndex = 24;
+            this.iconButton1.Text = "(YO)";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,5 +463,6 @@ namespace SGCalificaciones.Vista
         private FontAwesome.Sharp.IconButton btnCriterios;
         private FontAwesome.Sharp.IconButton btnMisEstudiantes;
         private FontAwesome.Sharp.IconButton btnCalificaiones;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
