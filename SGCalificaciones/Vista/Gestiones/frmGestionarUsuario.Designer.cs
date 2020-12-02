@@ -54,6 +54,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.lblConfirmar = new System.Windows.Forms.Label();
+            this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
@@ -214,6 +215,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.contraseniaTextBox.Name = "contraseniaTextBox";
             this.contraseniaTextBox.Size = new System.Drawing.Size(184, 20);
             this.contraseniaTextBox.TabIndex = 0;
+            this.toolTipMensaje.SetToolTip(this.contraseniaTextBox, "Debe contener al menos 8 caracteres");
             this.contraseniaTextBox.UseSystemPasswordChar = true;
             // 
             // nombreTextBox
@@ -336,6 +338,15 @@ namespace SGCalificaciones.Vista.Gestiones
             this.lblConfirmar.Text = "CONFIRMAR CONTRASEÑA:";
             this.lblConfirmar.Visible = false;
             // 
+            // toolTipMensaje
+            // 
+            this.toolTipMensaje.AutoPopDelay = 5000;
+            this.toolTipMensaje.InitialDelay = 10;
+            this.toolTipMensaje.IsBalloon = true;
+            this.toolTipMensaje.ReshowDelay = 100;
+            this.toolTipMensaje.ShowAlways = true;
+            this.toolTipMensaje.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // plantel_EducativoBindingSource
             // 
             this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
@@ -401,5 +412,6 @@ namespace SGCalificaciones.Vista.Gestiones
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.TextBox txtConfirmar;
         private System.Windows.Forms.Label lblConfirmar;
+        private System.Windows.Forms.ToolTip toolTipMensaje;
     }
 }

@@ -60,7 +60,7 @@ namespace SGCalificaciones.Vista.Gestiones
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (contraseniaTextBox.Text == txtConfirmar.Text)
+            if (contraseniaTextBox.Text == txtConfirmar.Text && contraseniaTextBox.Text.Length>=8)
             {
                 var reg = CargarDatos();
                 _obj_Plantel.Modificar(reg);
@@ -74,7 +74,7 @@ namespace SGCalificaciones.Vista.Gestiones
             }
             else
             {
-                MessageBox.Show("LAS CONTRASEÑAS DEBEN COINCIDIR!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("INGRESE CORRECTAMENTE LA NUEVA CONTRASEÑA", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }
