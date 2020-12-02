@@ -42,6 +42,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.ap_maternoTextBox = new System.Windows.Forms.TextBox();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ap_paternoTextBox = new System.Windows.Forms.TextBox();
             this.celularTextBox = new System.Windows.Forms.TextBox();
             this.contraseniaTextBox = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.lblConfirmar = new System.Windows.Forms.Label();
             this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -189,6 +189,10 @@ namespace SGCalificaciones.Vista.Gestiones
             this.ap_maternoTextBox.Size = new System.Drawing.Size(184, 20);
             this.ap_maternoTextBox.TabIndex = 21;
             // 
+            // plantel_EducativoBindingSource
+            // 
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
+            // 
             // ap_paternoTextBox
             // 
             this.ap_paternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_paterno", true));
@@ -215,7 +219,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.contraseniaTextBox.Name = "contraseniaTextBox";
             this.contraseniaTextBox.Size = new System.Drawing.Size(184, 20);
             this.contraseniaTextBox.TabIndex = 0;
-            this.toolTipMensaje.SetToolTip(this.contraseniaTextBox, "Debe contener al menos 8 caracteres");
+            this.toolTipMensaje.SetToolTip(this.contraseniaTextBox, "Debe contener al menos 6 caracteres");
             this.contraseniaTextBox.UseSystemPasswordChar = true;
             // 
             // nombreTextBox
@@ -346,10 +350,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.toolTipMensaje.ReshowDelay = 100;
             this.toolTipMensaje.ShowAlways = true;
             this.toolTipMensaje.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            // 
-            // plantel_EducativoBindingSource
-            // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
             // frmGestionarUsuario
             // 

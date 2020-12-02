@@ -18,14 +18,12 @@ namespace SGCalificaciones.Vista
         PlantelController _objPlantel = new PlantelController();
 
         private bool _esProfesor;
-        private string _User;
-        private string _Pass;
-        public frmPrincipal(string usuario, string contrasenia, bool EsProfesor)
+        private int _Ci;
+        public frmPrincipal(int ci, bool EsProfesor)
         {
             InitializeComponent();
             _esProfesor = EsProfesor;
-            _User = usuario;
-            _Pass = contrasenia;
+            _Ci = ci;
         }
 
         private void ControlMenu()
@@ -65,7 +63,7 @@ namespace SGCalificaciones.Vista
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.frmInicio(_User,_Pass,_esProfesor));
+            AbrirFormInPanel(new Vista.frmInicio(_Ci,_esProfesor));
         }
 
         private void btnPlantelDocente_Click(object sender, EventArgs e)
@@ -100,8 +98,8 @@ namespace SGCalificaciones.Vista
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             ControlMenu();
-            AbrirFormInPanel(new Vista.frmInicio(_User, _Pass,_esProfesor));
-            btnPerfil.Text= "(YO) " + Convert.ToString(_objPlantel.nombrePlantel(_User, _Pass));
+            AbrirFormInPanel(new Vista.frmInicio(_Ci,_esProfesor));
+            btnPerfil.Text= "(YO) " + Convert.ToString(_objPlantel.nombrePlantel(_Ci));
         }
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
@@ -121,17 +119,17 @@ namespace SGCalificaciones.Vista
 
         private void btnMisEstudiantes_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.Gestiones.frmCalificacionesGeneral(_User, _Pass));
+            AbrirFormInPanel(new Vista.Gestiones.frmCalificacionesGeneral(_Ci));
         }
 
         private void btnCriterios_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.Gestiones.frmGestionarCriterio(_User, _Pass));
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionarCriterio(_Ci));
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vista.Gestiones.frmGestionarUsuario(_User, _Pass));
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionarUsuario(_Ci));
         }
     }
 }

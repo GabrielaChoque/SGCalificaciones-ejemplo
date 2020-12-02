@@ -37,10 +37,6 @@ namespace SGCalificaciones.Controlador
         {
             return _db.Plantel_Educativo.Where(x => x.nro_carnet == pCuenta).ToList();
         }
-        internal List<Plantel_Educativo> MostrarDatos(string pUser, string pPass)
-        {
-            return _db.Plantel_Educativo.Where(x => x.usuario == pUser && x.contrasenia == pPass).ToList();
-        }
         public string Autenticar(string pUser, string pPass) //metodo autenticar con parametro Administrativo y contraseña respectivamente
         {
             try
@@ -63,14 +59,13 @@ namespace SGCalificaciones.Controlador
             }
         }
 
-        public string nombrePlantel(string pUser, string pPass)
+        public string nombrePlantel(int pCarnet)
         {
-            int carnet = CiPlantel(pUser, pPass);
             string nom, app, apm;
 
             using (var context = new BdCalificacionesEntities())
             {
-                var lista = context.Plantel_Educativo.Where(x => x.nro_carnet == carnet).FirstOrDefault();
+                var lista = context.Plantel_Educativo.Where(x => x.nro_carnet == pCarnet).FirstOrDefault();
                 nom=Convert.ToString(lista.nombre);
                 app = Convert.ToString(lista.ap_paterno);
                 apm = Convert.ToString(lista.ap_materno);
@@ -88,9 +83,8 @@ namespace SGCalificaciones.Controlador
                 }
         }
 
-        public int cursoPlantel(string pUser, string pPass)
+        public int cursoPlantel(int carnet)
         {
-            int carnet = CiPlantel(pUser, pPass);
             using (var context = new BdCalificacionesEntities())
             {
                 var lista = _db.Curso.Where(x => x.nro_carnet == carnet).FirstOrDefault();

@@ -33,12 +33,12 @@ namespace SGCalificaciones
             {
                 case "Si":
                     this.Hide();
-                    frmPrincipal frm = new frmPrincipal(txtUsuario.Text, txtContrasenia.Text,true);
+                    frmPrincipal frm = new frmPrincipal(Convert.ToInt32(txtUsuario.Text),true);
                     frm.ShowDialog();
                     break;
                 case "No":
                     this.Hide();
-                    frmPrincipal form = new frmPrincipal(txtUsuario.Text, txtContrasenia.Text, false);
+                    frmPrincipal form = new frmPrincipal(Convert.ToInt32(txtUsuario.Text), false);
                     form.ShowDialog();
                     break;
                 case "":

@@ -17,18 +17,16 @@ namespace SGCalificaciones.Vista.Gestiones
     {
         PlantelController _obj_Plantel = new PlantelController();
 
-        private string _User;
-        private string _Pass;
-        public frmGestionarUsuario(string usuario, string contrasenia)
+        private int _Ci;
+        public frmGestionarUsuario(int Ci)
         {
             InitializeComponent();
-            _User = usuario;
-            _Pass = contrasenia;
+            _Ci = Ci;
         }
 
         private void frmGestionarUsuario_Load(object sender, EventArgs e)
         {
-            plantel_EducativoBindingSource.DataSource = _obj_Plantel.MostrarDatos(_User, _Pass);
+            plantel_EducativoBindingSource.DataSource = _obj_Plantel.BuscarPorPK(_Ci);
             btnCancelar.Visible = false;
         }
 
@@ -60,7 +58,7 @@ namespace SGCalificaciones.Vista.Gestiones
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (contraseniaTextBox.Text == txtConfirmar.Text && contraseniaTextBox.Text.Length>=8)
+            if (contraseniaTextBox.Text == txtConfirmar.Text && contraseniaTextBox.Text.Length>=6)
             {
                 var reg = CargarDatos();
                 _obj_Plantel.Modificar(reg);

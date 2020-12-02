@@ -16,17 +16,15 @@ namespace SGCalificaciones.Vista.Gestiones
         EstudianteController _objUsuario = new EstudianteController();
         PlantelController _obj_Plantel = new PlantelController();
 
-        private string _User;
-        private string _Pass;
-        public frmCalificacionesGeneral(string usuario, string contrasenia)
+        private int _Ci;
+        public frmCalificacionesGeneral(int ci)
         {
             InitializeComponent();
-            _User = usuario;
-            _Pass = contrasenia;
+            _Ci = ci;
         }
         private void Listar(string pBuscar)
         {
-            int pIdCurso = _obj_Plantel.cursoPlantel(_User,_Pass);
+            int pIdCurso = _obj_Plantel.cursoPlantel(_Ci);
             estudianteBindingSource.DataSource = _objUsuario.ListarMisEstudiantes(pBuscar, pIdCurso);
         }
 

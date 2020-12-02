@@ -18,13 +18,11 @@ namespace SGCalificaciones.Vista.Gestiones
         CriterioController _objUsuario = new CriterioController();
         PlantelController _obj_Plantel = new PlantelController();
 
-        private string _User;
-        private string _Pass;
-        public frmGestionarCriterio(string usuario, string contrasenia)
+        private int _Ci;
+        public frmGestionarCriterio(int ci)
         {
             InitializeComponent();
-            _User = usuario;
-            _Pass = contrasenia;
+            _Ci = ci;
         }
         private void frmGestionarCriterio_Load(object sender, EventArgs e)
         {
@@ -40,8 +38,7 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void Listar(string pBuscar)
         {
-            int pCi = _obj_Plantel.CiPlantel(_User,_Pass);
-            criterioBindingSource.DataSource = _objUsuario.Listar(pBuscar, pCi);
+            criterioBindingSource.DataSource = _objUsuario.Listar(pBuscar, _Ci);
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

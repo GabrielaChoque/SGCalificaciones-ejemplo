@@ -15,14 +15,12 @@ namespace SGCalificaciones.Vista
     {
         PlantelController _objUsuario = new PlantelController();
 
-        private string _User;
-        private string _Pass;
+        private int _Ci;
         private bool _esProfesor;
-        public frmInicio(string usuario, string contrasenia, bool esProfesor)
+        public frmInicio(int Ci, bool esProfesor)
         {
             InitializeComponent();
-            _User = usuario;
-            _Pass = contrasenia;
+            _Ci = Ci;
             _esProfesor = esProfesor;
         }
 
@@ -34,9 +32,9 @@ namespace SGCalificaciones.Vista
         private void frmInicio_Load(object sender, EventArgs e)
         {
             if (_esProfesor)
-               lblNombrePlantel.Text = "Prof."+Convert.ToString(_objUsuario.nombrePlantel(_User,_Pass));
+               lblNombrePlantel.Text = "Prof."+Convert.ToString(_objUsuario.nombrePlantel(_Ci));
             else
-               lblNombrePlantel.Text = "Admin." + Convert.ToString(_objUsuario.nombrePlantel(_User, _Pass));
+               lblNombrePlantel.Text = "Admin." + Convert.ToString(_objUsuario.nombrePlantel(_Ci));
         }
     }
 }
