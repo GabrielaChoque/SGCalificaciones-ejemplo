@@ -6,5 +6,27 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="Curso" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <Children>
+      <GenericObjectDataSource DisplayName="Plantel_Educativo" Version="1.0">
+         <TypeInfo>SGCalificaciones.Data.Plantel_Educativo, SGCalificaciones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+         <TypeUISetting>
+            <PropertyUISettings>
+               <PropertyUISetting Name="Curso.Plantel_Educativo">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[Ninguno]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+            </PropertyUISettings>
+         </TypeUISetting>
+      </GenericObjectDataSource>
+      <GenericObjectDataSource DisplayName="Materia_Curso" Version="1.0">
+         <TypeInfo>SGCalificaciones.Data.Materia_Curso, SGCalificaciones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+      </GenericObjectDataSource>
+      <GenericObjectDataSource DisplayName="Estudiante" Version="1.0">
+         <TypeInfo>SGCalificaciones.Data.Estudiante, SGCalificaciones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+      </GenericObjectDataSource>
+   </Children>
    <TypeInfo>SGCalificaciones.Data.Curso, SGCalificaciones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>
