@@ -55,7 +55,7 @@ namespace SGCalificaciones.Vista.Gestiones
             if (res == DialogResult.Yes)
             {
                 _objUsuario.Eliminar(Convert.ToInt32(id_criterioLabel1.Text));
-                _objUsuario = new CriterioController();
+                //_objUsuario = new CriterioController();
                 Listar(txtBuscar.Text);
             }
         }
