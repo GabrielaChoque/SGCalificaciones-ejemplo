@@ -128,5 +128,10 @@ namespace SGCalificaciones.Vista
         {
             AbrirFormInPanel(new Vista.Gestiones.frmGestionarCriterio(_User, _Pass));
         }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Vista.Gestiones.frmGestionarUsuario(_User, _Pass));
+        }
     }
 }

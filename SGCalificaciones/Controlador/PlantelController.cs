@@ -37,6 +37,10 @@ namespace SGCalificaciones.Controlador
         {
             return _db.Plantel_Educativo.Where(x => x.nro_carnet == pCuenta).ToList();
         }
+        internal List<Plantel_Educativo> MostrarDatos(string pUser, string pPass)
+        {
+            return _db.Plantel_Educativo.Where(x => x.usuario == pUser && x.contrasenia == pPass).ToList();
+        }
         public string Autenticar(string pUser, string pPass) //metodo autenticar con parametro Administrativo y contraseña respectivamente
         {
             try
@@ -58,7 +62,6 @@ namespace SGCalificaciones.Controlador
                 return "";
             }
         }
-
 
         public string nombrePlantel(string pUser, string pPass)
         {
@@ -93,7 +96,6 @@ namespace SGCalificaciones.Controlador
                 var lista = _db.Curso.Where(x => x.nro_carnet == carnet).FirstOrDefault();
                 return lista.id_curso;
             }
-
         }
         internal List<Plantel_Educativo> ControlSesion(string pUser, string pPass)
         {

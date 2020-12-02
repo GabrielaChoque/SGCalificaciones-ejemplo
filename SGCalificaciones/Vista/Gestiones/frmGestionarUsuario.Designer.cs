@@ -41,7 +41,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ap_maternoTextBox = new System.Windows.Forms.TextBox();
             this.ap_paternoTextBox = new System.Windows.Forms.TextBox();
             this.celularTextBox = new System.Windows.Forms.TextBox();
@@ -50,6 +49,12 @@ namespace SGCalificaciones.Vista.Gestiones
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.tipo_plantelTextBox = new System.Windows.Forms.TextBox();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.txtConfirmar = new System.Windows.Forms.TextBox();
+            this.lblConfirmar = new System.Windows.Forms.Label();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -147,6 +152,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox2.TabIndex = 17;
             this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
             // label1
             // 
@@ -173,15 +179,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.iconPictureBox1.TabIndex = 19;
             this.iconPictureBox1.TabStop = false;
             // 
-            // plantel_EducativoBindingSource
-            // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
-            // 
             // ap_maternoTextBox
             // 
             this.ap_maternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_materno", true));
             this.ap_maternoTextBox.Enabled = false;
-            this.ap_maternoTextBox.Location = new System.Drawing.Point(493, 314);
+            this.ap_maternoTextBox.Location = new System.Drawing.Point(511, 310);
             this.ap_maternoTextBox.Name = "ap_maternoTextBox";
             this.ap_maternoTextBox.Size = new System.Drawing.Size(184, 20);
             this.ap_maternoTextBox.TabIndex = 21;
@@ -190,7 +192,7 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.ap_paternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "ap_paterno", true));
             this.ap_paternoTextBox.Enabled = false;
-            this.ap_paternoTextBox.Location = new System.Drawing.Point(493, 288);
+            this.ap_paternoTextBox.Location = new System.Drawing.Point(511, 284);
             this.ap_paternoTextBox.Name = "ap_paternoTextBox";
             this.ap_paternoTextBox.Size = new System.Drawing.Size(184, 20);
             this.ap_paternoTextBox.TabIndex = 23;
@@ -199,7 +201,7 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "celular", true));
             this.celularTextBox.Enabled = false;
-            this.celularTextBox.Location = new System.Drawing.Point(493, 341);
+            this.celularTextBox.Location = new System.Drawing.Point(511, 337);
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.Size = new System.Drawing.Size(184, 20);
             this.celularTextBox.TabIndex = 25;
@@ -208,16 +210,17 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "contrasenia", true));
             this.contraseniaTextBox.Enabled = false;
-            this.contraseniaTextBox.Location = new System.Drawing.Point(493, 419);
+            this.contraseniaTextBox.Location = new System.Drawing.Point(511, 415);
             this.contraseniaTextBox.Name = "contraseniaTextBox";
             this.contraseniaTextBox.Size = new System.Drawing.Size(184, 20);
-            this.contraseniaTextBox.TabIndex = 27;
+            this.contraseniaTextBox.TabIndex = 0;
+            this.contraseniaTextBox.UseSystemPasswordChar = true;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nombre", true));
             this.nombreTextBox.Enabled = false;
-            this.nombreTextBox.Location = new System.Drawing.Point(493, 263);
+            this.nombreTextBox.Location = new System.Drawing.Point(511, 259);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(184, 20);
             this.nombreTextBox.TabIndex = 29;
@@ -226,7 +229,7 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.nro_carnetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
             this.nro_carnetTextBox.Enabled = false;
-            this.nro_carnetTextBox.Location = new System.Drawing.Point(493, 237);
+            this.nro_carnetTextBox.Location = new System.Drawing.Point(511, 233);
             this.nro_carnetTextBox.Name = "nro_carnetTextBox";
             this.nro_carnetTextBox.Size = new System.Drawing.Size(184, 20);
             this.nro_carnetTextBox.TabIndex = 31;
@@ -235,7 +238,7 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "usuario", true));
             this.usuarioTextBox.Enabled = false;
-            this.usuarioTextBox.Location = new System.Drawing.Point(493, 393);
+            this.usuarioTextBox.Location = new System.Drawing.Point(511, 389);
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(184, 20);
             this.usuarioTextBox.TabIndex = 35;
@@ -244,10 +247,98 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.tipo_plantelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "tipo_plantel", true));
             this.tipo_plantelTextBox.Enabled = false;
-            this.tipo_plantelTextBox.Location = new System.Drawing.Point(493, 367);
+            this.tipo_plantelTextBox.Location = new System.Drawing.Point(511, 363);
             this.tipo_plantelTextBox.Name = "tipo_plantelTextBox";
             this.tipo_plantelTextBox.Size = new System.Drawing.Size(184, 20);
             this.tipo_plantelTextBox.TabIndex = 36;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 60;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(241, 486);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(230, 68);
+            this.btnEditar.TabIndex = 37;
+            this.btnEditar.Text = "EDITAR CONTRASEÑA";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 60;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(594, 486);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(230, 68);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "GUARDAR CAMBIOS";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Visible = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Verdana", 14.25F);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnCancelar.IconColor = System.Drawing.Color.White;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 60;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(241, 560);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(230, 68);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtConfirmar
+            // 
+            this.txtConfirmar.Location = new System.Drawing.Point(511, 441);
+            this.txtConfirmar.Name = "txtConfirmar";
+            this.txtConfirmar.Size = new System.Drawing.Size(184, 20);
+            this.txtConfirmar.TabIndex = 1;
+            this.txtConfirmar.UseSystemPasswordChar = true;
+            this.txtConfirmar.Visible = false;
+            // 
+            // lblConfirmar
+            // 
+            this.lblConfirmar.AutoSize = true;
+            this.lblConfirmar.Location = new System.Drawing.Point(348, 448);
+            this.lblConfirmar.Name = "lblConfirmar";
+            this.lblConfirmar.Size = new System.Drawing.Size(151, 13);
+            this.lblConfirmar.TabIndex = 41;
+            this.lblConfirmar.Text = "CONFIRMAR CONTRASEÑA:";
+            this.lblConfirmar.Visible = false;
+            // 
+            // plantel_EducativoBindingSource
+            // 
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
             // frmGestionarUsuario
             // 
@@ -255,6 +346,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1078, 669);
+            this.Controls.Add(this.lblConfirmar);
+            this.Controls.Add(this.txtConfirmar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.tipo_plantelTextBox);
             this.Controls.Add(ap_maternoLabel);
             this.Controls.Add(this.ap_maternoTextBox);
@@ -277,6 +373,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarUsuario";
             this.Text = "frmGestionarUsuario";
+            this.Load += new System.EventHandler(this.frmGestionarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
@@ -299,5 +396,10 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.TextBox nro_carnetTextBox;
         private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.TextBox tipo_plantelTextBox;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private System.Windows.Forms.TextBox txtConfirmar;
+        private System.Windows.Forms.Label lblConfirmar;
     }
 }
