@@ -149,6 +149,12 @@
     <Compile Include="Vista\Gestiones\frmGestionarEstudiante.Designer.cs">
       <DependentUpon>frmGestionarEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestiones\frmGestionarUsuario.Designer.cs">
+      <DependentUpon>frmGestionarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Gestiones\frmGestionPlantel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionarEstudiante.resx">
       <DependentUpon>frmGestionarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestiones\frmGestionarUsuario.resx">
+      <DependentUpon>frmGestionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestiones\frmGestionPlantel.resx">
       <DependentUpon>frmGestionPlantel.cs</DependentUpon>
