@@ -94,7 +94,7 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             VisibilizarBotones(btnGuardarCurso, btnCancelarCurso,btnNuevoCurso, btnEliminarCurso,true);
             btnBuscarProfesor.Enabled = true;
-
+            _EsNuevo = true;
             id_cursoTextBox.Text = "";
             nom_cursoTextBox.Text = "";
             paraleloTextBox.Text = "";
@@ -105,13 +105,16 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat,btnEliminarMat, true);
 
-            id_materiaTextBox.Text = "";
+            id_materiaTextBox.Text = Convert.ToString(materiaDataGridView.Rows.Count);
             nombre_materiaTextBox.Text = "";
+
+            _EsNuevo = true;
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, true);
+            _EsNuevo = false;
         }
 
         private void btnCancelarMat_Click(object sender, EventArgs e)
@@ -127,10 +130,11 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoCurso, btnEliminarCurso, true);
+            VisibilizarBotones(btnGuardarCurso, btnCancelarCurso, btnNuevoCurso, btnEliminarCurso, true);
             btnBuscarProfesor.Enabled = true;
+            _EsNuevo = false;
         }
-        private Bimestre CargarDatos()
+        private Bimestre CargarDatosBimestre()
         {
             var reg = (Bimestre)bimestreBindingSource.Current;
             return reg;
@@ -139,7 +143,7 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             try
             {
-                var reg = CargarDatos();
+                var reg = CargarDatosBimestre();
                 if (_EsNuevo && bimestreTextBox.Text!="")
                 {
                     if (_objBimestre.Insertar(reg))
@@ -165,39 +169,103 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnEliminarBim_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE BIMESTRE?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 _objBimestre.Eliminar(Convert.ToInt32(id_bimestreTextBox.Text));
                 Listar();
             }
         }
-
+        private Materia CargarDatosMateria()
+        {
+            var reg = (Materia) materiaBindingSource.Current;
+            return reg;
+        }
         private void btnGuardarMat_Click(object sender, EventArgs e)
         {
             try
             {
-                var reg = CargarDatos();
-                if (_EsNuevo && bimestreTextBox.Text != "")
+                var reg = CargarDatosMateria();
+                if (_EsNuevo)
                 {
-                    if (_objBimestre.Insertar(reg))
+                    if (_objMateria.Insertar(reg))
                     {
                         MessageBox.Show("INSERCION SATISFACTORIA", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    if (_objBimestre.Modificar(reg))
+                    if (_objMateria.Modificar(reg))
                     {
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                VisibilizarBotones(btnGuardarBim, btnCancelarBim, btnNuevoBim, btnEliminarBim, false);
+                VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
                 Listar();
             }
             catch (Exception)
             {
                 MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnEliminarMat_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTA MATERIA?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                _objMateria.Eliminar(Convert.ToInt32(id_materiaTextBox.Text));
+                Listar();
+            }
+        }
+
+        private void btnBuscarProfesor_Click(object sender, EventArgs e)
+        {
+            frmBuscarProfesor AbrirfrmBP = new frmBuscarProfesor();
+            AbrirfrmBP.ShowDialog();
+        }
+
+        private Curso CargarDatosCurso()
+        {
+            var reg = (Curso)cursoBindingSource.Current;
+            return reg;
+        }
+
+        private void btnGuardarCurso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var reg = CargarDatosCurso();
+                if (_EsNuevo)
+                {
+                    if (_objCurso.Insertar(reg))
+                    {
+                        MessageBox.Show("INSERCION SATISFACTORIA", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    if (_objCurso.Modificar(reg))
+                    {
+                        MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
+                Listar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnEliminarCurso_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTe CURSO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                _objCurso.Eliminar(Convert.ToInt32(id_cursoTextBox.Text));
+                Listar();
             }
         }
     }

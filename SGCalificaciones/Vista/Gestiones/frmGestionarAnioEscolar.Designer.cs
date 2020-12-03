@@ -39,24 +39,16 @@ namespace SGCalificaciones.Vista.Gestiones
             System.Windows.Forms.Label id_materiaLabel;
             System.Windows.Forms.Label nombre_materiaLabel;
             this.label1 = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.cursoDataGridView = new System.Windows.Forms.DataGridView();
             this.bimestreDataGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancelarBim = new FontAwesome.Sharp.IconButton();
-            this.btnNuevoBim = new FontAwesome.Sharp.IconButton();
-            this.btnGuardarBim = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.bimestreTextBox = new System.Windows.Forms.TextBox();
             this.id_bimestreTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancelarCurso = new FontAwesome.Sharp.IconButton();
-            this.btnNuevoCurso = new FontAwesome.Sharp.IconButton();
-            this.btnGuardarCurso = new FontAwesome.Sharp.IconButton();
-            this.btnBuscarProfesor = new FontAwesome.Sharp.IconButton();
             this.id_cursoTextBox = new System.Windows.Forms.TextBox();
             this.nom_cursoTextBox = new System.Windows.Forms.TextBox();
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
@@ -67,17 +59,25 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel3 = new System.Windows.Forms.Panel();
             this.id_materiaTextBox = new System.Windows.Forms.TextBox();
             this.nombre_materiaTextBox = new System.Windows.Forms.TextBox();
-            this.btnCancelarMat = new FontAwesome.Sharp.IconButton();
-            this.btnNuevoMat = new FontAwesome.Sharp.IconButton();
-            this.btnGuardarMat = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.btnModificar = new FontAwesome.Sharp.IconButton();
-            this.btnEditarCurso = new FontAwesome.Sharp.IconButton();
-            this.btnEditarMat = new FontAwesome.Sharp.IconButton();
             this.btnEliminarBim = new FontAwesome.Sharp.IconButton();
+            this.btnCancelarBim = new FontAwesome.Sharp.IconButton();
+            this.btnModificar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarBim = new FontAwesome.Sharp.IconButton();
+            this.btnNuevoBim = new FontAwesome.Sharp.IconButton();
             this.btnEliminarCurso = new FontAwesome.Sharp.IconButton();
+            this.btnNuevoCurso = new FontAwesome.Sharp.IconButton();
+            this.btnCancelarCurso = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarCurso = new FontAwesome.Sharp.IconButton();
+            this.btnBuscarProfesor = new FontAwesome.Sharp.IconButton();
+            this.btnEditarCurso = new FontAwesome.Sharp.IconButton();
             this.btnEliminarMat = new FontAwesome.Sharp.IconButton();
+            this.btnCancelarMat = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarMat = new FontAwesome.Sharp.IconButton();
+            this.btnEditarMat = new FontAwesome.Sharp.IconButton();
+            this.btnNuevoMat = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.bimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,7 +99,6 @@ namespace SGCalificaciones.Vista.Gestiones
             paraleloLabel = new System.Windows.Forms.Label();
             id_materiaLabel = new System.Windows.Forms.Label();
             nombre_materiaLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreDataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -110,6 +109,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materiaDataGridView)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
@@ -186,22 +186,22 @@ namespace SGCalificaciones.Vista.Gestiones
             id_materiaLabel.AutoSize = true;
             id_materiaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             id_materiaLabel.ForeColor = System.Drawing.Color.White;
-            id_materiaLabel.Location = new System.Drawing.Point(64, 110);
+            id_materiaLabel.Location = new System.Drawing.Point(27, 110);
             id_materiaLabel.Name = "id_materiaLabel";
-            id_materiaLabel.Size = new System.Drawing.Size(96, 24);
+            id_materiaLabel.Size = new System.Drawing.Size(145, 24);
             id_materiaLabel.TabIndex = 20;
-            id_materiaLabel.Text = "id materia:";
+            id_materiaLabel.Text = "COD MATERIA:";
             // 
             // nombre_materiaLabel
             // 
             nombre_materiaLabel.AutoSize = true;
             nombre_materiaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             nombre_materiaLabel.ForeColor = System.Drawing.Color.White;
-            nombre_materiaLabel.Location = new System.Drawing.Point(63, 141);
+            nombre_materiaLabel.Location = new System.Drawing.Point(71, 140);
             nombre_materiaLabel.Name = "nombre_materiaLabel";
-            nombre_materiaLabel.Size = new System.Drawing.Size(147, 24);
+            nombre_materiaLabel.Size = new System.Drawing.Size(99, 24);
             nombre_materiaLabel.TabIndex = 22;
-            nombre_materiaLabel.Text = "nombre materia:";
+            nombre_materiaLabel.Text = "MATERIA:";
             // 
             // label1
             // 
@@ -212,20 +212,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.label1.Size = new System.Drawing.Size(548, 47);
             this.label1.TabIndex = 1;
             this.label1.Text = "GESTION DEL AÑO ESCOLAR";
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.Crimson;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.Crimson;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(1023, 21);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.TabIndex = 11;
-            this.iconPictureBox2.TabStop = false;
-            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
             // cursoDataGridView
             // 
@@ -302,71 +288,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel1.Size = new System.Drawing.Size(396, 343);
             this.panel1.TabIndex = 14;
             // 
-            // btnCancelarBim
-            // 
-            this.btnCancelarBim.BackColor = System.Drawing.Color.Crimson;
-            this.btnCancelarBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarBim.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarBim.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnCancelarBim.IconColor = System.Drawing.Color.White;
-            this.btnCancelarBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelarBim.IconSize = 40;
-            this.btnCancelarBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarBim.Location = new System.Drawing.Point(33, 224);
-            this.btnCancelarBim.Name = "btnCancelarBim";
-            this.btnCancelarBim.Size = new System.Drawing.Size(141, 54);
-            this.btnCancelarBim.TabIndex = 20;
-            this.btnCancelarBim.Text = "CANCELAR";
-            this.btnCancelarBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelarBim.UseVisualStyleBackColor = false;
-            this.btnCancelarBim.Visible = false;
-            this.btnCancelarBim.Click += new System.EventHandler(this.btnCancelarBim_Click);
-            // 
-            // btnNuevoBim
-            // 
-            this.btnNuevoBim.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevoBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoBim.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoBim.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnNuevoBim.IconColor = System.Drawing.Color.White;
-            this.btnNuevoBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevoBim.IconSize = 40;
-            this.btnNuevoBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoBim.Location = new System.Drawing.Point(29, 271);
-            this.btnNuevoBim.Name = "btnNuevoBim";
-            this.btnNuevoBim.Size = new System.Drawing.Size(141, 54);
-            this.btnNuevoBim.TabIndex = 19;
-            this.btnNuevoBim.Text = "NUEVO";
-            this.btnNuevoBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoBim.UseVisualStyleBackColor = false;
-            this.btnNuevoBim.Click += new System.EventHandler(this.btnNuevoBim_Click);
-            // 
-            // btnGuardarBim
-            // 
-            this.btnGuardarBim.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardarBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarBim.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarBim.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardarBim.IconColor = System.Drawing.Color.White;
-            this.btnGuardarBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardarBim.IconSize = 40;
-            this.btnGuardarBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarBim.Location = new System.Drawing.Point(219, 224);
-            this.btnGuardarBim.Name = "btnGuardarBim";
-            this.btnGuardarBim.Size = new System.Drawing.Size(141, 54);
-            this.btnGuardarBim.TabIndex = 18;
-            this.btnGuardarBim.Text = "GUARDAR";
-            this.btnGuardarBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardarBim.UseVisualStyleBackColor = false;
-            this.btnGuardarBim.Visible = false;
-            this.btnGuardarBim.Click += new System.EventHandler(this.btnGuardarBim_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -432,91 +353,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(394, 338);
             this.panel2.TabIndex = 15;
-            // 
-            // btnCancelarCurso
-            // 
-            this.btnCancelarCurso.BackColor = System.Drawing.Color.Crimson;
-            this.btnCancelarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCurso.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnCancelarCurso.IconColor = System.Drawing.Color.White;
-            this.btnCancelarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelarCurso.IconSize = 40;
-            this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCurso.Location = new System.Drawing.Point(42, 247);
-            this.btnCancelarCurso.Name = "btnCancelarCurso";
-            this.btnCancelarCurso.Size = new System.Drawing.Size(141, 54);
-            this.btnCancelarCurso.TabIndex = 17;
-            this.btnCancelarCurso.Text = "CANCELAR";
-            this.btnCancelarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelarCurso.UseVisualStyleBackColor = false;
-            this.btnCancelarCurso.Visible = false;
-            this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
-            // 
-            // btnNuevoCurso
-            // 
-            this.btnNuevoCurso.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevoCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoCurso.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCurso.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnNuevoCurso.IconColor = System.Drawing.Color.White;
-            this.btnNuevoCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevoCurso.IconSize = 40;
-            this.btnNuevoCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCurso.Location = new System.Drawing.Point(15, 263);
-            this.btnNuevoCurso.Name = "btnNuevoCurso";
-            this.btnNuevoCurso.Size = new System.Drawing.Size(141, 54);
-            this.btnNuevoCurso.TabIndex = 16;
-            this.btnNuevoCurso.Text = "NUEVO";
-            this.btnNuevoCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoCurso.UseVisualStyleBackColor = false;
-            this.btnNuevoCurso.Click += new System.EventHandler(this.btnNuevoCurso_Click);
-            // 
-            // btnGuardarCurso
-            // 
-            this.btnGuardarCurso.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarCurso.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardarCurso.IconColor = System.Drawing.Color.White;
-            this.btnGuardarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardarCurso.IconSize = 40;
-            this.btnGuardarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarCurso.Location = new System.Drawing.Point(221, 247);
-            this.btnGuardarCurso.Name = "btnGuardarCurso";
-            this.btnGuardarCurso.Size = new System.Drawing.Size(141, 54);
-            this.btnGuardarCurso.TabIndex = 15;
-            this.btnGuardarCurso.Text = "GUARDAR";
-            this.btnGuardarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardarCurso.UseVisualStyleBackColor = false;
-            this.btnGuardarCurso.Visible = false;
-            // 
-            // btnBuscarProfesor
-            // 
-            this.btnBuscarProfesor.BackColor = System.Drawing.Color.Orange;
-            this.btnBuscarProfesor.Enabled = false;
-            this.btnBuscarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProfesor.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProfesor.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarProfesor.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscarProfesor.IconColor = System.Drawing.Color.White;
-            this.btnBuscarProfesor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarProfesor.IconSize = 25;
-            this.btnBuscarProfesor.Location = new System.Drawing.Point(291, 176);
-            this.btnBuscarProfesor.Name = "btnBuscarProfesor";
-            this.btnBuscarProfesor.Size = new System.Drawing.Size(38, 32);
-            this.btnBuscarProfesor.TabIndex = 14;
-            this.btnBuscarProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarProfesor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTipMensaje.SetToolTip(this.btnBuscarProfesor, "Buscar Profesor");
-            this.btnBuscarProfesor.UseVisualStyleBackColor = false;
-            this.btnBuscarProfesor.Visible = false;
             // 
             // id_cursoTextBox
             // 
@@ -617,20 +453,294 @@ namespace SGCalificaciones.Vista.Gestiones
             // id_materiaTextBox
             // 
             this.id_materiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materiaBindingSource, "id_materia", true));
+            this.id_materiaTextBox.Enabled = false;
             this.id_materiaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.id_materiaTextBox.Location = new System.Drawing.Point(216, 111);
+            this.id_materiaTextBox.Location = new System.Drawing.Point(168, 111);
             this.id_materiaTextBox.Name = "id_materiaTextBox";
-            this.id_materiaTextBox.Size = new System.Drawing.Size(100, 24);
+            this.id_materiaTextBox.Size = new System.Drawing.Size(191, 24);
             this.id_materiaTextBox.TabIndex = 21;
             // 
             // nombre_materiaTextBox
             // 
             this.nombre_materiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materiaBindingSource, "nombre_materia", true));
             this.nombre_materiaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.nombre_materiaTextBox.Location = new System.Drawing.Point(216, 141);
+            this.nombre_materiaTextBox.Location = new System.Drawing.Point(168, 140);
             this.nombre_materiaTextBox.Name = "nombre_materiaTextBox";
-            this.nombre_materiaTextBox.Size = new System.Drawing.Size(100, 24);
+            this.nombre_materiaTextBox.Size = new System.Drawing.Size(191, 24);
             this.nombre_materiaTextBox.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Rockwell", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(93, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(223, 46);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "MATERIAS";
+            // 
+            // toolTipMensaje
+            // 
+            this.toolTipMensaje.AutoPopDelay = 5000;
+            this.toolTipMensaje.InitialDelay = 10;
+            this.toolTipMensaje.ReshowDelay = 100;
+            // 
+            // btnEliminarBim
+            // 
+            this.btnEliminarBim.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminarBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarBim.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarBim.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminarBim.IconColor = System.Drawing.Color.White;
+            this.btnEliminarBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarBim.IconSize = 40;
+            this.btnEliminarBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarBim.Location = new System.Drawing.Point(218, 271);
+            this.btnEliminarBim.Name = "btnEliminarBim";
+            this.btnEliminarBim.Size = new System.Drawing.Size(141, 54);
+            this.btnEliminarBim.TabIndex = 22;
+            this.btnEliminarBim.Text = "ELIMINAR";
+            this.btnEliminarBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarBim.UseVisualStyleBackColor = false;
+            this.btnEliminarBim.Click += new System.EventHandler(this.btnEliminarBim_Click);
+            // 
+            // btnCancelarBim
+            // 
+            this.btnCancelarBim.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancelarBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarBim.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarBim.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnCancelarBim.IconColor = System.Drawing.Color.White;
+            this.btnCancelarBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarBim.IconSize = 40;
+            this.btnCancelarBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarBim.Location = new System.Drawing.Point(33, 224);
+            this.btnCancelarBim.Name = "btnCancelarBim";
+            this.btnCancelarBim.Size = new System.Drawing.Size(141, 54);
+            this.btnCancelarBim.TabIndex = 20;
+            this.btnCancelarBim.Text = "CANCELAR";
+            this.btnCancelarBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelarBim.UseVisualStyleBackColor = false;
+            this.btnCancelarBim.Visible = false;
+            this.btnCancelarBim.Click += new System.EventHandler(this.btnCancelarBim_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 40;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(33, 224);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(141, 54);
+            this.btnModificar.TabIndex = 21;
+            this.btnModificar.Text = "EDITAR";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnGuardarBim
+            // 
+            this.btnGuardarBim.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGuardarBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarBim.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarBim.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardarBim.IconColor = System.Drawing.Color.White;
+            this.btnGuardarBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardarBim.IconSize = 40;
+            this.btnGuardarBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarBim.Location = new System.Drawing.Point(219, 224);
+            this.btnGuardarBim.Name = "btnGuardarBim";
+            this.btnGuardarBim.Size = new System.Drawing.Size(141, 54);
+            this.btnGuardarBim.TabIndex = 18;
+            this.btnGuardarBim.Text = "GUARDAR";
+            this.btnGuardarBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardarBim.UseVisualStyleBackColor = false;
+            this.btnGuardarBim.Visible = false;
+            this.btnGuardarBim.Click += new System.EventHandler(this.btnGuardarBim_Click);
+            // 
+            // btnNuevoBim
+            // 
+            this.btnNuevoBim.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevoBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoBim.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoBim.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnNuevoBim.IconColor = System.Drawing.Color.White;
+            this.btnNuevoBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevoBim.IconSize = 40;
+            this.btnNuevoBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoBim.Location = new System.Drawing.Point(29, 271);
+            this.btnNuevoBim.Name = "btnNuevoBim";
+            this.btnNuevoBim.Size = new System.Drawing.Size(141, 54);
+            this.btnNuevoBim.TabIndex = 19;
+            this.btnNuevoBim.Text = "NUEVO";
+            this.btnNuevoBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoBim.UseVisualStyleBackColor = false;
+            this.btnNuevoBim.Click += new System.EventHandler(this.btnNuevoBim_Click);
+            // 
+            // btnEliminarCurso
+            // 
+            this.btnEliminarCurso.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarCurso.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminarCurso.IconColor = System.Drawing.Color.White;
+            this.btnEliminarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarCurso.IconSize = 40;
+            this.btnEliminarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarCurso.Location = new System.Drawing.Point(209, 263);
+            this.btnEliminarCurso.Name = "btnEliminarCurso";
+            this.btnEliminarCurso.Size = new System.Drawing.Size(141, 54);
+            this.btnEliminarCurso.TabIndex = 23;
+            this.btnEliminarCurso.Text = "ELIMINAR";
+            this.btnEliminarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarCurso.UseVisualStyleBackColor = false;
+            this.btnEliminarCurso.Click += new System.EventHandler(this.btnEliminarCurso_Click);
+            // 
+            // btnNuevoCurso
+            // 
+            this.btnNuevoCurso.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevoCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCurso.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoCurso.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnNuevoCurso.IconColor = System.Drawing.Color.White;
+            this.btnNuevoCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevoCurso.IconSize = 40;
+            this.btnNuevoCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoCurso.Location = new System.Drawing.Point(15, 263);
+            this.btnNuevoCurso.Name = "btnNuevoCurso";
+            this.btnNuevoCurso.Size = new System.Drawing.Size(141, 54);
+            this.btnNuevoCurso.TabIndex = 16;
+            this.btnNuevoCurso.Text = "NUEVO";
+            this.btnNuevoCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoCurso.UseVisualStyleBackColor = false;
+            this.btnNuevoCurso.Click += new System.EventHandler(this.btnNuevoCurso_Click);
+            // 
+            // btnCancelarCurso
+            // 
+            this.btnCancelarCurso.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancelarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarCurso.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnCancelarCurso.IconColor = System.Drawing.Color.White;
+            this.btnCancelarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarCurso.IconSize = 40;
+            this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarCurso.Location = new System.Drawing.Point(42, 247);
+            this.btnCancelarCurso.Name = "btnCancelarCurso";
+            this.btnCancelarCurso.Size = new System.Drawing.Size(141, 54);
+            this.btnCancelarCurso.TabIndex = 17;
+            this.btnCancelarCurso.Text = "CANCELAR";
+            this.btnCancelarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelarCurso.UseVisualStyleBackColor = false;
+            this.btnCancelarCurso.Visible = false;
+            this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
+            // 
+            // btnGuardarCurso
+            // 
+            this.btnGuardarCurso.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGuardarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarCurso.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardarCurso.IconColor = System.Drawing.Color.White;
+            this.btnGuardarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardarCurso.IconSize = 40;
+            this.btnGuardarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarCurso.Location = new System.Drawing.Point(221, 247);
+            this.btnGuardarCurso.Name = "btnGuardarCurso";
+            this.btnGuardarCurso.Size = new System.Drawing.Size(141, 54);
+            this.btnGuardarCurso.TabIndex = 15;
+            this.btnGuardarCurso.Text = "GUARDAR";
+            this.btnGuardarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardarCurso.UseVisualStyleBackColor = false;
+            this.btnGuardarCurso.Visible = false;
+            this.btnGuardarCurso.Click += new System.EventHandler(this.btnGuardarCurso_Click);
+            // 
+            // btnBuscarProfesor
+            // 
+            this.btnBuscarProfesor.BackColor = System.Drawing.Color.Orange;
+            this.btnBuscarProfesor.Enabled = false;
+            this.btnBuscarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProfesor.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProfesor.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarProfesor.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscarProfesor.IconColor = System.Drawing.Color.White;
+            this.btnBuscarProfesor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarProfesor.IconSize = 25;
+            this.btnBuscarProfesor.Location = new System.Drawing.Point(291, 176);
+            this.btnBuscarProfesor.Name = "btnBuscarProfesor";
+            this.btnBuscarProfesor.Size = new System.Drawing.Size(38, 32);
+            this.btnBuscarProfesor.TabIndex = 14;
+            this.btnBuscarProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarProfesor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTipMensaje.SetToolTip(this.btnBuscarProfesor, "Buscar Profesor");
+            this.btnBuscarProfesor.UseVisualStyleBackColor = false;
+            this.btnBuscarProfesor.Click += new System.EventHandler(this.btnBuscarProfesor_Click);
+            // 
+            // btnEditarCurso
+            // 
+            this.btnEditarCurso.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnEditarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnEditarCurso.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditarCurso.IconColor = System.Drawing.Color.White;
+            this.btnEditarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditarCurso.IconSize = 40;
+            this.btnEditarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarCurso.Location = new System.Drawing.Point(42, 247);
+            this.btnEditarCurso.Name = "btnEditarCurso";
+            this.btnEditarCurso.Size = new System.Drawing.Size(141, 54);
+            this.btnEditarCurso.TabIndex = 22;
+            this.btnEditarCurso.Text = "EDITAR";
+            this.btnEditarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditarCurso.UseVisualStyleBackColor = false;
+            this.btnEditarCurso.Click += new System.EventHandler(this.btnEditarCurso_Click);
+            // 
+            // btnEliminarMat
+            // 
+            this.btnEliminarMat.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminarMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarMat.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarMat.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminarMat.IconColor = System.Drawing.Color.White;
+            this.btnEliminarMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarMat.IconSize = 40;
+            this.btnEliminarMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarMat.Location = new System.Drawing.Point(203, 266);
+            this.btnEliminarMat.Name = "btnEliminarMat";
+            this.btnEliminarMat.Size = new System.Drawing.Size(141, 54);
+            this.btnEliminarMat.TabIndex = 23;
+            this.btnEliminarMat.Text = "ELIMINAR";
+            this.btnEliminarMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarMat.UseVisualStyleBackColor = false;
+            this.btnEliminarMat.Click += new System.EventHandler(this.btnEliminarMat_Click);
             // 
             // btnCancelarMat
             // 
@@ -654,27 +764,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnCancelarMat.Visible = false;
             this.btnCancelarMat.Click += new System.EventHandler(this.btnCancelarMat_Click);
             // 
-            // btnNuevoMat
-            // 
-            this.btnNuevoMat.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevoMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoMat.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoMat.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnNuevoMat.IconColor = System.Drawing.Color.White;
-            this.btnNuevoMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevoMat.IconSize = 40;
-            this.btnNuevoMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoMat.Location = new System.Drawing.Point(19, 266);
-            this.btnNuevoMat.Name = "btnNuevoMat";
-            this.btnNuevoMat.Size = new System.Drawing.Size(141, 54);
-            this.btnNuevoMat.TabIndex = 19;
-            this.btnNuevoMat.Text = "NUEVO";
-            this.btnNuevoMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoMat.UseVisualStyleBackColor = false;
-            this.btnNuevoMat.Click += new System.EventHandler(this.btnNuevoMat_Click);
-            // 
             // btnGuardarMat
             // 
             this.btnGuardarMat.BackColor = System.Drawing.Color.SeaGreen;
@@ -697,65 +786,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnGuardarMat.Visible = false;
             this.btnGuardarMat.Click += new System.EventHandler(this.btnGuardarMat_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Rockwell", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(93, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(223, 46);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "MATERIAS";
-            // 
-            // toolTipMensaje
-            // 
-            this.toolTipMensaje.AutoPopDelay = 5000;
-            this.toolTipMensaje.InitialDelay = 10;
-            this.toolTipMensaje.ReshowDelay = 100;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.DarkOrchid;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnModificar.IconColor = System.Drawing.Color.White;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 40;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(33, 224);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(141, 54);
-            this.btnModificar.TabIndex = 21;
-            this.btnModificar.Text = "EDITAR";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEditarCurso
-            // 
-            this.btnEditarCurso.BackColor = System.Drawing.Color.DarkOrchid;
-            this.btnEditarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCurso.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditarCurso.IconColor = System.Drawing.Color.White;
-            this.btnEditarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditarCurso.IconSize = 40;
-            this.btnEditarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCurso.Location = new System.Drawing.Point(42, 247);
-            this.btnEditarCurso.Name = "btnEditarCurso";
-            this.btnEditarCurso.Size = new System.Drawing.Size(141, 54);
-            this.btnEditarCurso.TabIndex = 22;
-            this.btnEditarCurso.Text = "EDITAR";
-            this.btnEditarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditarCurso.UseVisualStyleBackColor = false;
-            this.btnEditarCurso.Click += new System.EventHandler(this.btnEditarCurso_Click);
-            // 
             // btnEditarMat
             // 
             this.btnEditarMat.BackColor = System.Drawing.Color.DarkOrchid;
@@ -777,66 +807,40 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnEditarMat.UseVisualStyleBackColor = false;
             this.btnEditarMat.Click += new System.EventHandler(this.iconButton3_Click);
             // 
-            // btnEliminarBim
+            // btnNuevoMat
             // 
-            this.btnEliminarBim.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarBim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarBim.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarBim.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarBim.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarBim.IconColor = System.Drawing.Color.White;
-            this.btnEliminarBim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarBim.IconSize = 40;
-            this.btnEliminarBim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarBim.Location = new System.Drawing.Point(218, 271);
-            this.btnEliminarBim.Name = "btnEliminarBim";
-            this.btnEliminarBim.Size = new System.Drawing.Size(141, 54);
-            this.btnEliminarBim.TabIndex = 22;
-            this.btnEliminarBim.Text = "ELIMINAR";
-            this.btnEliminarBim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarBim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarBim.UseVisualStyleBackColor = false;
-            this.btnEliminarBim.Click += new System.EventHandler(this.btnEliminarBim_Click);
+            this.btnNuevoMat.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevoMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoMat.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoMat.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnNuevoMat.IconColor = System.Drawing.Color.White;
+            this.btnNuevoMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevoMat.IconSize = 40;
+            this.btnNuevoMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoMat.Location = new System.Drawing.Point(19, 266);
+            this.btnNuevoMat.Name = "btnNuevoMat";
+            this.btnNuevoMat.Size = new System.Drawing.Size(141, 54);
+            this.btnNuevoMat.TabIndex = 19;
+            this.btnNuevoMat.Text = "NUEVO";
+            this.btnNuevoMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoMat.UseVisualStyleBackColor = false;
+            this.btnNuevoMat.Click += new System.EventHandler(this.btnNuevoMat_Click);
             // 
-            // btnEliminarCurso
+            // iconPictureBox2
             // 
-            this.btnEliminarCurso.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCurso.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarCurso.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarCurso.IconColor = System.Drawing.Color.White;
-            this.btnEliminarCurso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarCurso.IconSize = 40;
-            this.btnEliminarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarCurso.Location = new System.Drawing.Point(209, 263);
-            this.btnEliminarCurso.Name = "btnEliminarCurso";
-            this.btnEliminarCurso.Size = new System.Drawing.Size(141, 54);
-            this.btnEliminarCurso.TabIndex = 23;
-            this.btnEliminarCurso.Text = "ELIMINAR";
-            this.btnEliminarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarCurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarCurso.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarMat
-            // 
-            this.btnEliminarMat.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarMat.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarMat.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarMat.IconColor = System.Drawing.Color.White;
-            this.btnEliminarMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarMat.IconSize = 40;
-            this.btnEliminarMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarMat.Location = new System.Drawing.Point(203, 266);
-            this.btnEliminarMat.Name = "btnEliminarMat";
-            this.btnEliminarMat.Size = new System.Drawing.Size(141, 54);
-            this.btnEliminarMat.TabIndex = 23;
-            this.btnEliminarMat.Text = "ELIMINAR";
-            this.btnEliminarMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarMat.UseVisualStyleBackColor = false;
+            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.Location = new System.Drawing.Point(1023, 21);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox2.TabIndex = 11;
+            this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
             // bimestreBindingSource
             // 
@@ -929,7 +933,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Name = "frmGestionarAnioEscolar";
             this.Text = "frmGestionarAnioEscolar";
             this.Load += new System.EventHandler(this.frmGestionarAnioEscolar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreDataGridView)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -943,6 +946,7 @@ namespace SGCalificaciones.Vista.Gestiones
             ((System.ComponentModel.ISupportInitialize)(this.materiaDataGridView)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
