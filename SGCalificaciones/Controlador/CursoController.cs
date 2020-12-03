@@ -28,7 +28,7 @@ namespace SGCalificaciones.Controlador
         }
         public bool Eliminar(int pParametro)
         {
-            var reg = _db.Curso.Where(x => x.nro_carnet == pParametro).FirstOrDefault();
+            var reg = _db.Curso.Where(x => x.id_curso == pParametro).FirstOrDefault();
             _db.Curso.Remove(reg);
             return _db.SaveChanges() > 0;
         }

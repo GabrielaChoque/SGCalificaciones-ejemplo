@@ -18,6 +18,8 @@ namespace SGCalificaciones.Vista.Gestiones
         BimestreController _objBimestre = new BimestreController();
         CursoController _objCurso = new CursoController();
         MateriaController _objMateria = new MateriaController();
+        PlantelController _objPlantel = new PlantelController();
+
 
         private bool _EsNuevo;
 
@@ -68,14 +70,17 @@ namespace SGCalificaciones.Vista.Gestiones
         private void frmGestionarAnioEscolar_Load(object sender, EventArgs e)
         {
             Listar();
+            ListarPlantel(txtBuscar.Text);
         }
 
         private void btnNuevoBim_Click(object sender, EventArgs e)
         {
+            bimestreBindingSource.AddNew();
             VisibilizarBotones(btnGuardarBim, btnCancelarBim, btnNuevoBim,btnEliminarBim, true);
             id_bimestreTextBox.Text = Convert.ToString(bimestreDataGridView.Rows.Count);
             bimestreTextBox.Text = "";
 
+            
             _EsNuevo = true;
         }
 
@@ -92,10 +97,11 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnNuevoCurso_Click(object sender, EventArgs e)
         {
+            cursoBindingSource.AddNew();
             VisibilizarBotones(btnGuardarCurso, btnCancelarCurso,btnNuevoCurso, btnEliminarCurso,true);
             btnBuscarProfesor.Enabled = true;
             _EsNuevo = true;
-            id_cursoTextBox.Text = "";
+            id_cursoTextBox.Text = Convert.ToString(cursoDataGridView.Rows.Count);
             nom_cursoTextBox.Text = "";
             paraleloTextBox.Text = "";
             nro_carnetTextBox.Text = "";
@@ -103,6 +109,7 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnNuevoMat_Click(object sender, EventArgs e)
         {
+            materiaBindingSource.AddNew();
             VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat,btnEliminarMat, true);
 
             id_materiaTextBox.Text = Convert.ToString(materiaDataGridView.Rows.Count);
@@ -130,8 +137,14 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarCurso, btnCancelarCurso, btnNuevoCurso, btnEliminarCurso, true);
-            btnBuscarProfesor.Enabled = true;
+            //VisibilizarBotones(btnGuardarCurso, btnCancelarCurso, btnNuevoCurso, btnEliminarCurso, true);
+            btnNuevoCurso.Visible = false;
+            btnEliminarCurso.Visible = false;
+
+            btnCancelarCurso.Visible = true;
+            btnGuardarCurso.Visible = true;
+
+            btnBuscarProfesor.Visible = true;
             _EsNuevo = false;
         }
         private Bimestre CargarDatosBimestre()
@@ -221,13 +234,18 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnBuscarProfesor_Click(object sender, EventArgs e)
         {
-            frmBuscarProfesor AbrirfrmBP = new frmBuscarProfesor();
-            AbrirfrmBP.ShowDialog();
+            panelBuscarProfesor.Visible = true;
+            
+            //plantel_EducativoBindingSource.DataSource = _objPlantel.Listar("");
+            txtBuscar.Focus();
+            //frmBuscarProfesor AbrirfrmBP = new frmBuscarProfesor();
+            //AbrirfrmBP.ShowDialog();
         }
 
         private Curso CargarDatosCurso()
         {
             var reg = (Curso)cursoBindingSource.Current;
+            reg.nro_carnet = Convert.ToInt32(nro_carnetTextBox.Text);
             return reg;
         }
 
@@ -250,7 +268,16 @@ namespace SGCalificaciones.Vista.Gestiones
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
+                //VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
+
+                btnNuevoCurso.Visible = true;
+                btnEliminarCurso.Visible = true;
+
+                btnCancelarCurso.Visible = false;
+                btnGuardarCurso.Visible = false;
+
+                btnBuscarProfesor.Visible = false;
+
                 Listar();
             }
             catch (Exception)
@@ -267,6 +294,30 @@ namespace SGCalificaciones.Vista.Gestiones
                 _objCurso.Eliminar(Convert.ToInt32(id_cursoTextBox.Text));
                 Listar();
             }
+        }
+        private void ListarPlantel(string pBuscar)
+        {
+            plantel_EducativoBindingSource.DataSource = _objPlantel.Listar(pBuscar);
+        }
+        private void panelBuscarProfesor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            nro_carnetTextBox.Text = nro_carnetLabel2.Text;
+            panelBuscarProfesor.Visible = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            panelBuscarProfesor.Visible = false;
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ListarPlantel(txtBuscar.Text);
         }
     }
 }
