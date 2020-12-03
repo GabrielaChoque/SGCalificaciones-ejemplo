@@ -40,5 +40,6 @@ namespace SGCalificaciones.Controlador
         {
             return _db.Estudiante.Where(x => x.nro_carnet == pCuenta).ToList();
         }
+
     }
 }

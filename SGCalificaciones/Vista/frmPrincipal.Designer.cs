@@ -150,6 +150,7 @@ namespace SGCalificaciones.Vista
             this.btnCalificaiones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalificaiones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCalificaiones.UseVisualStyleBackColor = false;
+            this.btnCalificaiones.Click += new System.EventHandler(this.btnCalificaiones_Click);
             // 
             // btnCriterios
             // 
