@@ -52,6 +52,7 @@ namespace SGCalificaciones.Vista
             this.label1 = new System.Windows.Forms.Label();
             this.PtbxMenuSidebar = new System.Windows.Forms.PictureBox();
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.PannelMenu.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.MenuTop.SuspendLayout();
@@ -391,6 +392,14 @@ namespace SGCalificaciones.Vista
             this.MoverDashboard.TargetControl = this.MenuTop;
             this.MoverDashboard.Vertical = true;
             // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,5 +450,6 @@ namespace SGCalificaciones.Vista
         private FontAwesome.Sharp.IconButton btnCriterios;
         private FontAwesome.Sharp.IconButton btnMisEstudiantes;
         private FontAwesome.Sharp.IconButton btnCalificaiones;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
     }
 }
