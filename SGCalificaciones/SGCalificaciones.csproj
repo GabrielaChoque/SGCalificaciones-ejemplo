@@ -87,6 +87,11 @@
     <Compile Include="Controlador\EstudianteController.cs" />
     <Compile Include="Controlador\MateriaController.cs" />
     <Compile Include="Controlador\PlantelController.cs" />
+    <Compile Include="DataSetCalificaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCalificaciones.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\BdCalificaciones.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,6 +226,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportCalificaciones.rdlc" />
     <EmbeddedResource Include="Vista\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +261,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BdCalificaciones.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DataSetCalificaciones.xsc">
+      <DependentUpon>DataSetCalificaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCalificaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCalificaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCalificaciones.xss">
+      <DependentUpon>DataSetCalificaciones.xsd</DependentUpon>
+    </None>
     <None Include="Data\BdCalificaciones.edmx.diagram">
       <DependentUpon>BdCalificaciones.edmx</DependentUpon>
     </None>

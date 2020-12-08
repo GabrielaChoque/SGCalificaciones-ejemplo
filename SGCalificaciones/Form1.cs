@@ -19,7 +19,10 @@ namespace SGCalificaciones
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DataSetCalificaciones.Calificaciones' table. You can move, or remove it, as needed.
+            this.CalificacionesTableAdapter.Fill(this.DataSetCalificaciones.Calificaciones);
 
+            this.reportViewer1.RefreshReport();
         }
 
         private void PrintDialog1_HelpRequest(object sender, EventArgs e)
