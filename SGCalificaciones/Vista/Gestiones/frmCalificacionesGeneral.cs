@@ -39,5 +39,10 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             this.Close();
         }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

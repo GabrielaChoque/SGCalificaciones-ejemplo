@@ -45,10 +45,15 @@ namespace SGCalificaciones.Vista.Gestiones
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDialog2 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox2
@@ -68,10 +73,10 @@ namespace SGCalificaciones.Vista.Gestiones
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Regatto", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(344, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 47);
+            this.label1.Size = new System.Drawing.Size(258, 39);
             this.label1.TabIndex = 17;
             this.label1.Text = "ESTUDIANTES";
             // 
@@ -186,6 +191,19 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDialog2
+            // 
+            this.printDialog2.UseEXDialog = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmCalificacionesGeneral
             // 
@@ -207,6 +225,7 @@ namespace SGCalificaciones.Vista.Gestiones
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +248,9 @@ namespace SGCalificaciones.Vista.Gestiones
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintDialog printDialog2;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
