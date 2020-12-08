@@ -75,77 +75,48 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnNuevoBim_Click(object sender, EventArgs e)
         {
-            bimestreBindingSource.AddNew();
-            VisibilizarBotones(btnGuardarBim, btnCancelarBim, btnNuevoBim,btnEliminarBim, true);
-            id_bimestreTextBox.Text = Convert.ToString(bimestreDataGridView.Rows.Count);
-            bimestreTextBox.Text = "";
-
             
-            _EsNuevo = true;
         }
 
         private void btnCancelarBim_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarBim, btnCancelarBim, btnNuevoBim, btnEliminarBim, false);
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarBim, btnCancelarBim, btnNuevoBim, btnEliminarBim, true);
-            _EsNuevo = false;
+            
         }
 
         private void btnNuevoCurso_Click(object sender, EventArgs e)
         {
-            cursoBindingSource.AddNew();
-            VisibilizarBotones(btnGuardarCurso, btnCancelarCurso,btnNuevoCurso, btnEliminarCurso,true);
-            btnBuscarProfesor.Enabled = true;
-            _EsNuevo = true;
-            id_cursoTextBox.Text = Convert.ToString(cursoDataGridView.Rows.Count);
-            nom_cursoTextBox.Text = "";
-            paraleloTextBox.Text = "";
-            nro_carnetTextBox.Text = "";
+            
         }
 
         private void btnNuevoMat_Click(object sender, EventArgs e)
         {
-            materiaBindingSource.AddNew();
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat,btnEliminarMat, true);
-
-            id_materiaTextBox.Text = Convert.ToString(materiaDataGridView.Rows.Count);
-            nombre_materiaTextBox.Text = "";
-
-            _EsNuevo = true;
+            
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, true);
-            _EsNuevo = false;
+            
         }
 
         private void btnCancelarMat_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat,btnNuevoMat, btnEliminarMat, false);
+           
         }
 
         private void btnCancelarCurso_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarCurso, btnCancelarCurso, btnNuevoCurso, btnEliminarCurso, false);
-            btnBuscarProfesor.Visible = false;
+         
         }
 
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
             //VisibilizarBotones(btnGuardarCurso, btnCancelarCurso, btnNuevoCurso, btnEliminarCurso, true);
-            btnNuevoCurso.Visible = false;
-            btnEliminarCurso.Visible = false;
-
-            btnCancelarCurso.Visible = true;
-            btnGuardarCurso.Visible = true;
-
-            btnBuscarProfesor.Visible = true;
-            _EsNuevo = false;
+         
         }
         private Bimestre CargarDatosBimestre()
         {
@@ -171,7 +142,7 @@ namespace SGCalificaciones.Vista.Gestiones
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                VisibilizarBotones(btnGuardarBim, btnCancelarBim, btnNuevoBim, btnEliminarBim, false);
+               
                 Listar();
             }
             catch (Exception)
@@ -213,8 +184,7 @@ namespace SGCalificaciones.Vista.Gestiones
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
-                Listar();
+                                Listar();
             }
             catch (Exception)
             {
@@ -266,13 +236,7 @@ namespace SGCalificaciones.Vista.Gestiones
                 }
                 //VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
 
-                btnNuevoCurso.Visible = true;
-                btnEliminarCurso.Visible = true;
-
-                btnCancelarCurso.Visible = false;
-                btnGuardarCurso.Visible = false;
-
-                btnBuscarProfesor.Visible = false;
+               
 
                 Listar();
             }
