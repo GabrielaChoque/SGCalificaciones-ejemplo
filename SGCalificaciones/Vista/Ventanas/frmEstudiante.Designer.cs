@@ -47,10 +47,11 @@ namespace SGCalificaciones.Vista.Ventanas
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.nro_carnetTextBox = new System.Windows.Forms.TextBox();
             this.lblIdCurso = new System.Windows.Forms.Label();
+            this.cmbCursos = new System.Windows.Forms.ComboBox();
+            this.id_cursoLabel2 = new System.Windows.Forms.Label();
             this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bdCalificacionesEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cmbCursos = new System.Windows.Forms.ComboBox();
             ap_maternoLabel = new System.Windows.Forms.Label();
             ap_paternoLabel = new System.Windows.Forms.Label();
             celularLabel = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@ namespace SGCalificaciones.Vista.Ventanas
             // ap_maternoLabel
             // 
             ap_maternoLabel.AutoSize = true;
-            ap_maternoLabel.Location = new System.Drawing.Point(61, 130);
+            ap_maternoLabel.Location = new System.Drawing.Point(61, 157);
             ap_maternoLabel.Name = "ap_maternoLabel";
             ap_maternoLabel.Size = new System.Drawing.Size(119, 13);
             ap_maternoLabel.TabIndex = 40;
@@ -75,7 +76,7 @@ namespace SGCalificaciones.Vista.Ventanas
             // ap_paternoLabel
             // 
             ap_paternoLabel.AutoSize = true;
-            ap_paternoLabel.Location = new System.Drawing.Point(61, 156);
+            ap_paternoLabel.Location = new System.Drawing.Point(61, 130);
             ap_paternoLabel.Name = "ap_paternoLabel";
             ap_paternoLabel.Size = new System.Drawing.Size(117, 13);
             ap_paternoLabel.TabIndex = 42;
@@ -181,18 +182,18 @@ namespace SGCalificaciones.Vista.Ventanas
             // ap_maternoTextBox
             // 
             this.ap_maternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "ap_materno", true));
-            this.ap_maternoTextBox.Location = new System.Drawing.Point(188, 127);
+            this.ap_maternoTextBox.Location = new System.Drawing.Point(188, 154);
             this.ap_maternoTextBox.Name = "ap_maternoTextBox";
             this.ap_maternoTextBox.Size = new System.Drawing.Size(163, 20);
-            this.ap_maternoTextBox.TabIndex = 2;
+            this.ap_maternoTextBox.TabIndex = 3;
             // 
             // ap_paternoTextBox
             // 
             this.ap_paternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "ap_paterno", true));
-            this.ap_paternoTextBox.Location = new System.Drawing.Point(188, 153);
+            this.ap_paternoTextBox.Location = new System.Drawing.Point(188, 127);
             this.ap_paternoTextBox.Name = "ap_paternoTextBox";
             this.ap_paternoTextBox.Size = new System.Drawing.Size(163, 20);
-            this.ap_paternoTextBox.TabIndex = 3;
+            this.ap_paternoTextBox.TabIndex = 2;
             // 
             // celularTextBox
             // 
@@ -240,6 +241,24 @@ namespace SGCalificaciones.Vista.Ventanas
             this.lblIdCurso.TabIndex = 53;
             this.lblIdCurso.Text = "label2";
             // 
+            // cmbCursos
+            // 
+            this.cmbCursos.FormattingEnabled = true;
+            this.cmbCursos.Location = new System.Drawing.Point(188, 234);
+            this.cmbCursos.Name = "cmbCursos";
+            this.cmbCursos.Size = new System.Drawing.Size(163, 21);
+            this.cmbCursos.TabIndex = 6;
+            this.cmbCursos.SelectedIndexChanged += new System.EventHandler(this.id_cursoComboBox_SelectedIndexChanged);
+            // 
+            // id_cursoLabel2
+            // 
+            this.id_cursoLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "id_curso", true));
+            this.id_cursoLabel2.Location = new System.Drawing.Point(38, 276);
+            this.id_cursoLabel2.Name = "id_cursoLabel2";
+            this.id_cursoLabel2.Size = new System.Drawing.Size(100, 23);
+            this.id_cursoLabel2.TabIndex = 55;
+            this.id_cursoLabel2.Text = "label2";
+            // 
             // estudianteBindingSource
             // 
             this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
@@ -252,20 +271,13 @@ namespace SGCalificaciones.Vista.Ventanas
             // 
             this.bdCalificacionesEntitiesBindingSource.DataSource = typeof(SGCalificaciones.Data.BdCalificacionesEntities);
             // 
-            // cmbCursos
-            // 
-            this.cmbCursos.FormattingEnabled = true;
-            this.cmbCursos.Location = new System.Drawing.Point(188, 234);
-            this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(163, 21);
-            this.cmbCursos.TabIndex = 54;
-            // 
             // frmEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(431, 375);
+            this.Controls.Add(this.id_cursoLabel2);
             this.Controls.Add(this.cmbCursos);
             this.Controls.Add(this.lblIdCurso);
             this.Controls.Add(ap_maternoLabel);
@@ -313,5 +325,6 @@ namespace SGCalificaciones.Vista.Ventanas
         private System.Windows.Forms.BindingSource bdCalificacionesEntitiesBindingSource;
         private System.Windows.Forms.Label lblIdCurso;
         private System.Windows.Forms.ComboBox cmbCursos;
+        private System.Windows.Forms.Label id_cursoLabel2;
     }
 }

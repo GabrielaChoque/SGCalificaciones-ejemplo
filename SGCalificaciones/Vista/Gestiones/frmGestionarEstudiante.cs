@@ -67,5 +67,30 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             this.Close();
         }
+
+        private void estudianteDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.estudianteDataGridView.Columns[e.ColumnIndex].Name == "NOTAS" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.estudianteDataGridView.Rows[e.RowIndex].Cells["NOTAS"] as DataGridViewButtonCell;
+                Icon icoNotas = new Icon(Environment.CurrentDirectory + @"\\notas.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoNotas, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.estudianteDataGridView.Rows[e.RowIndex].Height = icoNotas.Height + 8;
+                this.estudianteDataGridView.Columns[e.ColumnIndex].Width = icoNotas.Width + 8;
+
+                e.Handled = true;
+            }
+        }
+
+        private void estudianteDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.estudianteDataGridView.Columns[e.ColumnIndex].Name == "NOTAS")
+            {
+                MessageBox.Show(nro_carnetLabel1.Text);
+            }
+        }
     }
 }

@@ -15,6 +15,8 @@ namespace SGCalificaciones.Vista.Ventanas
     public partial class frmEstudiante : Form
     {
         EstudianteController _objEstudiante = new EstudianteController();
+        CursoController _objCurso = new CursoController();
+
         private string _carnet;
         private bool _esNuevo;
         public frmEstudiante()
@@ -40,6 +42,7 @@ namespace SGCalificaciones.Vista.Ventanas
             else
             {
                 estudianteBindingSource.DataSource = _objEstudiante.BuscarPorPK(Convert.ToInt32(_carnet));
+                cmbCursos.SelectedIndex = Convert.ToInt32(id_cursoLabel2.Text)-1;
                 label1.Text = "MODIFICAR";
             }
             
@@ -54,10 +57,26 @@ namespace SGCalificaciones.Vista.Ventanas
                         id_curso = Curso.id_curso,
                         Cursos = Curso.nom_curso +" '"+ Curso.paralelo + "'"
                     };
+            
+            cmbCursos.ValueMember = "id_curso";
+            cmbCursos.DisplayMember = "Cursos";
+            cmbCursos.DataSource = r.ToList();
+        }
+        private void cargarCursoUnico()
+        {
+            BdCalificacionesEntities _entity = new BdCalificacionesEntities();
+            var r = from Curso in _entity.Curso
+                    where Curso.id_curso == Convert.ToInt32(id_cursoLabel2.Text)
+                    select new
+                    {
+                        id_curso = Curso.id_curso,
+                        Cursos = Curso.nom_curso + " '" + Curso.paralelo + "'"
+                    };
 
             cmbCursos.ValueMember = "id_curso";
             cmbCursos.DisplayMember = "Cursos";
             cmbCursos.DataSource = r.ToList();
+            
         }
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
@@ -95,7 +114,7 @@ namespace SGCalificaciones.Vista.Ventanas
         private Estudiante CargarDatos()
         {
             var reg = (Estudiante)estudianteBindingSource.Current;
-            //reg.FechaNac = DateTime.Now;
+            reg.id_curso=Convert.ToInt32(lblIdCurso.Text);
             return reg;
         }
 

@@ -132,7 +132,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private void btnCancelarCurso_Click(object sender, EventArgs e)
         {
             VisibilizarBotones(btnGuardarCurso, btnCancelarCurso, btnNuevoCurso, btnEliminarCurso, false);
-            btnBuscarProfesor.Enabled = false;
+            btnBuscarProfesor.Visible = false;
         }
 
         private void btnEditarCurso_Click(object sender, EventArgs e)
@@ -235,17 +235,13 @@ namespace SGCalificaciones.Vista.Gestiones
         private void btnBuscarProfesor_Click(object sender, EventArgs e)
         {
             panelBuscarProfesor.Visible = true;
-            
-            //plantel_EducativoBindingSource.DataSource = _objPlantel.Listar("");
             txtBuscar.Focus();
-            //frmBuscarProfesor AbrirfrmBP = new frmBuscarProfesor();
-            //AbrirfrmBP.ShowDialog();
         }
 
         private Curso CargarDatosCurso()
         {
             var reg = (Curso)cursoBindingSource.Current;
-            reg.nro_carnet = Convert.ToInt32(nro_carnetTextBox.Text);
+            reg.nro_carnet = Convert.ToInt32(nro_carnetTextBox.Text)-1;
             return reg;
         }
 

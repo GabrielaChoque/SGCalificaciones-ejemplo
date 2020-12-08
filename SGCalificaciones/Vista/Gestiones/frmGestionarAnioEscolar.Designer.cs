@@ -40,15 +40,7 @@ namespace SGCalificaciones.Vista.Gestiones
             System.Windows.Forms.Label nombre_materiaLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.cursoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bimestreDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnEliminarBim = new FontAwesome.Sharp.IconButton();
@@ -76,11 +68,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnEliminarMat = new FontAwesome.Sharp.IconButton();
             this.materiaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.id_materiaTextBox = new System.Windows.Forms.TextBox();
             this.nombre_materiaTextBox = new System.Windows.Forms.TextBox();
@@ -95,6 +82,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panelBuscarProfesor = new System.Windows.Forms.Panel();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.plantel_EducativoDataGridView = new System.Windows.Forms.DataGridView();
+            this.nro_carnetLabel2 = new System.Windows.Forms.Label();
+            this.btnAceptar = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,11 +98,19 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nro_carnetLabel2 = new System.Windows.Forms.Label();
-            this.btnAceptar = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.bimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             bimestreLabel = new System.Windows.Forms.Label();
             id_bimestreLabel = new System.Windows.Forms.Label();
             id_cursoLabel = new System.Windows.Forms.Label();
@@ -120,9 +120,7 @@ namespace SGCalificaciones.Vista.Gestiones
             id_materiaLabel = new System.Windows.Forms.Label();
             nombre_materiaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -130,13 +128,15 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materiaDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panelBuscarProfesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bimestreLabel
@@ -255,34 +255,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.cursoDataGridView.Size = new System.Drawing.Size(387, 220);
             this.cursoDataGridView.TabIndex = 12;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_curso";
-            this.dataGridViewTextBoxColumn4.HeaderText = "id_curso";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "nom_curso";
-            this.dataGridViewTextBoxColumn5.HeaderText = "nom_curso";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "paralelo";
-            this.dataGridViewTextBoxColumn6.HeaderText = "paralelo";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "nro_carnet";
-            this.dataGridViewTextBoxColumn7.HeaderText = "nro_carnet";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataSource = typeof(SGCalificaciones.Data.Curso);
-            // 
             // bimestreDataGridView
             // 
             this.bimestreDataGridView.AutoGenerateColumns = false;
@@ -298,24 +270,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.bimestreDataGridView.RowHeadersVisible = false;
             this.bimestreDataGridView.Size = new System.Drawing.Size(330, 220);
             this.bimestreDataGridView.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_bimestre";
-            this.dataGridViewTextBoxColumn1.FillWeight = 50.76142F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_bimestre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "bimestre";
-            this.dataGridViewTextBoxColumn3.FillWeight = 149.2386F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "bimestre";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // bimestreBindingSource
-            // 
-            this.bimestreBindingSource.DataSource = typeof(SGCalificaciones.Data.Bimestre);
             // 
             // tabControl1
             // 
@@ -761,38 +715,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.materiaDataGridView.Size = new System.Drawing.Size(377, 220);
             this.materiaDataGridView.TabIndex = 16;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_materia";
-            this.dataGridViewTextBoxColumn2.FillWeight = 50.76142F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "id_materia";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_materia";
-            this.dataGridViewTextBoxColumn8.FillWeight = 149.2386F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "nombre_materia";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Materia_Curso";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Materia_Curso";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Calificaciones";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Calificaciones";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // materiaBindingSource
-            // 
-            this.materiaBindingSource.DataSource = typeof(SGCalificaciones.Data.Materia);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SteelBlue;
@@ -1015,6 +937,68 @@ namespace SGCalificaciones.Vista.Gestiones
             this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(467, 163);
             this.plantel_EducativoDataGridView.TabIndex = 18;
             // 
+            // nro_carnetLabel2
+            // 
+            this.nro_carnetLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
+            this.nro_carnetLabel2.Location = new System.Drawing.Point(413, 199);
+            this.nro_carnetLabel2.Name = "nro_carnetLabel2";
+            this.nro_carnetLabel2.Size = new System.Drawing.Size(100, 23);
+            this.nro_carnetLabel2.TabIndex = 19;
+            this.nro_carnetLabel2.Text = "label5";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnAceptar.IconColor = System.Drawing.Color.White;
+            this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAceptar.IconSize = 40;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(96, 297);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(139, 45);
+            this.btnAceptar.TabIndex = 18;
+            this.btnAceptar.Text = "ACEPTAR";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(27, 77);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(39, 32);
+            this.iconPictureBox1.TabIndex = 16;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(72, 77);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(422, 26);
+            this.txtBuscar.TabIndex = 15;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(67, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(395, 27);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "PROFESORES DE LA UNIDAD EDUCATIVA";
+            // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "nro_carnet";
@@ -1089,67 +1073,83 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
-            // nro_carnetLabel2
+            // bimestreBindingSource
             // 
-            this.nro_carnetLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
-            this.nro_carnetLabel2.Location = new System.Drawing.Point(413, 199);
-            this.nro_carnetLabel2.Name = "nro_carnetLabel2";
-            this.nro_carnetLabel2.Size = new System.Drawing.Size(100, 23);
-            this.nro_carnetLabel2.TabIndex = 19;
-            this.nro_carnetLabel2.Text = "label5";
+            this.bimestreBindingSource.DataSource = typeof(SGCalificaciones.Data.Bimestre);
             // 
-            // btnAceptar
+            // dataGridViewTextBoxColumn1
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnAceptar.IconColor = System.Drawing.Color.White;
-            this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAceptar.IconSize = 40;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(96, 297);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(139, 45);
-            this.btnAceptar.TabIndex = 18;
-            this.btnAceptar.Text = "ACEPTAR";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_bimestre";
+            this.dataGridViewTextBoxColumn1.FillWeight = 50.76142F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "id_bimestre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // iconPictureBox1
+            // dataGridViewTextBoxColumn3
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.SteelBlue;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(27, 77);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(39, 32);
-            this.iconPictureBox1.TabIndex = 16;
-            this.iconPictureBox1.TabStop = false;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "bimestre";
+            this.dataGridViewTextBoxColumn3.FillWeight = 149.2386F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "bimestre";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // txtBuscar
+            // cursoBindingSource
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(72, 77);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(422, 26);
-            this.txtBuscar.TabIndex = 15;
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.cursoBindingSource.DataSource = typeof(SGCalificaciones.Data.Curso);
             // 
-            // label4
+            // dataGridViewTextBoxColumn4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(395, 27);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "PROFESORES DE LA UNIDAD EDUCATIVA";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_curso";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id_curso";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "nom_curso";
+            this.dataGridViewTextBoxColumn5.HeaderText = "nom_curso";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "paralelo";
+            this.dataGridViewTextBoxColumn6.HeaderText = "paralelo";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "nro_carnet";
+            this.dataGridViewTextBoxColumn7.HeaderText = "nro_carnet";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_materia";
+            this.dataGridViewTextBoxColumn2.FillWeight = 50.76142F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "id_materia";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_materia";
+            this.dataGridViewTextBoxColumn8.FillWeight = 149.2386F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "nombre_materia";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Materia_Curso";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Materia_Curso";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Calificaciones";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Calificaciones";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // materiaBindingSource
+            // 
+            this.materiaBindingSource.DataSource = typeof(SGCalificaciones.Data.Materia);
             // 
             // frmGestionarAnioEscolar
             // 
@@ -1166,9 +1166,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Text = "frmGestionarAnioEscolar";
             this.Load += new System.EventHandler(this.frmGestionarAnioEscolar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1178,15 +1176,17 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materiaDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.panelBuscarProfesor.ResumeLayout(false);
             this.panelBuscarProfesor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
