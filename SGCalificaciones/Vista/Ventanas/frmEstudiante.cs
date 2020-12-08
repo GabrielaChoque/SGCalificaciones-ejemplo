@@ -14,22 +14,24 @@ namespace SGCalificaciones.Vista.Ventanas
 {
     public partial class frmEstudiante : Form
     {
-        EstudianteController _objUsuario = new EstudianteController();
-        private string _cuenta;
+        EstudianteController _objEstudiante = new EstudianteController();
+        private string _carnet;
         private bool _esNuevo;
         public frmEstudiante()
         {
             _esNuevo = true;
             InitializeComponent();
         }
-        public frmEstudiante(string pCuenta)
+        public frmEstudiante(string pCarnet)
         {
-            _cuenta = pCuenta;
+            _carnet = pCarnet;
             _esNuevo = false;
             InitializeComponent();
         }
+
         private void frmEstudiante_Load(object sender, EventArgs e)
         {
+            cargarCursos();
             if (_esNuevo)
             {
                 estudianteBindingSource.AddNew();
@@ -37,11 +39,26 @@ namespace SGCalificaciones.Vista.Ventanas
             }
             else
             {
-                estudianteBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                estudianteBindingSource.DataSource = _objEstudiante.BuscarPorPK(Convert.ToInt32(_carnet));
                 label1.Text = "MODIFICAR";
             }
+            
         }
 
+        private void cargarCursos()
+        {
+            BdCalificacionesEntities _entity = new BdCalificacionesEntities();
+            var r = from Curso in _entity.Curso
+                    select new
+                    {
+                        id_curso = Curso.id_curso,
+                        Cursos = Curso.nom_curso +" '"+ Curso.paralelo + "'"
+                    };
+
+            cmbCursos.ValueMember = "id_curso";
+            cmbCursos.DisplayMember = "Cursos";
+            cmbCursos.DataSource = r.ToList();
+        }
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             try
@@ -49,7 +66,8 @@ namespace SGCalificaciones.Vista.Ventanas
                 var reg = CargarDatos();
                 if (_esNuevo)
                 {
-                    if (_objUsuario.Insertar(reg))
+                    reg.id_curso = Convert.ToInt32(lblIdCurso.Text);
+                    if (_objEstudiante.Insertar(reg))
                     {
                         MessageBox.Show("REGISTRO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
@@ -60,7 +78,7 @@ namespace SGCalificaciones.Vista.Ventanas
                 }
                 else
                 {
-                    if (_objUsuario.Modificar(reg))
+                    if (_objEstudiante.Modificar(reg))
                     {
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
@@ -86,5 +104,29 @@ namespace SGCalificaciones.Vista.Ventanas
             Close();
         }
 
-     }
+        private void nro_carnetTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void id_cursoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblIdCurso.Text = Convert.ToString(cmbCursos.SelectedValue);
+        }
+    }
 }

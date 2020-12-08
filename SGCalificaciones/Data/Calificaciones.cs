@@ -19,9 +19,11 @@ namespace SGCalificaciones.Data
         public Nullable<int> nro_carnet { get; set; }
         public Nullable<int> id_criterio { get; set; }
         public Nullable<int> id_materia { get; set; }
+        public Nullable<int> id_bimestre { get; set; }
     
         public virtual Criterio Criterio { get; set; }
         public virtual Materia Materia { get; set; }
         public virtual Estudiante Estudiante { get; set; }
+        public virtual Bimestre Bimestre { get; set; }
     }
 }

@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0dd8a1237e4445fea253af92fe8db827" Name="Diagram1">
-        <EntityTypeShape EntityType="BdCalificacionesModel.Bimestre" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdCalificacionesModel.Bimestre" Width="1.5" PointX="0.5" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Criterio" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Curso" Width="1.5" PointX="4" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Materia" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
@@ -16,13 +16,14 @@
         <AssociationConnector Association="BdCalificacionesModel.FK_Materia_Curso_Curso" ManuallyRouted="false" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Materia_Curso_Materia" ManuallyRouted="false" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Criterio_Bimestre" />
-        <EntityTypeShape EntityType="BdCalificacionesModel.Calificaciones" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="BdCalificacionesModel.Calificaciones" Width="1.5" PointX="3" PointY="6.75" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Criterio" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Materia" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Criterio_Plantel_Educativo" />
         <EntityTypeShape EntityType="BdCalificacionesModel.Estudiante" Width="1.5" PointX="6.875" PointY="7.75" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Estudiante" />
         <AssociationConnector Association="BdCalificacionesModel.FK_Estudiante_Curso" />
+        <AssociationConnector Association="BdCalificacionesModel.FK_Calificaciones_Bimestre" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

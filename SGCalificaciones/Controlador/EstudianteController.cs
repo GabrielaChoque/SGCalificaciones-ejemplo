@@ -14,11 +14,19 @@ namespace SGCalificaciones.Controlador
         public List<Estudiante> Listar(string pBuscar)
         {
             return _db.Estudiante.Where(x => x.nombre.Contains(pBuscar)).ToList();
+
         }
         public List<Estudiante> ListarMisEstudiantes(string pBuscar, int pIdCurso)
         {
             return _db.Estudiante.Where(x => x.nombre.Contains(pBuscar) && x.id_curso== pIdCurso).ToList();
         }
+      /*  public List<String> ListarNombresEstudiantes(string pBuscar, int pIdCurso)
+        {
+            var posts = _db.Estudiante
+                                   .Where(x => x.nombre.Contains(pBuscar) && x.id_curso == pIdCurso)
+                                   .Concat(p => new {p.nombre+" "+p.ap_paterno + " " + p p.ap_materno });
+            return posts;
+        }*/
         public bool Insertar(Data.Estudiante reg)
         {
             _db.Estudiante.Add(reg);
@@ -39,6 +47,12 @@ namespace SGCalificaciones.Controlador
         internal List<Estudiante> BuscarPorPK(int pCuenta)
         {
             return _db.Estudiante.Where(x => x.nro_carnet == pCuenta).ToList();
+        }
+
+        public int carnetEst(string pNombre)
+        {
+            var reg = _db.Estudiante.Where(x => x.nombre == pNombre).FirstOrDefault();
+            return reg.nro_carnet;
         }
 
     }

@@ -18,6 +18,7 @@ namespace SGCalificaciones.Data
         public Bimestre()
         {
             this.Criterio = new HashSet<Criterio>();
+            this.Calificaciones = new HashSet<Calificaciones>();
         }
     
         public int id_bimestre { get; set; }
@@ -25,5 +26,7 @@ namespace SGCalificaciones.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Criterio> Criterio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Calificaciones> Calificaciones { get; set; }
     }
 }

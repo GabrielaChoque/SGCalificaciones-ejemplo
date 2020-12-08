@@ -32,7 +32,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.components = new System.ComponentModel.Container();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCalificaciones = new System.Windows.Forms.DataGridView();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nrocarnetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,15 +44,13 @@ namespace SGCalificaciones.Vista.Gestiones
             this.apmaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.celularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calificacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalificaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox2
@@ -75,11 +77,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.label1.TabIndex = 17;
             this.label1.Text = "MIS ESTUDIANTES";
             // 
-            // dataGridView1
+            // dgvCalificaciones
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCalificaciones.AutoGenerateColumns = false;
+            this.dgvCalificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalificaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nrocarnetDataGridViewTextBoxColumn,
             this.idcursoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
@@ -87,64 +89,14 @@ namespace SGCalificaciones.Vista.Gestiones
             this.apmaternoDataGridViewTextBoxColumn,
             this.celularDataGridViewTextBoxColumn,
             this.direccionDataGridViewTextBoxColumn,
-            this.calificacionesDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.estudianteBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(123, 220);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(846, 274);
-            this.dataGridView1.TabIndex = 19;
-            // 
-            // nrocarnetDataGridViewTextBoxColumn
-            // 
-            this.nrocarnetDataGridViewTextBoxColumn.DataPropertyName = "nro_carnet";
-            this.nrocarnetDataGridViewTextBoxColumn.HeaderText = "nro_carnet";
-            this.nrocarnetDataGridViewTextBoxColumn.Name = "nrocarnetDataGridViewTextBoxColumn";
-            // 
-            // idcursoDataGridViewTextBoxColumn
-            // 
-            this.idcursoDataGridViewTextBoxColumn.DataPropertyName = "id_curso";
-            this.idcursoDataGridViewTextBoxColumn.HeaderText = "id_curso";
-            this.idcursoDataGridViewTextBoxColumn.Name = "idcursoDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // appaternoDataGridViewTextBoxColumn
-            // 
-            this.appaternoDataGridViewTextBoxColumn.DataPropertyName = "ap_paterno";
-            this.appaternoDataGridViewTextBoxColumn.HeaderText = "ap_paterno";
-            this.appaternoDataGridViewTextBoxColumn.Name = "appaternoDataGridViewTextBoxColumn";
-            // 
-            // apmaternoDataGridViewTextBoxColumn
-            // 
-            this.apmaternoDataGridViewTextBoxColumn.DataPropertyName = "ap_materno";
-            this.apmaternoDataGridViewTextBoxColumn.HeaderText = "ap_materno";
-            this.apmaternoDataGridViewTextBoxColumn.Name = "apmaternoDataGridViewTextBoxColumn";
-            // 
-            // celularDataGridViewTextBoxColumn
-            // 
-            this.celularDataGridViewTextBoxColumn.DataPropertyName = "celular";
-            this.celularDataGridViewTextBoxColumn.HeaderText = "celular";
-            this.celularDataGridViewTextBoxColumn.Name = "celularDataGridViewTextBoxColumn";
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            // 
-            // calificacionesDataGridViewTextBoxColumn
-            // 
-            this.calificacionesDataGridViewTextBoxColumn.DataPropertyName = "Calificaciones";
-            this.calificacionesDataGridViewTextBoxColumn.HeaderText = "Calificaciones";
-            this.calificacionesDataGridViewTextBoxColumn.Name = "calificacionesDataGridViewTextBoxColumn";
-            // 
-            // estudianteBindingSource
-            // 
-            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
+            this.cursoDataGridViewTextBoxColumn,
+            this.calificacionesDataGridViewTextBoxColumn,
+            this.Nota});
+            this.dgvCalificaciones.DataSource = this.estudianteBindingSource;
+            this.dgvCalificaciones.Location = new System.Drawing.Point(123, 220);
+            this.dgvCalificaciones.Name = "dgvCalificaciones";
+            this.dgvCalificaciones.Size = new System.Drawing.Size(714, 274);
+            this.dgvCalificaciones.TabIndex = 19;
             // 
             // iconPictureBox1
             // 
@@ -186,6 +138,75 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // Nota
+            // 
+            this.Nota.DataPropertyName = "nro_carnet";
+            this.Nota.HeaderText = "Nota ";
+            this.Nota.Name = "Nota";
+            // 
+            // nrocarnetDataGridViewTextBoxColumn
+            // 
+            this.nrocarnetDataGridViewTextBoxColumn.DataPropertyName = "nro_carnet";
+            this.nrocarnetDataGridViewTextBoxColumn.HeaderText = "nro_carnet";
+            this.nrocarnetDataGridViewTextBoxColumn.Name = "nrocarnetDataGridViewTextBoxColumn";
+            // 
+            // idcursoDataGridViewTextBoxColumn
+            // 
+            this.idcursoDataGridViewTextBoxColumn.DataPropertyName = "id_curso";
+            this.idcursoDataGridViewTextBoxColumn.HeaderText = "id_curso";
+            this.idcursoDataGridViewTextBoxColumn.Name = "idcursoDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // appaternoDataGridViewTextBoxColumn
+            // 
+            this.appaternoDataGridViewTextBoxColumn.DataPropertyName = "ap_paterno";
+            this.appaternoDataGridViewTextBoxColumn.HeaderText = "ap_paterno";
+            this.appaternoDataGridViewTextBoxColumn.Name = "appaternoDataGridViewTextBoxColumn";
+            // 
+            // apmaternoDataGridViewTextBoxColumn
+            // 
+            this.apmaternoDataGridViewTextBoxColumn.DataPropertyName = "ap_materno";
+            this.apmaternoDataGridViewTextBoxColumn.HeaderText = "ap_materno";
+            this.apmaternoDataGridViewTextBoxColumn.Name = "apmaternoDataGridViewTextBoxColumn";
+            // 
+            // celularDataGridViewTextBoxColumn
+            // 
+            this.celularDataGridViewTextBoxColumn.DataPropertyName = "celular";
+            this.celularDataGridViewTextBoxColumn.HeaderText = "celular";
+            this.celularDataGridViewTextBoxColumn.Name = "celularDataGridViewTextBoxColumn";
+            this.celularDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cursoDataGridViewTextBoxColumn
+            // 
+            this.cursoDataGridViewTextBoxColumn.DataPropertyName = "Curso";
+            this.cursoDataGridViewTextBoxColumn.HeaderText = "Curso";
+            this.cursoDataGridViewTextBoxColumn.Name = "cursoDataGridViewTextBoxColumn";
+            this.cursoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // calificacionesDataGridViewTextBoxColumn
+            // 
+            this.calificacionesDataGridViewTextBoxColumn.DataPropertyName = "Calificaciones";
+            this.calificacionesDataGridViewTextBoxColumn.HeaderText = "Calificaciones";
+            this.calificacionesDataGridViewTextBoxColumn.Name = "calificacionesDataGridViewTextBoxColumn";
+            this.calificacionesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estudianteBindingSource
+            // 
+            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
             // 
             // frmCalificacionesGeneral
             // 
@@ -196,7 +217,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCalificaciones);
             this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -204,9 +225,9 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Text = "frmCalificacionesGeneral";
             this.Load += new System.EventHandler(this.frmCalificacionesGeneral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalificaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +237,11 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCalificaciones;
+        private System.Windows.Forms.BindingSource estudianteBindingSource;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private FontAwesome.Sharp.IconButton btnImprimir;
         private System.Windows.Forms.DataGridViewTextBoxColumn nrocarnetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
@@ -224,10 +249,8 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn apmaternoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn celularDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn calificacionesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource estudianteBindingSource;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
     }
 }

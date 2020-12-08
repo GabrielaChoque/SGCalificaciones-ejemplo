@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\BimestreController.cs" />
+    <Compile Include="Controlador\CalificacionesController.cs" />
     <Compile Include="Controlador\CriterioController.cs" />
     <Compile Include="Controlador\CursoController.cs" />
     <Compile Include="Controlador\EstudianteController.cs" />
