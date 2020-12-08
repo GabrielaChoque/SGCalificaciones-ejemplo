@@ -49,6 +49,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.calificacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalificaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
@@ -106,7 +107,8 @@ namespace SGCalificaciones.Vista.Gestiones
             this.cursoDataGridViewTextBoxColumn,
             this.calificacionesDataGridViewTextBoxColumn,
             this.NotaFinal,
-            this.Estado});
+            this.Estado,
+            this.Calif});
             this.dgvCalificaciones.DataSource = this.estudianteBindingSource;
             this.dgvCalificaciones.GridColor = System.Drawing.Color.SkyBlue;
             this.dgvCalificaciones.Location = new System.Drawing.Point(125, 214);
@@ -117,6 +119,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dgvCalificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCalificaciones.Size = new System.Drawing.Size(729, 274);
             this.dgvCalificaciones.TabIndex = 19;
+            this.dgvCalificaciones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCalificaciones_CellPainting);
             // 
             // estudianteBindingSource
             // 
@@ -251,6 +254,12 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // Calif
+            // 
+            this.Calif.HeaderText = "VER CALIF";
+            this.Calif.Name = "Calif";
+            this.Calif.ReadOnly = true;
+            // 
             // frmCalificacionesGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +305,6 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn calificacionesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotaFinal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calif;
     }
 }

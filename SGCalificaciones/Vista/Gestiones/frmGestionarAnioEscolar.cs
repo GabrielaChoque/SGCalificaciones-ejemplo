@@ -110,23 +110,18 @@ namespace SGCalificaciones.Vista.Gestiones
         private void btnNuevoMat_Click(object sender, EventArgs e)
         {
             materiaBindingSource.AddNew();
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat,btnEliminarMat, true);
-
-            id_materiaTextBox.Text = Convert.ToString(materiaDataGridView.Rows.Count);
-            nombre_materiaTextBox.Text = "";
-
             _EsNuevo = true;
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, true);
+           
             _EsNuevo = false;
         }
 
         private void btnCancelarMat_Click(object sender, EventArgs e)
         {
-            VisibilizarBotones(btnGuardarMat, btnCancelarMat,btnNuevoMat, btnEliminarMat, false);
+            
         }
 
         private void btnCancelarCurso_Click(object sender, EventArgs e)
@@ -213,7 +208,7 @@ namespace SGCalificaciones.Vista.Gestiones
                         MessageBox.Show("MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                VisibilizarBotones(btnGuardarMat, btnCancelarMat, btnNuevoMat, btnEliminarMat, false);
+                
                 Listar();
             }
             catch (Exception)
@@ -227,7 +222,7 @@ namespace SGCalificaciones.Vista.Gestiones
             DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTA MATERIA?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
-                _objMateria.Eliminar(Convert.ToInt32(id_materiaTextBox.Text));
+                
                 Listar();
             }
         }

@@ -36,11 +36,17 @@ namespace SGCalificaciones.Vista.Gestiones
             System.Windows.Forms.Label nom_cursoLabel;
             System.Windows.Forms.Label nro_carnetLabel;
             System.Windows.Forms.Label paraleloLabel;
-            System.Windows.Forms.Label id_materiaLabel;
-            System.Windows.Forms.Label nombre_materiaLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.cursoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bimestreDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnEliminarBim = new FontAwesome.Sharp.IconButton();
@@ -66,27 +72,18 @@ namespace SGCalificaciones.Vista.Gestiones
             this.label3 = new System.Windows.Forms.Label();
             this.btnEditarCurso = new FontAwesome.Sharp.IconButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnEliminarMat = new FontAwesome.Sharp.IconButton();
             this.materiaDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.id_materiaTextBox = new System.Windows.Forms.TextBox();
-            this.nombre_materiaTextBox = new System.Windows.Forms.TextBox();
-            this.btnCancelarMat = new FontAwesome.Sharp.IconButton();
-            this.btnGuardarMat = new FontAwesome.Sharp.IconButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnEditarMat = new FontAwesome.Sharp.IconButton();
-            this.btnNuevoMat = new FontAwesome.Sharp.IconButton();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTipMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.bdcpanelProfesores = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelBuscarProfesor = new System.Windows.Forms.Panel();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.plantel_EducativoDataGridView = new System.Windows.Forms.DataGridView();
-            this.nro_carnetLabel2 = new System.Windows.Forms.Label();
-            this.btnAceptar = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,29 +95,21 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nro_carnetLabel2 = new System.Windows.Forms.Label();
+            this.btnAceptar = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             bimestreLabel = new System.Windows.Forms.Label();
             id_bimestreLabel = new System.Windows.Forms.Label();
             id_cursoLabel = new System.Windows.Forms.Label();
             nom_cursoLabel = new System.Windows.Forms.Label();
             nro_carnetLabel = new System.Windows.Forms.Label();
             paraleloLabel = new System.Windows.Forms.Label();
-            id_materiaLabel = new System.Windows.Forms.Label();
-            nombre_materiaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -128,15 +117,12 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materiaDataGridView)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panelBuscarProfesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bimestreLabel
@@ -205,35 +191,13 @@ namespace SGCalificaciones.Vista.Gestiones
             paraleloLabel.TabIndex = 12;
             paraleloLabel.Text = "PARALELO:";
             // 
-            // id_materiaLabel
-            // 
-            id_materiaLabel.AutoSize = true;
-            id_materiaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            id_materiaLabel.ForeColor = System.Drawing.Color.White;
-            id_materiaLabel.Location = new System.Drawing.Point(27, 110);
-            id_materiaLabel.Name = "id_materiaLabel";
-            id_materiaLabel.Size = new System.Drawing.Size(145, 24);
-            id_materiaLabel.TabIndex = 20;
-            id_materiaLabel.Text = "COD MATERIA:";
-            // 
-            // nombre_materiaLabel
-            // 
-            nombre_materiaLabel.AutoSize = true;
-            nombre_materiaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            nombre_materiaLabel.ForeColor = System.Drawing.Color.White;
-            nombre_materiaLabel.Location = new System.Drawing.Point(71, 140);
-            nombre_materiaLabel.Name = "nombre_materiaLabel";
-            nombre_materiaLabel.Size = new System.Drawing.Size(99, 24);
-            nombre_materiaLabel.TabIndex = 22;
-            nombre_materiaLabel.Text = "MATERIA:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Regatto", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(252, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(548, 47);
+            this.label1.Size = new System.Drawing.Size(506, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "GESTION DEL AÑO ESCOLAR";
             // 
@@ -255,6 +219,34 @@ namespace SGCalificaciones.Vista.Gestiones
             this.cursoDataGridView.Size = new System.Drawing.Size(387, 220);
             this.cursoDataGridView.TabIndex = 12;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_curso";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id_curso";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "nom_curso";
+            this.dataGridViewTextBoxColumn5.HeaderText = "nom_curso";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "paralelo";
+            this.dataGridViewTextBoxColumn6.HeaderText = "paralelo";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "nro_carnet";
+            this.dataGridViewTextBoxColumn7.HeaderText = "nro_carnet";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(SGCalificaciones.Data.Curso);
+            // 
             // bimestreDataGridView
             // 
             this.bimestreDataGridView.AutoGenerateColumns = false;
@@ -270,6 +262,24 @@ namespace SGCalificaciones.Vista.Gestiones
             this.bimestreDataGridView.RowHeadersVisible = false;
             this.bimestreDataGridView.Size = new System.Drawing.Size(330, 220);
             this.bimestreDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_bimestre";
+            this.dataGridViewTextBoxColumn1.FillWeight = 50.76142F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "id_bimestre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "bimestre";
+            this.dataGridViewTextBoxColumn3.FillWeight = 149.2386F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "bimestre";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // bimestreBindingSource
+            // 
+            this.bimestreBindingSource.DataSource = typeof(SGCalificaciones.Data.Bimestre);
             // 
             // tabControl1
             // 
@@ -414,6 +424,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.bimestreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bimestreBindingSource, "bimestre", true));
             this.bimestreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bimestreTextBox.Location = new System.Drawing.Point(219, 150);
+            this.bimestreTextBox.MaxLength = 6;
             this.bimestreTextBox.Name = "bimestreTextBox";
             this.bimestreTextBox.Size = new System.Drawing.Size(100, 24);
             this.bimestreTextBox.TabIndex = 1;
@@ -424,6 +435,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.id_bimestreTextBox.Enabled = false;
             this.id_bimestreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id_bimestreTextBox.Location = new System.Drawing.Point(219, 120);
+            this.id_bimestreTextBox.MaxLength = 5;
             this.id_bimestreTextBox.Name = "id_bimestreTextBox";
             this.id_bimestreTextBox.Size = new System.Drawing.Size(100, 24);
             this.id_bimestreTextBox.TabIndex = 3;
@@ -598,6 +610,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.id_cursoTextBox.Enabled = false;
             this.id_cursoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.id_cursoTextBox.Location = new System.Drawing.Point(185, 94);
+            this.id_cursoTextBox.MaxLength = 3;
             this.id_cursoTextBox.Name = "id_cursoTextBox";
             this.id_cursoTextBox.Size = new System.Drawing.Size(100, 24);
             this.id_cursoTextBox.TabIndex = 7;
@@ -607,6 +620,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.nom_cursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "nom_curso", true));
             this.nom_cursoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.nom_cursoTextBox.Location = new System.Drawing.Point(185, 122);
+            this.nom_cursoTextBox.MaxLength = 5;
             this.nom_cursoTextBox.Name = "nom_cursoTextBox";
             this.nom_cursoTextBox.Size = new System.Drawing.Size(100, 24);
             this.nom_cursoTextBox.TabIndex = 0;
@@ -625,6 +639,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.paraleloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "paralelo", true));
             this.paraleloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.paraleloTextBox.Location = new System.Drawing.Point(185, 150);
+            this.paraleloTextBox.MaxLength = 3;
             this.paraleloTextBox.Name = "paraleloTextBox";
             this.paraleloTextBox.Size = new System.Drawing.Size(100, 24);
             this.paraleloTextBox.TabIndex = 1;
@@ -665,37 +680,13 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.btnEliminarMat);
             this.tabPage3.Controls.Add(this.materiaDataGridView);
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Controls.Add(this.btnNuevoMat);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(805, 341);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MATERIAS";
-            // 
-            // btnEliminarMat
-            // 
-            this.btnEliminarMat.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarMat.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarMat.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarMat.IconColor = System.Drawing.Color.White;
-            this.btnEliminarMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarMat.IconSize = 40;
-            this.btnEliminarMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarMat.Location = new System.Drawing.Point(203, 266);
-            this.btnEliminarMat.Name = "btnEliminarMat";
-            this.btnEliminarMat.Size = new System.Drawing.Size(141, 54);
-            this.btnEliminarMat.TabIndex = 23;
-            this.btnEliminarMat.Text = "ELIMINAR";
-            this.btnEliminarMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarMat.UseVisualStyleBackColor = false;
-            this.btnEliminarMat.Click += new System.EventHandler(this.btnEliminarMat_Click);
             // 
             // materiaDataGridView
             // 
@@ -712,140 +703,40 @@ namespace SGCalificaciones.Vista.Gestiones
             this.materiaDataGridView.Location = new System.Drawing.Point(19, 22);
             this.materiaDataGridView.Name = "materiaDataGridView";
             this.materiaDataGridView.RowHeadersVisible = false;
-            this.materiaDataGridView.Size = new System.Drawing.Size(377, 220);
+            this.materiaDataGridView.Size = new System.Drawing.Size(761, 293);
             this.materiaDataGridView.TabIndex = 16;
             // 
-            // panel3
+            // dataGridViewTextBoxColumn2
             // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Controls.Add(id_materiaLabel);
-            this.panel3.Controls.Add(this.id_materiaTextBox);
-            this.panel3.Controls.Add(nombre_materiaLabel);
-            this.panel3.Controls.Add(this.nombre_materiaTextBox);
-            this.panel3.Controls.Add(this.btnCancelarMat);
-            this.panel3.Controls.Add(this.btnGuardarMat);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.btnEditarMat);
-            this.panel3.Location = new System.Drawing.Point(408, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(394, 334);
-            this.panel3.TabIndex = 16;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_materia";
+            this.dataGridViewTextBoxColumn2.FillWeight = 50.76142F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "id_materia";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // id_materiaTextBox
+            // dataGridViewTextBoxColumn8
             // 
-            this.id_materiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materiaBindingSource, "id_materia", true));
-            this.id_materiaTextBox.Enabled = false;
-            this.id_materiaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.id_materiaTextBox.Location = new System.Drawing.Point(168, 111);
-            this.id_materiaTextBox.Name = "id_materiaTextBox";
-            this.id_materiaTextBox.Size = new System.Drawing.Size(191, 24);
-            this.id_materiaTextBox.TabIndex = 21;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_materia";
+            this.dataGridViewTextBoxColumn8.FillWeight = 149.2386F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "nombre_materia";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // nombre_materiaTextBox
+            // dataGridViewTextBoxColumn9
             // 
-            this.nombre_materiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materiaBindingSource, "nombre_materia", true));
-            this.nombre_materiaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.nombre_materiaTextBox.Location = new System.Drawing.Point(168, 140);
-            this.nombre_materiaTextBox.Name = "nombre_materiaTextBox";
-            this.nombre_materiaTextBox.Size = new System.Drawing.Size(191, 24);
-            this.nombre_materiaTextBox.TabIndex = 23;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Materia_Curso";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Materia_Curso";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
             // 
-            // btnCancelarMat
+            // dataGridViewTextBoxColumn10
             // 
-            this.btnCancelarMat.BackColor = System.Drawing.Color.Crimson;
-            this.btnCancelarMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarMat.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarMat.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnCancelarMat.IconColor = System.Drawing.Color.White;
-            this.btnCancelarMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelarMat.IconSize = 40;
-            this.btnCancelarMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarMat.Location = new System.Drawing.Point(53, 243);
-            this.btnCancelarMat.Name = "btnCancelarMat";
-            this.btnCancelarMat.Size = new System.Drawing.Size(141, 54);
-            this.btnCancelarMat.TabIndex = 20;
-            this.btnCancelarMat.Text = "CANCELAR";
-            this.btnCancelarMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelarMat.UseVisualStyleBackColor = false;
-            this.btnCancelarMat.Visible = false;
-            this.btnCancelarMat.Click += new System.EventHandler(this.btnCancelarMat_Click);
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Calificaciones";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Calificaciones";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
-            // btnGuardarMat
+            // materiaBindingSource
             // 
-            this.btnGuardarMat.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardarMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarMat.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarMat.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardarMat.IconColor = System.Drawing.Color.White;
-            this.btnGuardarMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardarMat.IconSize = 40;
-            this.btnGuardarMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarMat.Location = new System.Drawing.Point(218, 243);
-            this.btnGuardarMat.Name = "btnGuardarMat";
-            this.btnGuardarMat.Size = new System.Drawing.Size(141, 54);
-            this.btnGuardarMat.TabIndex = 18;
-            this.btnGuardarMat.Text = "GUARDAR";
-            this.btnGuardarMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardarMat.UseVisualStyleBackColor = false;
-            this.btnGuardarMat.Visible = false;
-            this.btnGuardarMat.Click += new System.EventHandler(this.btnGuardarMat_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Rockwell", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(93, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(223, 46);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "MATERIAS";
-            // 
-            // btnEditarMat
-            // 
-            this.btnEditarMat.BackColor = System.Drawing.Color.DarkOrchid;
-            this.btnEditarMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarMat.ForeColor = System.Drawing.Color.White;
-            this.btnEditarMat.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditarMat.IconColor = System.Drawing.Color.White;
-            this.btnEditarMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditarMat.IconSize = 40;
-            this.btnEditarMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarMat.Location = new System.Drawing.Point(53, 243);
-            this.btnEditarMat.Name = "btnEditarMat";
-            this.btnEditarMat.Size = new System.Drawing.Size(141, 54);
-            this.btnEditarMat.TabIndex = 24;
-            this.btnEditarMat.Text = "EDITAR";
-            this.btnEditarMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditarMat.UseVisualStyleBackColor = false;
-            this.btnEditarMat.Click += new System.EventHandler(this.iconButton3_Click);
-            // 
-            // btnNuevoMat
-            // 
-            this.btnNuevoMat.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevoMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoMat.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoMat.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoMat.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnNuevoMat.IconColor = System.Drawing.Color.White;
-            this.btnNuevoMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevoMat.IconSize = 40;
-            this.btnNuevoMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoMat.Location = new System.Drawing.Point(19, 266);
-            this.btnNuevoMat.Name = "btnNuevoMat";
-            this.btnNuevoMat.Size = new System.Drawing.Size(141, 54);
-            this.btnNuevoMat.TabIndex = 19;
-            this.btnNuevoMat.Text = "NUEVO";
-            this.btnNuevoMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoMat.UseVisualStyleBackColor = false;
-            this.btnNuevoMat.Click += new System.EventHandler(this.btnNuevoMat_Click);
+            this.materiaBindingSource.DataSource = typeof(SGCalificaciones.Data.Materia);
             // 
             // toolTipMensaje
             // 
@@ -885,9 +776,9 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panelBuscarProfesor.Controls.Add(this.iconPictureBox1);
             this.panelBuscarProfesor.Controls.Add(this.txtBuscar);
             this.panelBuscarProfesor.Controls.Add(this.label4);
-            this.panelBuscarProfesor.Location = new System.Drawing.Point(231, 59);
+            this.panelBuscarProfesor.Location = new System.Drawing.Point(333, 59);
             this.panelBuscarProfesor.Name = "panelBuscarProfesor";
-            this.panelBuscarProfesor.Size = new System.Drawing.Size(521, 357);
+            this.panelBuscarProfesor.Size = new System.Drawing.Size(511, 357);
             this.panelBuscarProfesor.TabIndex = 16;
             this.panelBuscarProfesor.Visible = false;
             this.panelBuscarProfesor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBuscarProfesor_Paint);
@@ -936,68 +827,6 @@ namespace SGCalificaciones.Vista.Gestiones
             this.plantel_EducativoDataGridView.RowHeadersVisible = false;
             this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(467, 163);
             this.plantel_EducativoDataGridView.TabIndex = 18;
-            // 
-            // nro_carnetLabel2
-            // 
-            this.nro_carnetLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
-            this.nro_carnetLabel2.Location = new System.Drawing.Point(413, 199);
-            this.nro_carnetLabel2.Name = "nro_carnetLabel2";
-            this.nro_carnetLabel2.Size = new System.Drawing.Size(100, 23);
-            this.nro_carnetLabel2.TabIndex = 19;
-            this.nro_carnetLabel2.Text = "label5";
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnAceptar.IconColor = System.Drawing.Color.White;
-            this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAceptar.IconSize = 40;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(96, 297);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(139, 45);
-            this.btnAceptar.TabIndex = 18;
-            this.btnAceptar.Text = "ACEPTAR";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.SteelBlue;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(27, 77);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(39, 32);
-            this.iconPictureBox1.TabIndex = 16;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(72, 77);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(422, 26);
-            this.txtBuscar.TabIndex = 15;
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(395, 27);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "PROFESORES DE LA UNIDAD EDUCATIVA";
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -1073,83 +902,67 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
-            // bimestreBindingSource
+            // nro_carnetLabel2
             // 
-            this.bimestreBindingSource.DataSource = typeof(SGCalificaciones.Data.Bimestre);
+            this.nro_carnetLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.plantel_EducativoBindingSource, "nro_carnet", true));
+            this.nro_carnetLabel2.Location = new System.Drawing.Point(413, 199);
+            this.nro_carnetLabel2.Name = "nro_carnetLabel2";
+            this.nro_carnetLabel2.Size = new System.Drawing.Size(100, 23);
+            this.nro_carnetLabel2.TabIndex = 19;
+            this.nro_carnetLabel2.Text = "label5";
             // 
-            // dataGridViewTextBoxColumn1
+            // btnAceptar
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_bimestre";
-            this.dataGridViewTextBoxColumn1.FillWeight = 50.76142F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_bimestre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.btnAceptar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnAceptar.IconColor = System.Drawing.Color.White;
+            this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAceptar.IconSize = 40;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(96, 297);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(139, 45);
+            this.btnAceptar.TabIndex = 18;
+            this.btnAceptar.Text = "ACEPTAR";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // dataGridViewTextBoxColumn3
+            // iconPictureBox1
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "bimestre";
-            this.dataGridViewTextBoxColumn3.FillWeight = 149.2386F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "bimestre";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(27, 77);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(39, 32);
+            this.iconPictureBox1.TabIndex = 16;
+            this.iconPictureBox1.TabStop = false;
             // 
-            // cursoBindingSource
+            // txtBuscar
             // 
-            this.cursoBindingSource.DataSource = typeof(SGCalificaciones.Data.Curso);
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(72, 77);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(422, 26);
+            this.txtBuscar.TabIndex = 15;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
-            // dataGridViewTextBoxColumn4
+            // label4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_curso";
-            this.dataGridViewTextBoxColumn4.HeaderText = "id_curso";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "nom_curso";
-            this.dataGridViewTextBoxColumn5.HeaderText = "nom_curso";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "paralelo";
-            this.dataGridViewTextBoxColumn6.HeaderText = "paralelo";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "nro_carnet";
-            this.dataGridViewTextBoxColumn7.HeaderText = "nro_carnet";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_materia";
-            this.dataGridViewTextBoxColumn2.FillWeight = 50.76142F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "id_materia";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_materia";
-            this.dataGridViewTextBoxColumn8.FillWeight = 149.2386F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "nombre_materia";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Materia_Curso";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Materia_Curso";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Calificaciones";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Calificaciones";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // materiaBindingSource
-            // 
-            this.materiaBindingSource.DataSource = typeof(SGCalificaciones.Data.Materia);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(67, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(395, 27);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "PROFESORES DE LA UNIDAD EDUCATIVA";
             // 
             // frmGestionarAnioEscolar
             // 
@@ -1166,7 +979,9 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Text = "frmGestionarAnioEscolar";
             this.Load += new System.EventHandler(this.frmGestionarAnioEscolar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bimestreDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1176,17 +991,13 @@ namespace SGCalificaciones.Vista.Gestiones
             this.panel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materiaDataGridView)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.panelBuscarProfesor.ResumeLayout(false);
             this.panelBuscarProfesor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bimestreBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1227,8 +1038,6 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.ToolTip toolTipMensaje;
         private System.Windows.Forms.DataGridView materiaDataGridView;
         private System.Windows.Forms.BindingSource materiaBindingSource;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnCancelarCurso;
         private FontAwesome.Sharp.IconButton btnNuevoCurso;
         private FontAwesome.Sharp.IconButton btnCancelarBim;
@@ -1238,17 +1047,10 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.TextBox id_materiaTextBox;
-        private System.Windows.Forms.TextBox nombre_materiaTextBox;
-        private FontAwesome.Sharp.IconButton btnCancelarMat;
-        private FontAwesome.Sharp.IconButton btnNuevoMat;
-        private FontAwesome.Sharp.IconButton btnGuardarMat;
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnEditarCurso;
-        private FontAwesome.Sharp.IconButton btnEditarMat;
         private FontAwesome.Sharp.IconButton btnEliminarBim;
         private FontAwesome.Sharp.IconButton btnEliminarCurso;
-        private FontAwesome.Sharp.IconButton btnEliminarMat;
         private Bunifu.Framework.UI.BunifuDragControl bdcpanelProfesores;
         private System.Windows.Forms.Panel panelBuscarProfesor;
         private FontAwesome.Sharp.IconButton btnAceptar;
