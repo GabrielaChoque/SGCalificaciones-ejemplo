@@ -315,5 +315,15 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             ListarPlantel(txtBuscar.Text);
         }
+
+        private void Id_materiaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Nombre_materiaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

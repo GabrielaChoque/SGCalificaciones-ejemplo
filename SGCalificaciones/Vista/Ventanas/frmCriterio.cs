@@ -84,5 +84,29 @@ namespace SGCalificaciones.Vista.Ventanas
         {
             Close();
         }
+
+        private void Id_criterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void Desc_criterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }

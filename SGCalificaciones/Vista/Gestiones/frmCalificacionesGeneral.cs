@@ -48,6 +48,17 @@ namespace SGCalificaciones.Vista.Gestiones
         private void frmCalificacionesGeneral_Load(object sender, EventArgs e)
         {
             Listar(txtBuscar.Text);
+            int i = 0, notaF;
+            foreach (DataGridViewRow Fila in dgvCalificaciones.Rows)
+            {
+                notaF = Convert.ToInt32(dgvCalificaciones.Rows[i].Cells[0].Value);
+                dgvCalificaciones.Rows[i].Cells["NotaFinal"].Value = _objCalif.promedio(notaF);
+                if(notaF>=51)
+                    dgvCalificaciones.Rows[i].Cells["Estado"].Value = "APROBADO";
+                else
+                    dgvCalificaciones.Rows[i].Cells["Estado"].Value = "REPROBADO";
+                i++;
+            }
         }
 
         private void iconPictureBox2_Click(object sender, EventArgs e)
@@ -68,6 +79,23 @@ namespace SGCalificaciones.Vista.Gestiones
                 xd = Convert.ToInt32(dgvCalificaciones.Rows[i].Cells[0].Value);
                 dgvCalificaciones.Rows[i].Cells[9].Value = _objCalif.promedio(xd);
                 i++;
+            }
+        }
+
+        private void dgvCalificaciones_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvCalificaciones.Columns[e.ColumnIndex].Name == "Calif" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvCalificaciones.Rows[e.RowIndex].Cells["Calif"] as DataGridViewButtonCell;
+                Icon icoNotas = new Icon(Environment.CurrentDirectory + @"\\notas.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoNotas, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvCalificaciones.Rows[e.RowIndex].Height = icoNotas.Height + 8;
+                this.dgvCalificaciones.Columns[e.ColumnIndex].Width = icoNotas.Width + 8;
+
+                e.Handled = true;
             }
         }
     }
