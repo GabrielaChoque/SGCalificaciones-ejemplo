@@ -30,13 +30,14 @@ namespace SGCalificaciones.Vista.Gestiones
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCalificaciones = new System.Windows.Forms.DataGridView();
+            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nrocarnetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +47,12 @@ namespace SGCalificaciones.Vista.Gestiones
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calificacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.NotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalificaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox2
@@ -79,7 +81,19 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             // dgvCalificaciones
             // 
+            this.dgvCalificaciones.AllowUserToAddRows = false;
+            this.dgvCalificaciones.AllowUserToDeleteRows = false;
             this.dgvCalificaciones.AutoGenerateColumns = false;
+            this.dgvCalificaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCalificaciones.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCalificaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCalificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalificaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nrocarnetDataGridViewTextBoxColumn,
@@ -91,12 +105,22 @@ namespace SGCalificaciones.Vista.Gestiones
             this.direccionDataGridViewTextBoxColumn,
             this.cursoDataGridViewTextBoxColumn,
             this.calificacionesDataGridViewTextBoxColumn,
-            this.Nota});
+            this.NotaFinal,
+            this.Estado});
             this.dgvCalificaciones.DataSource = this.estudianteBindingSource;
-            this.dgvCalificaciones.Location = new System.Drawing.Point(123, 220);
+            this.dgvCalificaciones.GridColor = System.Drawing.Color.SkyBlue;
+            this.dgvCalificaciones.Location = new System.Drawing.Point(125, 214);
             this.dgvCalificaciones.Name = "dgvCalificaciones";
-            this.dgvCalificaciones.Size = new System.Drawing.Size(714, 274);
+            this.dgvCalificaciones.ReadOnly = true;
+            this.dgvCalificaciones.RowHeadersVisible = false;
+            this.dgvCalificaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvCalificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCalificaciones.Size = new System.Drawing.Size(729, 274);
             this.dgvCalificaciones.TabIndex = 19;
+            // 
+            // estudianteBindingSource
+            // 
+            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
             // 
             // iconPictureBox1
             // 
@@ -140,47 +164,52 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // Nota
-            // 
-            this.Nota.DataPropertyName = "nro_carnet";
-            this.Nota.HeaderText = "Nota ";
-            this.Nota.Name = "Nota";
-            // 
             // nrocarnetDataGridViewTextBoxColumn
             // 
             this.nrocarnetDataGridViewTextBoxColumn.DataPropertyName = "nro_carnet";
-            this.nrocarnetDataGridViewTextBoxColumn.HeaderText = "nro_carnet";
+            this.nrocarnetDataGridViewTextBoxColumn.FillWeight = 91.37056F;
+            this.nrocarnetDataGridViewTextBoxColumn.HeaderText = "NRO CARNET";
             this.nrocarnetDataGridViewTextBoxColumn.Name = "nrocarnetDataGridViewTextBoxColumn";
+            this.nrocarnetDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idcursoDataGridViewTextBoxColumn
             // 
             this.idcursoDataGridViewTextBoxColumn.DataPropertyName = "id_curso";
             this.idcursoDataGridViewTextBoxColumn.HeaderText = "id_curso";
             this.idcursoDataGridViewTextBoxColumn.Name = "idcursoDataGridViewTextBoxColumn";
+            this.idcursoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idcursoDataGridViewTextBoxColumn.Visible = false;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.FillWeight = 101.7259F;
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "NOMBRE";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // appaternoDataGridViewTextBoxColumn
             // 
             this.appaternoDataGridViewTextBoxColumn.DataPropertyName = "ap_paterno";
-            this.appaternoDataGridViewTextBoxColumn.HeaderText = "ap_paterno";
+            this.appaternoDataGridViewTextBoxColumn.FillWeight = 101.7259F;
+            this.appaternoDataGridViewTextBoxColumn.HeaderText = "APELLIDO PATERNO";
             this.appaternoDataGridViewTextBoxColumn.Name = "appaternoDataGridViewTextBoxColumn";
+            this.appaternoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apmaternoDataGridViewTextBoxColumn
             // 
             this.apmaternoDataGridViewTextBoxColumn.DataPropertyName = "ap_materno";
-            this.apmaternoDataGridViewTextBoxColumn.HeaderText = "ap_materno";
+            this.apmaternoDataGridViewTextBoxColumn.FillWeight = 101.7259F;
+            this.apmaternoDataGridViewTextBoxColumn.HeaderText = "APELLIDO MATERNO";
             this.apmaternoDataGridViewTextBoxColumn.Name = "apmaternoDataGridViewTextBoxColumn";
+            this.apmaternoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // celularDataGridViewTextBoxColumn
             // 
             this.celularDataGridViewTextBoxColumn.DataPropertyName = "celular";
             this.celularDataGridViewTextBoxColumn.HeaderText = "celular";
             this.celularDataGridViewTextBoxColumn.Name = "celularDataGridViewTextBoxColumn";
+            this.celularDataGridViewTextBoxColumn.ReadOnly = true;
             this.celularDataGridViewTextBoxColumn.Visible = false;
             // 
             // direccionDataGridViewTextBoxColumn
@@ -188,6 +217,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
             this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             this.direccionDataGridViewTextBoxColumn.Visible = false;
             // 
             // cursoDataGridViewTextBoxColumn
@@ -195,6 +225,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.cursoDataGridViewTextBoxColumn.DataPropertyName = "Curso";
             this.cursoDataGridViewTextBoxColumn.HeaderText = "Curso";
             this.cursoDataGridViewTextBoxColumn.Name = "cursoDataGridViewTextBoxColumn";
+            this.cursoDataGridViewTextBoxColumn.ReadOnly = true;
             this.cursoDataGridViewTextBoxColumn.Visible = false;
             // 
             // calificacionesDataGridViewTextBoxColumn
@@ -202,11 +233,23 @@ namespace SGCalificaciones.Vista.Gestiones
             this.calificacionesDataGridViewTextBoxColumn.DataPropertyName = "Calificaciones";
             this.calificacionesDataGridViewTextBoxColumn.HeaderText = "Calificaciones";
             this.calificacionesDataGridViewTextBoxColumn.Name = "calificacionesDataGridViewTextBoxColumn";
+            this.calificacionesDataGridViewTextBoxColumn.ReadOnly = true;
             this.calificacionesDataGridViewTextBoxColumn.Visible = false;
             // 
-            // estudianteBindingSource
+            // NotaFinal
             // 
-            this.estudianteBindingSource.DataSource = typeof(SGCalificaciones.Data.Estudiante);
+            this.NotaFinal.DataPropertyName = "nro_carnet";
+            this.NotaFinal.FillWeight = 101.7259F;
+            this.NotaFinal.HeaderText = "NOTA FINAL";
+            this.NotaFinal.Name = "NotaFinal";
+            this.NotaFinal.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.FillWeight = 101.7259F;
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // frmCalificacionesGeneral
             // 
@@ -226,8 +269,8 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Load += new System.EventHandler(this.frmCalificacionesGeneral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalificaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +294,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn calificacionesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NotaFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

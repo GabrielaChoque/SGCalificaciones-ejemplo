@@ -23,6 +23,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private void frmGestionarEstudiante_Load(object sender, EventArgs e)
         {
             Listar(txtBuscar.Text);
+            
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
