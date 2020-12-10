@@ -12,6 +12,8 @@ namespace SGCalificaciones.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class BdCalificacionesEntities : DbContext
     {
@@ -34,5 +36,10 @@ namespace SGCalificaciones.Data
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Calificaciones> Calificaciones { get; set; }
         public virtual DbSet<Estudiante> Estudiante { get; set; }
+    
+        public virtual ObjectResult<TablaCalificaciones1Prueba_Result> TablaCalificaciones1Prueba()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TablaCalificaciones1Prueba_Result>("TablaCalificaciones1Prueba");
+        }
     }
 }

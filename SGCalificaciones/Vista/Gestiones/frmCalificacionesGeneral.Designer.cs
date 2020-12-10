@@ -38,6 +38,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.nombreLabel1 = new System.Windows.Forms.Label();
+            this.nro_carnetLabel1 = new System.Windows.Forms.Label();
+            this.ap_paternoLabel1 = new System.Windows.Forms.Label();
+            this.ap_maternoLabel1 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.nrocarnetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +54,7 @@ namespace SGCalificaciones.Vista.Gestiones
             this.calificacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalificaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
@@ -106,17 +112,20 @@ namespace SGCalificaciones.Vista.Gestiones
             this.cursoDataGridViewTextBoxColumn,
             this.calificacionesDataGridViewTextBoxColumn,
             this.NotaFinal,
-            this.Estado});
+            this.Estado,
+            this.Calif});
             this.dgvCalificaciones.DataSource = this.estudianteBindingSource;
             this.dgvCalificaciones.GridColor = System.Drawing.Color.SkyBlue;
-            this.dgvCalificaciones.Location = new System.Drawing.Point(125, 214);
+            this.dgvCalificaciones.Location = new System.Drawing.Point(116, 214);
             this.dgvCalificaciones.Name = "dgvCalificaciones";
             this.dgvCalificaciones.ReadOnly = true;
             this.dgvCalificaciones.RowHeadersVisible = false;
             this.dgvCalificaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCalificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCalificaciones.Size = new System.Drawing.Size(729, 274);
+            this.dgvCalificaciones.Size = new System.Drawing.Size(793, 274);
             this.dgvCalificaciones.TabIndex = 19;
+            this.dgvCalificaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalificaciones_CellClick);
+            this.dgvCalificaciones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCalificaciones_CellPainting);
             // 
             // estudianteBindingSource
             // 
@@ -154,15 +163,72 @@ namespace SGCalificaciones.Vista.Gestiones
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 60;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(748, 535);
+            this.btnImprimir.Location = new System.Drawing.Point(741, 530);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(195, 70);
+            this.btnImprimir.Size = new System.Drawing.Size(252, 70);
             this.btnImprimir.TabIndex = 22;
-            this.btnImprimir.Text = "IMPRIMIR";
+            this.btnImprimir.Text = "IMPRIMIR TODO";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // nombreLabel1
+            // 
+            this.nombreLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "nombre", true));
+            this.nombreLabel1.Location = new System.Drawing.Point(58, 120);
+            this.nombreLabel1.Name = "nombreLabel1";
+            this.nombreLabel1.Size = new System.Drawing.Size(100, 14);
+            this.nombreLabel1.TabIndex = 23;
+            this.nombreLabel1.Text = "label2";
+            // 
+            // nro_carnetLabel1
+            // 
+            this.nro_carnetLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "nro_carnet", true));
+            this.nro_carnetLabel1.Location = new System.Drawing.Point(58, 87);
+            this.nro_carnetLabel1.Name = "nro_carnetLabel1";
+            this.nro_carnetLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nro_carnetLabel1.TabIndex = 24;
+            this.nro_carnetLabel1.Text = "label2";
+            // 
+            // ap_paternoLabel1
+            // 
+            this.ap_paternoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "ap_paterno", true));
+            this.ap_paternoLabel1.Location = new System.Drawing.Point(58, 134);
+            this.ap_paternoLabel1.Name = "ap_paternoLabel1";
+            this.ap_paternoLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ap_paternoLabel1.TabIndex = 25;
+            this.ap_paternoLabel1.Text = "label2";
+            // 
+            // ap_maternoLabel1
+            // 
+            this.ap_maternoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "ap_materno", true));
+            this.ap_maternoLabel1.Location = new System.Drawing.Point(58, 157);
+            this.ap_maternoLabel1.Name = "ap_maternoLabel1";
+            this.ap_maternoLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ap_maternoLabel1.TabIndex = 26;
+            this.ap_maternoLabel1.Text = "label2";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.SeaGreen;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 40;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(725, 157);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(165, 40);
+            this.iconButton1.TabIndex = 27;
+            this.iconButton1.Text = "VER NOTAS";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // nrocarnetDataGridViewTextBoxColumn
             // 
@@ -238,11 +304,11 @@ namespace SGCalificaciones.Vista.Gestiones
             // 
             // NotaFinal
             // 
-            this.NotaFinal.DataPropertyName = "nro_carnet";
             this.NotaFinal.FillWeight = 101.7259F;
             this.NotaFinal.HeaderText = "NOTA FINAL";
             this.NotaFinal.Name = "NotaFinal";
             this.NotaFinal.ReadOnly = true;
+            this.NotaFinal.Visible = false;
             // 
             // Estado
             // 
@@ -250,6 +316,14 @@ namespace SGCalificaciones.Vista.Gestiones
             this.Estado.HeaderText = "ESTADO";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
+            // Calif
+            // 
+            this.Calif.HeaderText = "VER CALIF";
+            this.Calif.Name = "Calif";
+            this.Calif.ReadOnly = true;
+            this.Calif.Visible = false;
             // 
             // frmCalificacionesGeneral
             // 
@@ -257,6 +331,11 @@ namespace SGCalificaciones.Vista.Gestiones
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1078, 669);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.ap_maternoLabel1);
+            this.Controls.Add(this.ap_paternoLabel1);
+            this.Controls.Add(this.nro_carnetLabel1);
+            this.Controls.Add(this.nombreLabel1);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtBuscar);
@@ -285,6 +364,11 @@ namespace SGCalificaciones.Vista.Gestiones
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.Label nombreLabel1;
+        private System.Windows.Forms.Label nro_carnetLabel1;
+        private System.Windows.Forms.Label ap_paternoLabel1;
+        private System.Windows.Forms.Label ap_maternoLabel1;
+        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nrocarnetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
@@ -296,5 +380,6 @@ namespace SGCalificaciones.Vista.Gestiones
         private System.Windows.Forms.DataGridViewTextBoxColumn calificacionesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotaFinal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calif;
     }
 }

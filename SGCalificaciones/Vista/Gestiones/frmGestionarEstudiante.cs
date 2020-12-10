@@ -90,7 +90,8 @@ namespace SGCalificaciones.Vista.Gestiones
         {
             if (this.estudianteDataGridView.Columns[e.ColumnIndex].Name == "NOTAS")
             {
-                MessageBox.Show(nro_carnetLabel1.Text);
+                Reportes.frmLibreta frm = new Reportes.frmLibreta(nro_carnetLabel1.Text, nombreLabel1.Text+" "+ap_paternoLabel1.Text+" "+ap_maternoLabel1.Text);
+                frm.Show();
             }
         }
     }

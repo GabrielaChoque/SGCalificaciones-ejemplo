@@ -49,9 +49,6 @@ namespace SGCalificaciones.Vista.Gestiones
             cmbEstudiante.ValueMember = "nro_carnet";
             cmbEstudiante.DisplayMember = "NombreCompleto";
             cmbEstudiante.DataSource = r.ToList();
-
-           //label11.Text = Convert.ToString(cmbEstudiante.ValueMember);
-            //_db.Medicamento.Where(x => x.NomMed.Contains(pBuscar)).ToList();
         }
 
         private void CargarBimestre()
@@ -59,7 +56,7 @@ namespace SGCalificaciones.Vista.Gestiones
             int anio = DateTime.Today.Year;
             BdCalificacionesEntities _entity = new BdCalificacionesEntities();
             var r = from Bimestre in _entity.Bimestre
-                    where Bimestre.bimestre.Contains(Convert.ToString(anio))
+                    where Bimestre.bimestre.Contains("2020")
                     select new
                     {
                         id_bimestre = Bimestre.id_bimestre,

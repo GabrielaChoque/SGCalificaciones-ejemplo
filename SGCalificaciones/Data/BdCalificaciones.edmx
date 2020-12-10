@@ -212,6 +212,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="TablaCalificaciones1Prueba" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="BdCalificacionesModelStoreContainer">
           <EntitySet Name="Bimestre" EntityType="Self.Bimestre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
@@ -431,6 +432,7 @@
             <End Role="Bimestre" EntitySet="Bimestre" />
             <End Role="Calificaciones" EntitySet="Calificaciones" />
           </AssociationSet>
+          <FunctionImport Name="TablaCalificaciones1Prueba" ReturnType="Collection(BdCalificacionesModel.TablaCalificaciones1Prueba_Result)" />
         </EntityContainer>
         <Association Name="FK_Criterio_Bimestre">
           <End Type="BdCalificacionesModel.Bimestre" Role="Bimestre" Multiplicity="0..1" />
@@ -545,6 +547,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="TablaCalificaciones1Prueba_Result">
+          <Property Type="Int32" Name="nro_carnet" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ap_paterno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ap_materno" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_materia" Nullable="true" />
+          <Property Type="String" Name="nombre_materia" Nullable="true" MaxLength="60" />
+          <Property Type="Int32" Name="id_bimestre" Nullable="true" />
+          <Property Type="String" Name="bimestre" Nullable="true" MaxLength="8" />
+          <Property Type="Int32" Name="calificacion" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -647,6 +660,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TablaCalificaciones1Prueba" FunctionName="BdCalificacionesModel.Store.TablaCalificaciones1Prueba">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BdCalificacionesModel.TablaCalificaciones1Prueba_Result">
+                <ScalarProperty Name="nro_carnet" ColumnName="nro_carnet" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="ap_paterno" ColumnName="ap_paterno" />
+                <ScalarProperty Name="ap_materno" ColumnName="ap_materno" />
+                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
+                <ScalarProperty Name="nombre_materia" ColumnName="nombre_materia" />
+                <ScalarProperty Name="id_bimestre" ColumnName="id_bimestre" />
+                <ScalarProperty Name="bimestre" ColumnName="bimestre" />
+                <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

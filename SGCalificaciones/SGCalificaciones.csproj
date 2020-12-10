@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>D:\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -45,6 +48,9 @@
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -82,6 +88,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BdCalificacionesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdCalificacionesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controlador\BimestreController.cs" />
     <Compile Include="Controlador\CalificacionesController.cs" />
     <Compile Include="Controlador\CriterioController.cs" />
@@ -129,6 +140,9 @@
       <DependentUpon>BdCalificaciones.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sysdiagrams.cs">
+      <DependentUpon>BdCalificaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TablaCalificaciones1Prueba_Result.cs">
       <DependentUpon>BdCalificaciones.tt</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -194,6 +208,12 @@
     <Compile Include="Vista\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Reportes\frmLibreta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\frmLibreta.Designer.cs">
+      <DependentUpon>frmLibreta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\frmCriterio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +225,12 @@
     </Compile>
     <Compile Include="Vista\Ventanas\frmEstudiante.Designer.cs">
       <DependentUpon>frmEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmImprimirLibreta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\frmImprimirLibreta.Designer.cs">
+      <DependentUpon>frmImprimirLibreta.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas\frmPlantel.cs">
       <SubType>Form</SubType>
@@ -252,12 +278,18 @@
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Reportes\ReportCalificaciones.rdlc" />
+    <EmbeddedResource Include="Vista\Reportes\frmLibreta.resx">
+      <DependentUpon>frmLibreta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\ReportLibreta.rdlc" />
     <EmbeddedResource Include="Vista\Ventanas\frmCriterio.resx">
       <DependentUpon>frmCriterio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmEstudiante.resx">
       <DependentUpon>frmEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\frmImprimirLibreta.resx">
+      <DependentUpon>frmImprimirLibreta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\frmPlantel.resx">
       <DependentUpon>frmPlantel.cs</DependentUpon>
@@ -266,6 +298,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BdCalificaciones.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Data\BdCalificacionesDataSet.xsc">
+      <DependentUpon>BdCalificacionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\BdCalificacionesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdCalificacionesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\BdCalificacionesDataSet.xss">
+      <DependentUpon>BdCalificacionesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Data\BdCalificaciones.edmx.diagram">
       <DependentUpon>BdCalificaciones.edmx</DependentUpon>
     </None>
@@ -323,6 +366,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

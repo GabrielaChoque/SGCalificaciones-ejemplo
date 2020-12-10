@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace SGCalificaciones.Vista.Gestiones
 {
@@ -30,20 +33,25 @@ namespace SGCalificaciones.Vista.Gestiones
             estudianteBindingSource.DataSource = _objUsuario.ListarMisEstudiantes(pBuscar, pIdCurso);
         }
 
-        private void CargarBimestre()
+        private void CargarNotaF()
         {
-            //BdCalificacionesEntities _entity = new BdCalificacionesEntities();
-            //var r = from Bimestre in _entity.Bimestre
-            //        where Bimestre.bimestre.Contains("2020")
-            //        select new
-            //        {
-            //            id_bimestre = Bimestre.id_bimestre,
-            //            bimestre = Bimestre.bimestre
-            //        };
-            int xd = _objCalif.promedio(1111111);
-            MessageBox.Show(Convert.ToString(xd));
-
-
+            int i = 0, Carnet;
+            foreach (DataGridViewRow Fila in dgvCalificaciones.Rows)
+            {
+                Carnet = Convert.ToInt32(dgvCalificaciones.Rows[i].Cells[0].Value);
+                dgvCalificaciones.Rows[i].Cells["NotaFinal"].Value = _objCalif.promedio(Carnet);
+                if (_objCalif.promedio(Carnet) >= 51)
+                {
+                    dgvCalificaciones.Rows[i].Cells["Estado"].Value = "APROBADO";
+                }
+                else
+                {
+                    dgvCalificaciones.Rows[i].Cells["Estado"].Value = "REPROBADO";
+                    dgvCalificaciones.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Coral;
+                    dgvCalificaciones.Rows[i].DefaultCellStyle.ForeColor = System.Drawing.Color.Red;
+                }
+                i++;
+            }
         }
         private void frmCalificacionesGeneral_Load(object sender, EventArgs e)
         {
@@ -57,18 +65,40 @@ namespace SGCalificaciones.Vista.Gestiones
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            int xd , cant = dgvCalificaciones.Rows.Count;
-            //MessageBox.Show(Convert.ToString(xd));
-
-            
-            int i = 0;
-            foreach (DataGridViewRow Fila in dgvCalificaciones.Rows)
+            CargarNotaF();
+        }
+        private void dgvCalificaciones_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvCalificaciones.Columns[e.ColumnIndex].Name == "Calif" && e.RowIndex >= 0)
             {
-                
-                xd = Convert.ToInt32(dgvCalificaciones.Rows[i].Cells[0].Value);
-                dgvCalificaciones.Rows[i].Cells[9].Value = _objCalif.promedio(xd);
-                i++;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvCalificaciones.Rows[e.RowIndex].Cells["Calif"] as DataGridViewButtonCell;
+                System.Drawing.Icon icoNotas = new System.Drawing.Icon(Environment.CurrentDirectory + @"\\notas.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoNotas, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvCalificaciones.Rows[e.RowIndex].Height = icoNotas.Height + 8;
+                this.dgvCalificaciones.Columns[e.ColumnIndex].Width = icoNotas.Width + 8;
+
+                e.Handled = true;
             }
+        }
+
+        private void dgvCalificaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgvCalificaciones.Columns[e.ColumnIndex].Name == "Calif")
+            {
+                Reportes.frmLibreta frm = new Reportes.frmLibreta(nro_carnetLabel1.Text, nombreLabel1.Text + " " + ap_paternoLabel1.Text + " " + ap_maternoLabel1.Text);
+                frm.Show();
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            dgvCalificaciones.Columns["Calif"].Visible = true; 
+            dgvCalificaciones.Columns["NotaFinal"].Visible = true;
+            dgvCalificaciones.Columns["Estado"].Visible = true;
+            CargarNotaF();
         }
     }
 }
