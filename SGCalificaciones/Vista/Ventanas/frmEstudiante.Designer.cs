@@ -183,17 +183,23 @@ namespace SGCalificaciones.Vista.Ventanas
             // 
             this.ap_maternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "ap_materno", true));
             this.ap_maternoTextBox.Location = new System.Drawing.Point(188, 154);
+            this.ap_maternoTextBox.MaxLength = 18;
             this.ap_maternoTextBox.Name = "ap_maternoTextBox";
             this.ap_maternoTextBox.Size = new System.Drawing.Size(163, 20);
             this.ap_maternoTextBox.TabIndex = 3;
+            this.ap_maternoTextBox.TextChanged += new System.EventHandler(this.Ap_maternoTextBox_TextChanged);
+            this.ap_maternoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ap_maternoTextBox_KeyPress);
             // 
             // ap_paternoTextBox
             // 
             this.ap_paternoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "ap_paterno", true));
             this.ap_paternoTextBox.Location = new System.Drawing.Point(188, 127);
+            this.ap_paternoTextBox.MaxLength = 18;
             this.ap_paternoTextBox.Name = "ap_paternoTextBox";
             this.ap_paternoTextBox.Size = new System.Drawing.Size(163, 20);
             this.ap_paternoTextBox.TabIndex = 2;
+            this.ap_paternoTextBox.TextChanged += new System.EventHandler(this.Ap_paternoTextBox_TextChanged);
+            this.ap_paternoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ap_paternoTextBox_KeyPress);
             // 
             // celularTextBox
             // 
@@ -203,30 +209,35 @@ namespace SGCalificaciones.Vista.Ventanas
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.Size = new System.Drawing.Size(163, 20);
             this.celularTextBox.TabIndex = 4;
+            this.celularTextBox.TextChanged += new System.EventHandler(this.CelularTextBox_TextChanged);
             this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nro_carnetTextBox_KeyPress);
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "direccion", true));
             this.direccionTextBox.Location = new System.Drawing.Point(188, 205);
+            this.direccionTextBox.MaxLength = 35;
             this.direccionTextBox.Multiline = true;
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(163, 20);
             this.direccionTextBox.TabIndex = 5;
+            this.direccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DireccionTextBox_KeyPress);
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "nombre", true));
             this.nombreTextBox.Location = new System.Drawing.Point(188, 101);
+            this.nombreTextBox.MaxLength = 36;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(163, 20);
             this.nombreTextBox.TabIndex = 1;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // nro_carnetTextBox
             // 
             this.nro_carnetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "nro_carnet", true));
             this.nro_carnetTextBox.Location = new System.Drawing.Point(188, 75);
-            this.nro_carnetTextBox.MaxLength = 10;
+            this.nro_carnetTextBox.MaxLength = 7;
             this.nro_carnetTextBox.Name = "nro_carnetTextBox";
             this.nro_carnetTextBox.Size = new System.Drawing.Size(163, 20);
             this.nro_carnetTextBox.TabIndex = 0;

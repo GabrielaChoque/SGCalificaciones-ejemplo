@@ -36,12 +36,12 @@ namespace SGCalificaciones.Vista.Ventanas
             System.Windows.Forms.Label id_criterioLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.desc_criterioTextBox = new System.Windows.Forms.TextBox();
-            this.criterioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.id_bimestreTextBox = new System.Windows.Forms.TextBox();
             this.id_criterioTextBox = new System.Windows.Forms.TextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnAceptar = new FontAwesome.Sharp.IconButton();
+            this.criterioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             desc_criterioLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             id_bimestreLabel = new System.Windows.Forms.Label();
@@ -99,13 +99,11 @@ namespace SGCalificaciones.Vista.Ventanas
             // 
             this.desc_criterioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.criterioBindingSource, "desc_criterio", true));
             this.desc_criterioTextBox.Location = new System.Drawing.Point(164, 114);
+            this.desc_criterioTextBox.MaxLength = 10;
             this.desc_criterioTextBox.Name = "desc_criterioTextBox";
             this.desc_criterioTextBox.Size = new System.Drawing.Size(200, 20);
             this.desc_criterioTextBox.TabIndex = 1;
-            // 
-            // criterioBindingSource
-            // 
-            this.criterioBindingSource.DataSource = typeof(SGCalificaciones.Data.Criterio);
+            this.desc_criterioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Desc_criterioTextBox_KeyPress);
             // 
             // fechaDateTimePicker
             // 
@@ -119,6 +117,7 @@ namespace SGCalificaciones.Vista.Ventanas
             // 
             this.id_bimestreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.criterioBindingSource, "id_bimestre", true));
             this.id_bimestreTextBox.Location = new System.Drawing.Point(164, 141);
+            this.id_bimestreTextBox.MaxLength = 7;
             this.id_bimestreTextBox.Name = "id_bimestreTextBox";
             this.id_bimestreTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_bimestreTextBox.TabIndex = 2;
@@ -127,9 +126,11 @@ namespace SGCalificaciones.Vista.Ventanas
             // 
             this.id_criterioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.criterioBindingSource, "id_criterio", true));
             this.id_criterioTextBox.Location = new System.Drawing.Point(164, 88);
+            this.id_criterioTextBox.MaxLength = 5;
             this.id_criterioTextBox.Name = "id_criterioTextBox";
             this.id_criterioTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_criterioTextBox.TabIndex = 0;
+            this.id_criterioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Id_criterioTextBox_KeyPress);
             // 
             // btnCancelar
             // 
@@ -172,6 +173,10 @@ namespace SGCalificaciones.Vista.Ventanas
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
+            // criterioBindingSource
+            // 
+            this.criterioBindingSource.DataSource = typeof(SGCalificaciones.Data.Criterio);
             // 
             // frmCriterio
             // 

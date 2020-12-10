@@ -147,5 +147,60 @@ namespace SGCalificaciones.Vista.Ventanas
         {
             lblIdCurso.Text = Convert.ToString(cmbCursos.SelectedValue);
         }
+
+        private void NombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void Ap_paternoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Ap_maternoTextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void CelularTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Ap_paternoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void Ap_maternoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void DireccionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
     }
 }
