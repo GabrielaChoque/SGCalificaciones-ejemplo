@@ -67,6 +67,23 @@ namespace SGCalificaciones.Vista.Administrativo
         {
             this.Close();
         }
+
+        private void plantel_EducativoDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.plantel_EducativoDataGridView.Columns[e.ColumnIndex].Name == "VER" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.plantel_EducativoDataGridView.Rows[e.RowIndex].Cells["VER"] as DataGridViewButtonCell;
+                Icon icoNotas = new Icon(Environment.CurrentDirectory + @"\\ver.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoNotas, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.plantel_EducativoDataGridView.Rows[e.RowIndex].Height = icoNotas.Height + 8;
+                this.plantel_EducativoDataGridView.Columns[e.ColumnIndex].Width = icoNotas.Width + 8;
+
+                e.Handled = true;
+            }
+        }
     }
 }
 

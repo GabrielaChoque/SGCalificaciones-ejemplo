@@ -30,6 +30,7 @@ namespace SGCalificaciones.Vista.Gestiones
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -169,6 +170,7 @@ namespace SGCalificaciones.Vista.Gestiones
             // id_criterioLabel1
             // 
             this.id_criterioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.criterioBindingSource, "id_criterio", true));
+            this.id_criterioLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.id_criterioLabel1.Location = new System.Drawing.Point(163, 62);
             this.id_criterioLabel1.Name = "id_criterioLabel1";
             this.id_criterioLabel1.Size = new System.Drawing.Size(100, 23);
@@ -178,6 +180,16 @@ namespace SGCalificaciones.Vista.Gestiones
             // criterioDataGridView
             // 
             this.criterioDataGridView.AutoGenerateColumns = false;
+            this.criterioDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.criterioDataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.criterioDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.criterioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.criterioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -191,19 +203,20 @@ namespace SGCalificaciones.Vista.Gestiones
             this.criterioDataGridView.DataSource = this.criterioBindingSource;
             this.criterioDataGridView.Location = new System.Drawing.Point(127, 208);
             this.criterioDataGridView.Name = "criterioDataGridView";
+            this.criterioDataGridView.RowHeadersVisible = false;
             this.criterioDataGridView.Size = new System.Drawing.Size(844, 220);
             this.criterioDataGridView.TabIndex = 26;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_criterio";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_criterio";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NRO CRITERIO";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "desc_criterio";
-            this.dataGridViewTextBoxColumn2.HeaderText = "desc_criterio";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
@@ -211,11 +224,12 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn3.DataPropertyName = "id_bimestre";
             this.dataGridViewTextBoxColumn3.HeaderText = "id_bimestre";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "fecha";
-            this.dataGridViewTextBoxColumn4.HeaderText = "fecha";
+            this.dataGridViewTextBoxColumn4.HeaderText = "FECHA";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
@@ -223,24 +237,28 @@ namespace SGCalificaciones.Vista.Gestiones
             this.dataGridViewTextBoxColumn5.DataPropertyName = "nro_carnet";
             this.dataGridViewTextBoxColumn5.HeaderText = "nro_carnet";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Bimestre";
             this.dataGridViewTextBoxColumn6.HeaderText = "Bimestre";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Calificaciones";
             this.dataGridViewTextBoxColumn7.HeaderText = "Calificaciones";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Plantel_Educativo";
             this.dataGridViewTextBoxColumn8.HeaderText = "Plantel_Educativo";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Visible = false;
             // 
             // frmGestionarCriterio
             // 

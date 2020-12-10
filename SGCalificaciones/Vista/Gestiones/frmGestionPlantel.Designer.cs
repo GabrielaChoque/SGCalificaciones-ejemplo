@@ -38,8 +38,8 @@ namespace SGCalificaciones.Vista.Administrativo
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.nro_carnetLabel1 = new System.Windows.Forms.Label();
-            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.plantel_EducativoDataGridView = new System.Windows.Forms.DataGridView();
+            this.VER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +49,11 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plantel_EducativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,13 +174,13 @@ namespace SGCalificaciones.Vista.Administrativo
             this.nro_carnetLabel1.TabIndex = 11;
             this.nro_carnetLabel1.Text = "label2";
             // 
-            // plantel_EducativoBindingSource
-            // 
-            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
-            // 
             // plantel_EducativoDataGridView
             // 
+            this.plantel_EducativoDataGridView.AllowUserToAddRows = false;
+            this.plantel_EducativoDataGridView.AllowUserToDeleteRows = false;
             this.plantel_EducativoDataGridView.AutoGenerateColumns = false;
+            this.plantel_EducativoDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.plantel_EducativoDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.plantel_EducativoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.plantel_EducativoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -190,66 +191,93 @@ namespace SGCalificaciones.Vista.Administrativo
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
+            this.dataGridViewTextBoxColumn9,
+            this.VER});
             this.plantel_EducativoDataGridView.DataSource = this.plantel_EducativoBindingSource;
             this.plantel_EducativoDataGridView.Location = new System.Drawing.Point(54, 250);
             this.plantel_EducativoDataGridView.Name = "plantel_EducativoDataGridView";
+            this.plantel_EducativoDataGridView.ReadOnly = true;
+            this.plantel_EducativoDataGridView.RowHeadersVisible = false;
+            this.plantel_EducativoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.plantel_EducativoDataGridView.Size = new System.Drawing.Size(977, 232);
             this.plantel_EducativoDataGridView.TabIndex = 11;
+            this.plantel_EducativoDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.plantel_EducativoDataGridView_CellPainting);
+            // 
+            // VER
+            // 
+            this.VER.HeaderText = "VER";
+            this.VER.Name = "VER";
+            this.VER.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "nro_carnet";
-            this.dataGridViewTextBoxColumn1.HeaderText = "nro_carnet";
+            this.dataGridViewTextBoxColumn1.HeaderText = "CARNET";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NOMBRE";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ap_paterno";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ap_paterno";
+            this.dataGridViewTextBoxColumn3.HeaderText = "APELLIDO PATERNO";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ap_materno";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ap_materno";
+            this.dataGridViewTextBoxColumn4.HeaderText = "APELLIDO MATERNO";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "celular";
-            this.dataGridViewTextBoxColumn5.HeaderText = "celular";
+            this.dataGridViewTextBoxColumn5.HeaderText = "CELULAR";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "tipo_plantel";
-            this.dataGridViewTextBoxColumn6.HeaderText = "tipo_plantel";
+            this.dataGridViewTextBoxColumn6.HeaderText = "TIPO PLANTEL";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "usuario";
             this.dataGridViewTextBoxColumn7.HeaderText = "usuario";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "contrasenia";
             this.dataGridViewTextBoxColumn8.HeaderText = "contrasenia";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn8.Visible = false;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Curso";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn9.HeaderText = "CURSO ASIGNADO";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // plantel_EducativoBindingSource
+            // 
+            this.plantel_EducativoBindingSource.DataSource = typeof(SGCalificaciones.Data.Plantel_Educativo);
             // 
             // frmGestionPlantel
             // 
@@ -272,8 +300,8 @@ namespace SGCalificaciones.Vista.Administrativo
             this.Load += new System.EventHandler(this.frmGestionPlantel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plantel_EducativoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +328,6 @@ namespace SGCalificaciones.Vista.Administrativo
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VER;
     }
 }
